@@ -206,6 +206,9 @@ tempCodeRunnerFile.py
 # Ruff stuff:
 .ruff_cache/
 
+# Reproducible upstream checkout; generated BFCL artifacts are committed separately.
+.cache/
+
 # PyPI configuration file
 .pypirc
 

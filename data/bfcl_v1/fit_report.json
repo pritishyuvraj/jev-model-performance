@@ -1,0 +1,26 @@
+{
+  "schema": "jev-prompt-fit/v1",
+  "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+  "checked_count": 250,
+  "method": "Tokenization and complete input-budget check only; no model inference.",
+  "models": {
+    "laya": {
+      "repo": "convaiinnovations/laya-typed-decisions",
+      "revision": "1a793eb568e6718f15941d08f85432581df534e3",
+      "max_len": 4096,
+      "head_max_len": 1024,
+      "failures": [],
+      "max_input_tokens": 271,
+      "max_head_tokens": 181
+    },
+    "macjev": {
+      "repo": "chaoliangUNSW/MacJev-322M-4K-Laya-MLX",
+      "revision": "f2ab36ef98d81e9fc65949e4df35cebc93f21e14",
+      "max_len": 4096,
+      "head_max_len": 1024,
+      "failures": [],
+      "max_input_tokens": 293,
+      "max_head_tokens": 178
+    }
+  }
+}

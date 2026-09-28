@@ -1,0 +1,18 @@
+{
+  "exclude_ids": {
+    "simple_305": "The offered function computes a performance score, while the request asks for goal and assist totals."
+  },
+  "relevance_allowlist": [
+    "relevance_0", "relevance_1", "relevance_3", "relevance_5",
+    "relevance_9", "relevance_11", "relevance_13", "relevance_14", "relevance_19",
+    "relevance_21", "relevance_23", "relevance_28", "relevance_35", "relevance_42", "relevance_45",
+    "relevance_47", "relevance_50", "relevance_51", "relevance_52", "relevance_59",
+    "relevance_61", "relevance_62", "relevance_64", "relevance_71", "relevance_75", "relevance_80",
+    "relevance_104", "relevance_117", "relevance_119", "relevance_122", "relevance_125",
+    "relevance_133", "relevance_141", "relevance_142", "relevance_143", "relevance_144", "relevance_145",
+    "relevance_155", "relevance_163", "relevance_166", "relevance_170", "relevance_173",
+    "relevance_175", "relevance_176", "relevance_189", "relevance_198", "relevance_200",
+    "relevance_205", "relevance_209", "relevance_210", "relevance_220", "relevance_221",
+    "relevance_234", "relevance_235", "relevance_238"
+  ]
+}

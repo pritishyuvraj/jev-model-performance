@@ -1,0 +1,198 @@
+{
+  "schema": "bfcl-v1-jev-eval-subset/v1",
+  "source_repository": "https://github.com/ShishirPatil/gorilla",
+  "source_tag": "v1.0",
+  "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+  "source_license": "Apache-2.0",
+  "parent_corpus": {
+    "schema": "bfcl-v1-jev-next-action/v1",
+    "cases_sha256": "df2a9bc01038a086625e0df583f37e576892846ffa4f1fb1b1ff4f7f8b0145ec",
+    "converted_count": 2000
+  },
+  "cases_file": "cases.jsonl",
+  "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+  "index_file": "index.csv",
+  "index_sha256": "8ec9b5431473ea01a9a11548e170568fb4e4cc39fda931f16a8dde09c7caf13c",
+  "selected_count": 250,
+  "quotas": {
+    "multiple_function": 120,
+    "executable_multiple_function": 30,
+    "relevance": 50,
+    "simple": 35,
+    "executable_simple": 15
+  },
+  "selected_category_counts": {
+    "multiple_function": 120,
+    "executable_multiple_function": 30,
+    "relevance": 50,
+    "simple": 35,
+    "executable_simple": 15
+  },
+  "baseline_by_stratum": {
+    "multi_tool_call": {
+      "count": 150,
+      "first_offered_tool_correct": 56,
+      "always_no_tool_correct": 0
+    },
+    "one_tool_call": {
+      "count": 50,
+      "first_offered_tool_correct": 50,
+      "always_no_tool_correct": 0
+    },
+    "one_tool_no_call": {
+      "count": 50,
+      "first_offered_tool_correct": 0,
+      "always_no_tool_correct": 50
+    },
+    "overall": {
+      "count": 250,
+      "first_offered_tool_correct": 106,
+      "always_no_tool_correct": 50
+    }
+  },
+  "selection_algorithm": {
+    "name": "stratified_sha256_id_rank_with_global_request_dedup",
+    "seed": "bfcl-v1-jev-routing-250-v1",
+    "rank": "SHA256 of UTF-8 seed, NUL, and case id; ascending lexical digest per category",
+    "quota_priority": [
+      "multiple_function",
+      "executable_multiple_function",
+      "relevance",
+      "simple",
+      "executable_simple"
+    ],
+    "prefilter": "Apply explicit review exclusions and optional relevance/positive allowlists before hash ranking; refill each category quota",
+    "duplicate_key": "Unicode NFKC source question, collapsed whitespace, casefold",
+    "output_order": "quota priority, then source row number, then case id"
+  },
+  "selection_review": {
+    "file": "bfcl_v1_selection_review.json",
+    "sha256": "83445886259f64dcb210b645fb91f2d5b308448446b43c1eedcc653a268a115a",
+    "excluded_id_count": 1,
+    "relevance_allowlist_count": 55,
+    "relevance_allowlist": [
+      "relevance_0",
+      "relevance_1",
+      "relevance_104",
+      "relevance_11",
+      "relevance_117",
+      "relevance_119",
+      "relevance_122",
+      "relevance_125",
+      "relevance_13",
+      "relevance_133",
+      "relevance_14",
+      "relevance_141",
+      "relevance_142",
+      "relevance_143",
+      "relevance_144",
+      "relevance_145",
+      "relevance_155",
+      "relevance_163",
+      "relevance_166",
+      "relevance_170",
+      "relevance_173",
+      "relevance_175",
+      "relevance_176",
+      "relevance_189",
+      "relevance_19",
+      "relevance_198",
+      "relevance_200",
+      "relevance_205",
+      "relevance_209",
+      "relevance_21",
+      "relevance_210",
+      "relevance_220",
+      "relevance_221",
+      "relevance_23",
+      "relevance_234",
+      "relevance_235",
+      "relevance_238",
+      "relevance_28",
+      "relevance_3",
+      "relevance_35",
+      "relevance_42",
+      "relevance_45",
+      "relevance_47",
+      "relevance_5",
+      "relevance_50",
+      "relevance_51",
+      "relevance_52",
+      "relevance_59",
+      "relevance_61",
+      "relevance_62",
+      "relevance_64",
+      "relevance_71",
+      "relevance_75",
+      "relevance_80",
+      "relevance_9"
+    ],
+    "positive_allowlist_counts": {},
+    "positive_allowlist": {}
+  },
+  "exclusions": {
+    "rules": [
+      "score_eligible must be true",
+      "kind must be single_call or no_call",
+      "warnings must be empty",
+      "one gold next-action id must appear in offered options",
+      "duplicate normalized user requests cannot both be selected"
+    ],
+    "category_reasons": {
+      "parallel_function": "Several calls are valid, so there is no unique first action.",
+      "parallel_multiple_function": "Several calls are valid, so there is no unique first action.",
+      "executable_parallel_function": "Several calls are valid, so there is no unique first action.",
+      "executable_parallel_multiple_function": "Several calls are valid, so there is no unique first action.",
+      "chatable": "The zero-tool prompts mostly repeat tool-call questions with a different offered catalog.",
+      "rest": "BFCL v1 supplies no reference answer for REST; its converted label is inferred.",
+      "sql": "These controls all offer the same single sql.execute tool; other one-tool controls provide more variety.",
+      "java": "Language-specific function catalogs are outside the chosen pilot categories.",
+      "javascript": "Language-specific function catalogs are outside the chosen pilot categories."
+    },
+    "excluded_category_counts": {
+      "chatable": 200,
+      "executable_parallel_function": 50,
+      "executable_parallel_multiple_function": 40,
+      "java": 100,
+      "javascript": 50,
+      "parallel_function": 200,
+      "parallel_multiple_function": 200,
+      "rest": 70,
+      "sql": 100
+    },
+    "eligibility_counts": {
+      "category_not_selected": 448,
+      "conversion_warning": 2,
+      "eligible_pool": 803,
+      "explicit_review_exclusion": 1,
+      "non_unique_first_action": 491,
+      "not_score_eligible": 70,
+      "outside_reviewed_relevance_allowlist": 185
+    },
+    "eligible_pool_counts": {
+      "multiple_function": 200,
+      "executable_multiple_function": 50,
+      "relevance": 55,
+      "simple": 398,
+      "executable_simple": 100
+    },
+    "selection_skipped_duplicate_requests": {
+      "multiple_function": 1,
+      "executable_multiple_function": 0,
+      "relevance": 0,
+      "simple": 8,
+      "executable_simple": 0
+    },
+    "eligible_pool_duplicate_request_groups": 95,
+    "eligible_pool_extra_duplicate_request_rows": 99,
+    "explicit_review_exclusions": {
+      "simple_305": "The offered function computes a performance score, while the request asks for goal and assist totals."
+    }
+  },
+  "evaluation_notes": [
+    "Score the three strata separately; option count and no-call prevalence differ across them.",
+    "The relevance no_tool label is BFCL's no-function-call outcome mapped to a Jev action, not a verified clarify/cannot_answer subtype.",
+    "Some BFCL call examples may be answerable directly. Human review is required before interpreting the set as a final Jev benchmark.",
+    "The chat model handles tool arguments and can clarify missing values after a tool is selected; this set does not score arguments, execution, or full-task completion."
+  ]
+}
