@@ -2,6 +2,8 @@
 
 This folder contains the pinned environments and run instructions for Laya, Kev-0.8B, Nimble-9B, SemIf on frozen Qwen3.5-4B, Rizzo Flow 4B, Von, and NanoJev. All seven completed the same [250 selected BFCL V1 cases](../data/bfcl_v1/cases.jsonl). The primary score is whether the model selected the right function, or selected no function on BFCL no-call rows. It does not measure arguments, execution, or final answers. Each run uses the same `jev.laya` state and choice question, with adapters for models that have a different native interface. BFCL source answers and `gold_next_action_ids` stay outside the model request.
 
+For copyable commands that **start a fresh run** for every model, use the [seven-model runbook](RUNBOOK.md). It writes new results under `.cache/reruns/`. The published `results/bfcl_v1_*.jsonl` files are already complete and resumable, so pointing a new invocation at them will not give an independent new evaluation.
+
 Use each project's native decision path. Laya, Kev, Von, and Rizzo expose `/v1/systemone`; NanoJev uses its own endpoint with a local bridge; Nimble and SemIf score candidates directly in Python. A generic [vLLM pooling classifier](https://docs.vllm.ai/en/stable/models/pooling_models/) or [SGLang model server](https://docs.sglang.ai/) does not implement all of these checkpoint-specific choice heads and question handling. Hosting only a base architecture would score a different system.
 
 | Run | Native path | Tool selection | Reproduce | Saved case selections |
