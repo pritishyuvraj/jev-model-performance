@@ -5,6 +5,7 @@ This repository holds a **250-case BFCL-conditioned Jev routing pilot** adapted 
 ## Results and reruns
 
 - [Evaluation results](results/README.md): all seven scores, per-stratum breakdowns, run identity, and links to every per-case selection log.
+- [Comparison charts](charts/README.md): model size, observed latency, and gold-function probability against exact right-tool accuracy, with reproducible PNG and SVG figures.
 - [Inference setup](inference/README.md): pinned environments and rerun instructions for each model.
 - [Prompt and results viewer](data/bfcl_v1/viewer.html): compare every saved model selection alongside the user request and offered tools.
 

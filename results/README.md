@@ -16,6 +16,24 @@ All seven models completed the same [250 selected BFCL V1 cases](../data/bfcl_v1
 
 The three middle columns use the primary tool-selection rule and show correct selections out of that column's case count. Nimble and SemIf tied at 248/250 on this set. Their predictions and native prompt encodings differ, so the equal totals are not interchangeable behavior. The 50 one-tool-call cases are easy for several models; inspect the multiple-tool and no-call columns before comparing overall totals.
 
+## Function choice, response time, and probability
+
+The table below is generated from the seven saved per-case JSONL logs by [`tools/summarize_runs.py`](../tools/summarize_runs.py); its machine-readable source is [`bfcl_v1_comparison.csv`](bfcl_v1_comparison.csv). **Exact right tool** checks the precise function ID on the 200 cases that require a call. It excludes the 50 no-call cases and does not check function arguments. **Tool selection** uses all 250 cases and credits any no-function choice on a no-call case. These are different denominators from the **exact action** column above.
+
+| Model | Approx. parameters | Exact right tool (200 calls) | Tool selection (250 cases) | Mean latency | Median latency | P95 latency | Mean correct-route probability |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Laya typed-decisions | ~421M | 197/200 (98.5%) | 240/250 (96.0%) | 23.4 ms | 17.0 ms | 32.8 ms | 72.7% |
+| Kev-0.8B | ~0.8B | 192/200 (96.0%) | 241/250 (96.4%) | 75.3 ms | 73.8 ms | 79.9 ms | 71.0% |
+| Bespoke Nimble 9B | ~9B | 200/200 (100.0%) | 248/250 (99.2%) | 69.2 ms | 60.3 ms | 69.4 ms | 98.6% |
+| SemIf / frozen Qwen3.5-4B | ~4B | 198/200 (99.0%) | 248/250 (99.2%) | 61.6 ms | 56.0 ms | 74.6 ms | 96.2% |
+| Rizzo Flow 4B Q8_0 | ~4B | 189/200 (94.5%) | 239/250 (95.6%) | 39.2 ms | 38.3 ms | 45.9 ms | 87.1% |
+| Von 1.3, chains off | ~395M | 179/200 (89.5%) | 228/250 (91.2%) | 31.2 ms | 13.0 ms | 14.4 ms | 64.6% |
+| NanoJev `unified-games-v1` | ~0.6B | 38/200 (19.0%) | 88/250 (35.2%) | 27.0 ms | 27.4 ms | 36.0 ms | 33.0% |
+
+The parameter labels are rounded sizes of the tested backbones; adapters and decision heads can add parameters. Latency is the saved `wall_latency_ms` over all 250 sequential responses, including first-request warmup. P95 uses linear interpolation on sorted times at `0.95 × (n − 1)`. These runs used different inference paths and precision, so the timings are observed response times rather than a controlled throughput comparison. Von's 4.49-second first response raises its mean well above its median.
+
+Mean correct-route probability is the mean probability assigned to the exact gold function on call cases. On no-call cases it sums the probabilities of `no_tool`, `clarify`, and `cannot_answer`. It is neither calibrated confidence nor the probability that the assistant completes the task. Saved raw logits exist for Nimble and SemIf, but their scales differ; the table uses probabilities for all seven. Regenerate or verify the CSV with `python3 tools/summarize_runs.py` or `python3 tools/summarize_runs.py --check`.
+
 Von illustrates the difference between the two scores: it selected no function on 49/50 no-call rows, but its chosen no-function action was `clarify` or `cannot_answer` rather than the BFCL-derived `no_tool` on every one of those rows. BFCL does not label those subtypes. NanoJev's published checkpoint was trained on games, so this BFCL run is an out-of-domain probe, not a test of its game performance. SemIf is direct-logit scoring over a frozen Qwen checkpoint rather than a separately trained SemIf model. Rizzo used its fine-tuned Q8_0 GGUF; other run-specific precision and revisions are recorded below.
 
 ## Inspect every selection
