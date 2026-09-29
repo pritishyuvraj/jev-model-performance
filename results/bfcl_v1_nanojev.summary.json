@@ -1,0 +1,117 @@
+{
+  "schema": "bfcl-v1-jev-eval-summary/v1",
+  "generated_at_utc": "2026-09-29T01:40:50+00:00",
+  "run": {
+    "provider": "nanojev",
+    "requested_model": "nanojev-unified-games-v1",
+    "declared_model_revision": "047b927b30882a1138fc504821b82ac145a4b81a",
+    "endpoint": "http://127.0.0.1:8015",
+    "cases_path": "/data/home/pritish/jev-model-performance/data/bfcl_v1/cases.jsonl",
+    "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+    "source_tag": "v1.0",
+    "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "selection_review_sha256": "83445886259f64dcb210b645fb91f2d5b308448446b43c1eedcc653a268a115a"
+  },
+  "expected_count": 250,
+  "completed_count": 250,
+  "is_complete": true,
+  "overall": {
+    "total": 250,
+    "correct": 66,
+    "tool_selection_correct": 88,
+    "errors": 0,
+    "incorrect_responses": 184,
+    "accuracy_all_cases": 0.264,
+    "tool_selection_accuracy_all_cases": 0.352,
+    "accuracy_responded_only": 0.264
+  },
+  "by_stratum": {
+    "multi_tool_call": {
+      "total": 150,
+      "correct": 25,
+      "tool_selection_correct": 25,
+      "errors": 0,
+      "incorrect_responses": 125,
+      "accuracy_all_cases": 0.16666666666666666,
+      "tool_selection_accuracy_all_cases": 0.16666666666666666,
+      "accuracy_responded_only": 0.16666666666666666
+    },
+    "one_tool_call": {
+      "total": 50,
+      "correct": 13,
+      "tool_selection_correct": 13,
+      "errors": 0,
+      "incorrect_responses": 37,
+      "accuracy_all_cases": 0.26,
+      "tool_selection_accuracy_all_cases": 0.26,
+      "accuracy_responded_only": 0.26
+    },
+    "one_tool_no_call": {
+      "total": 50,
+      "correct": 28,
+      "tool_selection_correct": 50,
+      "errors": 0,
+      "incorrect_responses": 22,
+      "accuracy_all_cases": 0.56,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 0.56
+    }
+  },
+  "by_category": {
+    "executable_multiple_function": {
+      "total": 30,
+      "correct": 4,
+      "tool_selection_correct": 4,
+      "errors": 0,
+      "incorrect_responses": 26,
+      "accuracy_all_cases": 0.13333333333333333,
+      "tool_selection_accuracy_all_cases": 0.13333333333333333,
+      "accuracy_responded_only": 0.13333333333333333
+    },
+    "executable_simple": {
+      "total": 15,
+      "correct": 2,
+      "tool_selection_correct": 2,
+      "errors": 0,
+      "incorrect_responses": 13,
+      "accuracy_all_cases": 0.13333333333333333,
+      "tool_selection_accuracy_all_cases": 0.13333333333333333,
+      "accuracy_responded_only": 0.13333333333333333
+    },
+    "multiple_function": {
+      "total": 120,
+      "correct": 21,
+      "tool_selection_correct": 21,
+      "errors": 0,
+      "incorrect_responses": 99,
+      "accuracy_all_cases": 0.175,
+      "tool_selection_accuracy_all_cases": 0.175,
+      "accuracy_responded_only": 0.175
+    },
+    "relevance": {
+      "total": 50,
+      "correct": 28,
+      "tool_selection_correct": 50,
+      "errors": 0,
+      "incorrect_responses": 22,
+      "accuracy_all_cases": 0.56,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 0.56
+    },
+    "simple": {
+      "total": 35,
+      "correct": 11,
+      "tool_selection_correct": 11,
+      "errors": 0,
+      "incorrect_responses": 24,
+      "accuracy_all_cases": 0.3142857142857143,
+      "tool_selection_accuracy_all_cases": 0.3142857142857143,
+      "accuracy_responded_only": 0.3142857142857143
+    }
+  },
+  "error_cases": [],
+  "response_models": {
+    "nanojev-unified-games-v1": 250
+  },
+  "note": "accuracy_all_cases scores the exact BFCL-derived action. tool_selection_accuracy_all_cases also credits clarify/cannot_answer on BFCL no-call cases because no function was selected. Errors count as incorrect in both. Neither scores arguments or tool execution."
+}

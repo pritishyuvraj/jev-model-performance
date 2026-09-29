@@ -1,0 +1,136 @@
+{
+  "schema": "bfcl-v1-jev-eval-summary/v1",
+  "generated_at_utc": "2026-09-29T01:33:30+00:00",
+  "run": {
+    "provider": "nimble",
+    "requested_model": "bespokelabs/Bespoke-Nimble-9B",
+    "declared_model_revision": "bd792f44ec8e265be861bfcdf4e05967ffe0e858",
+    "endpoint": "native-cuda",
+    "adapter": "nimble-cuda-enum-v1",
+    "source_revision": "62076b4f2d365b5879dafcf7f6dd072a1fe76df7",
+    "base_model": "Qwen/Qwen3.5-9B",
+    "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "adapter_sha256": "29ef39b072dee97287947455337879c1e916705c2f727287922a2d81f5e2f20a",
+    "runtime": {
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "device_map": null,
+      "max_gpu_memory": null,
+      "placement": null,
+      "torch": "2.8.0+cu128",
+      "cuda": "12.8",
+      "hip": null,
+      "gpus": [
+        "NVIDIA H100 80GB HBM3"
+      ]
+    },
+    "temperature": 1.0,
+    "cases_path": "/data/home/pritish/jev-model-performance/data/bfcl_v1/cases.jsonl",
+    "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+    "source_tag": "v1.0",
+    "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "selection_review_sha256": "83445886259f64dcb210b645fb91f2d5b308448446b43c1eedcc653a268a115a"
+  },
+  "expected_count": 250,
+  "completed_count": 250,
+  "is_complete": true,
+  "overall": {
+    "total": 250,
+    "correct": 245,
+    "tool_selection_correct": 248,
+    "errors": 0,
+    "incorrect_responses": 5,
+    "accuracy_all_cases": 0.98,
+    "tool_selection_accuracy_all_cases": 0.992,
+    "accuracy_responded_only": 0.98
+  },
+  "by_stratum": {
+    "multi_tool_call": {
+      "total": 150,
+      "correct": 150,
+      "tool_selection_correct": 150,
+      "errors": 0,
+      "incorrect_responses": 0,
+      "accuracy_all_cases": 1.0,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 1.0
+    },
+    "one_tool_call": {
+      "total": 50,
+      "correct": 50,
+      "tool_selection_correct": 50,
+      "errors": 0,
+      "incorrect_responses": 0,
+      "accuracy_all_cases": 1.0,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 1.0
+    },
+    "one_tool_no_call": {
+      "total": 50,
+      "correct": 45,
+      "tool_selection_correct": 48,
+      "errors": 0,
+      "incorrect_responses": 5,
+      "accuracy_all_cases": 0.9,
+      "tool_selection_accuracy_all_cases": 0.96,
+      "accuracy_responded_only": 0.9
+    }
+  },
+  "by_category": {
+    "executable_multiple_function": {
+      "total": 30,
+      "correct": 30,
+      "tool_selection_correct": 30,
+      "errors": 0,
+      "incorrect_responses": 0,
+      "accuracy_all_cases": 1.0,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 1.0
+    },
+    "executable_simple": {
+      "total": 15,
+      "correct": 15,
+      "tool_selection_correct": 15,
+      "errors": 0,
+      "incorrect_responses": 0,
+      "accuracy_all_cases": 1.0,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 1.0
+    },
+    "multiple_function": {
+      "total": 120,
+      "correct": 120,
+      "tool_selection_correct": 120,
+      "errors": 0,
+      "incorrect_responses": 0,
+      "accuracy_all_cases": 1.0,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 1.0
+    },
+    "relevance": {
+      "total": 50,
+      "correct": 45,
+      "tool_selection_correct": 48,
+      "errors": 0,
+      "incorrect_responses": 5,
+      "accuracy_all_cases": 0.9,
+      "tool_selection_accuracy_all_cases": 0.96,
+      "accuracy_responded_only": 0.9
+    },
+    "simple": {
+      "total": 35,
+      "correct": 35,
+      "tool_selection_correct": 35,
+      "errors": 0,
+      "incorrect_responses": 0,
+      "accuracy_all_cases": 1.0,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 1.0
+    }
+  },
+  "error_cases": [],
+  "response_models": {
+    "bespokelabs/Bespoke-Nimble-9B": 250
+  },
+  "note": "accuracy_all_cases scores the exact BFCL-derived action. tool_selection_accuracy_all_cases also credits clarify/cannot_answer on BFCL no-call cases because no function was selected. Errors count as incorrect in both. Neither scores arguments or tool execution."
+}

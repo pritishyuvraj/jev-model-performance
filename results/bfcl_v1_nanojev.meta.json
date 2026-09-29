@@ -1,0 +1,47 @@
+{
+  "schema": "bfcl-v1-jev-eval-run/v1",
+  "created_at_utc": "2026-09-29T01:40:43+00:00",
+  "run_id": "d9f9b634c4859f22eebc586489e757c7b598db6daad1a21cb5de1999217cfb29",
+  "run": {
+    "provider": "nanojev",
+    "requested_model": "nanojev-unified-games-v1",
+    "declared_model_revision": "047b927b30882a1138fc504821b82ac145a4b81a",
+    "endpoint": "http://127.0.0.1:8015",
+    "cases_path": "/data/home/pritish/jev-model-performance/data/bfcl_v1/cases.jsonl",
+    "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+    "source_tag": "v1.0",
+    "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "selection_review_sha256": "83445886259f64dcb210b645fb91f2d5b308448446b43c1eedcc653a268a115a"
+  },
+  "server_probe": {
+    "/v1/models": {
+      "models": [
+        {
+          "name": "nanojev-unified-games-v1",
+          "run": "C-Tianyu/NanoJev@047b927b30882a1138fc504821b82ac145a4b81a",
+          "base": "Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+          "code_revision": "76fdfc9ecdca45a9bcef17991a07d3041a87685a",
+          "backend": "torch",
+          "dtype": "bfloat16"
+        }
+      ]
+    },
+    "/health": {
+      "ready": true,
+      "model_loaded_once": true,
+      "provider_calls": 0,
+      "model": "nanojev-unified-games-v1",
+      "revision": "047b927b30882a1138fc504821b82ac145a4b81a"
+    }
+  },
+  "server_identity": {
+    "name": "nanojev-unified-games-v1",
+    "run": "C-Tianyu/NanoJev@047b927b30882a1138fc504821b82ac145a4b81a",
+    "base": "Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+    "backend": "torch",
+    "dtype": "bfloat16",
+    "health_model": "nanojev-unified-games-v1",
+    "health_revision": "047b927b30882a1138fc504821b82ac145a4b81a"
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance/results/bfcl_v1_nanojev.jsonl"
+}

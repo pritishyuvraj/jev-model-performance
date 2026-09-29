@@ -1,0 +1,33 @@
+{
+  "schema": "bfcl-v1-jev-eval-run/v1",
+  "created_at_utc": "2026-09-29T01:37:15+00:00",
+  "run_id": "2befea38304229703795ca8d32a7539cba652a90a2e87bb422f937b101d09616",
+  "run": {
+    "provider": "semif",
+    "requested_model": "Qwen/Qwen3.5-4B",
+    "declared_model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "upstream_repo": "https://github.com/TheoLeeCJ/SemIf-OpenJev",
+    "upstream_revision": "23cf1f39fc9534fe81437200959b6dfc7106e45a",
+    "mode": "direct",
+    "backend": "torch",
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "max_input_tokens": 4096,
+    "input_adapter": "semif-direct-bfcl-choice-v1",
+    "input_adapter_sha256": "afbd1324f029d8465050f48ba721f7ebb7e85819a8deafcf989adae33bb05230",
+    "cases_path": "/data/home/pritish/jev-model-performance/data/bfcl_v1/cases.jsonl",
+    "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+    "source_tag": "v1.0",
+    "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "selection_review_sha256": "83445886259f64dcb210b645fb91f2d5b308448446b43c1eedcc653a268a115a"
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance/results/bfcl_v1_semif.jsonl",
+  "native_model_identity": {
+    "source": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "dtype": "bfloat16",
+    "device": "cuda:0",
+    "torch_version": "2.10.0+cu128",
+    "transformers_version": "5.17.0"
+  }
+}

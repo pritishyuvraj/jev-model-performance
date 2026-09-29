@@ -1,36 +1,41 @@
-# BFCL V1 Jev routing pilot: Laya and Kev
+# BFCL V1 Jev routing pilot: seven model runs
 
-These are the first-step **tool-selection** results for the [250 selected BFCL V1 cases](../data/bfcl_v1/cases.jsonl). Both models received the same `jev.laya` state and choice question. The evaluator withheld source answers and gold labels from their requests. It did not ask either model to fill function arguments or execute a tool.
+All seven models completed the same [250 selected BFCL V1 cases](../data/bfcl_v1/cases.jsonl) on `vp-dgx-65` (`dgxh100-065`, NVIDIA H100). Each case asked a model to select the assistant's next capability from the offered actions. The saved rows record the selected action and option probabilities; the BFCL answer and gold label stayed outside model requests. No model generated function arguments or executed a tool.
 
-| Selected cases | Count | Laya typed-decisions | Kev-0.8B |
-| --- | ---: | ---: | ---: |
-| Choose among multiple offered tools | 150 | 147/150 (98.0%) | 142/150 (94.7%) |
-| Call the one offered tool | 50 | 50/50 (100%) | 50/50 (100%) |
-| Select no function when the one offered tool is irrelevant | 50 | 43/50 (86.0%) | 49/50 (98.0%) |
-| **All cases: tool selection** | **250** | **240/250 (96.0%)** | **241/250 (96.4%)** |
+**Tool selection** is the primary score for Jev's router role. On 200 positive BFCL cases, the model must choose the exact function ID. On 50 BFCL no-call cases, `no_tool`, `clarify`, and `cannot_answer` all count as selecting no function. **Exact action** is stricter: it requires the BFCL-derived action ID, including `no_tool` rather than another no-function action. Failed requests count as wrong in both scores.
 
-Tool selection is the primary score for Jev's role here. On positive BFCL rows, the model must choose the exact function ID. On no-call rows, `no_tool`, `clarify`, and `cannot_answer` all count as selecting no function. This matters because the BFCL no-call label does not specify which of those three Jev actions to take. Failed requests count as wrong; there were **zero** for either model.
+| Model and checkpoint | Multiple tools (150) | One tool, call (50) | One tool, no call (50) | Tool selection (250) | Exact action (250) | Errors |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Laya typed-decisions | 147 | 50 | 43 | **240 (96.0%)** | 228 (91.2%) | 0 |
+| Kev-0.8B | 142 | 50 | 49 | **241 (96.4%)** | 224 (89.6%) | 0 |
+| Bespoke Nimble 9B | 150 | 50 | 48 | **248 (99.2%)** | 245 (98.0%) | 0 |
+| SemIf / frozen Qwen3.5-4B | 149 | 49 | 50 | **248 (99.2%)** | 245 (98.0%) | 0 |
+| Rizzo Flow 4B Q8_0 | 143 | 46 | 50 | **239 (95.6%)** | 239 (95.6%) | 0 |
+| Von 1.3, chains off | 133 | 46 | 49 | **228 (91.2%)** | 179 (71.6%) | 0 |
+| NanoJev `unified-games-v1` | 25 | 13 | 50 | **88 (35.2%)** | 66 (26.4%) | 0 |
 
-A stricter secondary score requires the exact BFCL-derived action ID on every row, including `no_tool` on no-call rows. Laya scored **228/250 (91.2%)** and Kev scored **224/250 (89.6%)**. On the 50 no-call cases, those exact scores were 31/50 and 32/50 respectively. Laya returned `clarify` 12 times and an offered function 7 times; Kev returned `clarify` 9 times, `cannot_answer` 8 times, and an offered function once. This distinction is why the secondary scores are lower than the tool-selection scores.
+The three middle columns use the primary tool-selection rule and show correct selections out of that column's case count. Nimble and SemIf tied at 248/250 on this set. Their predictions and native prompt encodings differ, so the equal totals are not interchangeable behavior. The 50 one-tool-call cases are easy for several models; inspect the multiple-tool and no-call columns before comparing overall totals.
 
-The two primary scores differ by **one case**. They were both correct on 232 cases, only Laya was correct on 8, only Kev was correct on 9, and both were wrong on 1. This small difference does not establish that one model is better. The easy one-tool-call stratum also raises the overall score; use the rows above when comparing future models.
+Von illustrates the difference between the two scores: it selected no function on 49/50 no-call rows, but its chosen no-function action was `clarify` or `cannot_answer` rather than the BFCL-derived `no_tool` on every one of those rows. BFCL does not label those subtypes. NanoJev's published checkpoint was trained on games, so this BFCL run is an out-of-domain probe, not a test of its game performance. SemIf is direct-logit scoring over a frozen Qwen checkpoint rather than a separately trained SemIf model. Rizzo used its fine-tuned Q8_0 GGUF; other run-specific precision and revisions are recorded below.
 
-## Run identity and files
+## Inspect every selection
 
-The runs completed on `vp-dgx-65` (`dgxh100-065`), an H100 DGX, with Laya on GPU 0 and Kev on GPU 1. Laya used native CUDA serving with FP16 automatic mixed precision. Kev used its native PyTorch/CUDA server in FP32 with fused kernels and CUDA graphs disabled. Both servers answered all 250 cases. Their server probes, exact revisions, and result timestamps are in the run metadata.
+[Open the offline prompt and results viewer](../data/bfcl_v1/viewer.html). It embeds all seven saved logs and shows, for each case, the user request, offered functions, expected route, and each model's selected action. Filter by model and wrong/correct tool selection, inspect a model's full saved row and probabilities, or import another result JSONL. Rebuild it with `python3 tools/build_prompt_viewer.py` after changing logs.
 
-| Item | Value |
-| --- | --- |
-| BFCL source | Gorilla V1 tag `v1.0`, commit `9df5c346ee0556c8a7cb09fd7206a39aadd904c2` |
-| Selected cases SHA-256 | `68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602` |
-| Laya typed-decisions weights | Standalone revision `1a793eb568e6718f15941d08f85432581df534e3`; served from the identical reviewed bundle revision `55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851` |
-| Kev-0.8B weights | `jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e` |
-| Installed package snapshot | [`requirements.resolved.txt`](../inference/requirements.resolved.txt), SHA-256 `1b6b57b5d6c0958d078e1bca563c80d9c1aa0ccdb854b787a8959a00938659de` |
+| Model | Per-case selection log | Summary | Run metadata | Rerun instructions |
+| --- | --- | --- | --- | --- |
+| Laya | [JSONL](bfcl_v1_laya.jsonl) | [JSON](bfcl_v1_laya.summary.json) | [JSON](bfcl_v1_laya.meta.json) | [Shared setup](../inference/README.md) |
+| Kev-0.8B | [JSONL](bfcl_v1_kev.jsonl) | [JSON](bfcl_v1_kev.summary.json) | [JSON](bfcl_v1_kev.meta.json) | [Shared setup](../inference/README.md) |
+| Nimble 9B | [JSONL](bfcl_v1_nimble.jsonl) | [JSON](bfcl_v1_nimble.summary.json) | [JSON](bfcl_v1_nimble.meta.json) | [Nimble](../inference/nimble/README.md) |
+| SemIf | [JSONL](bfcl_v1_semif.jsonl) | [JSON](bfcl_v1_semif.summary.json) | [JSON](bfcl_v1_semif.meta.json) | [SemIf](../inference/semif/README.md) |
+| Rizzo Flow | [JSONL](bfcl_v1_rizzo.jsonl) | [JSON](bfcl_v1_rizzo.summary.json) | [JSON](bfcl_v1_rizzo.meta.json) | [Rizzo](../inference/rizzo/README.md) |
+| Von | [JSONL](bfcl_v1_von.jsonl) | [JSON](bfcl_v1_von.summary.json) | [JSON](bfcl_v1_von.meta.json) | [Von](../inference/von/README.md) |
+| NanoJev | [JSONL](bfcl_v1_nanojev.jsonl) | [JSON](bfcl_v1_nanojev.summary.json) | [JSON](bfcl_v1_nanojev.meta.json) | [NanoJev](../inference/nanojev/README.md) |
 
-- Laya: [predictions](bfcl_v1_laya.jsonl), [summary](bfcl_v1_laya.summary.json), [run metadata](bfcl_v1_laya.meta.json).
-- Kev: [predictions](bfcl_v1_kev.jsonl), [summary](bfcl_v1_kev.summary.json), [run metadata](bfcl_v1_kev.meta.json).
-- [Inference setup and rerun commands](../inference/README.md).
+Each JSONL row includes a case ID, selected action, status, complete option probability distribution, and timing or error data. The `.meta.json` file identifies the checkpoint and runtime; the `.summary.json` file reports scores overall and by stratum/category. Some adapters also retain raw logits or a prompt hash. Use the log for case-level review and the metadata to reproduce its model and environment.
 
-## Scope
+## Shared source and interpretation
 
-This is a derived, selected BFCL routing set, not an official BFCL leaderboard score. It measures neither argument correctness nor end-to-end task completion. Public BFCL questions may have appeared in model training. The current [Kev-0.8B model card](https://huggingface.co/jaredpalmer/kev-0.8b) also warns against relying on this checkpoint for tool-call routing based on its separate When2Call evaluation. Treat these results as a comparison on this exact frozen set, not deployment evidence. Re-evaluate on untouched assistant requests and complete-task outcomes before deciding which model to use in the Jev harness.
+Every run's metadata records the same selected-case SHA-256, `68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602`, from Gorilla/BFCL V1 tag `v1.0`, commit `9df5c346ee0556c8a7cb09fd7206a39aadd904c2`. The selected set contains 150 multiple-tool call cases, 50 one-tool call cases, and 50 one-tool no-call cases. Native adapters preserve that state and the offered action meanings, but their prompt serialization, precision, scoring heads, and model training differ. The linked run metadata and [inference instructions](../inference/README.md) identify representative checkpoints used here rather than every available variant of each model family.
+
+This is a derived, selected routing set, **not an official BFCL leaderboard result**. It does not score argument correctness, execution, final answers, or multi-step task completion. Some positive BFCL questions could be answered without a tool, and public BFCL material may have appeared in model training. The [Kev-0.8B model card](https://huggingface.co/jaredpalmer/kev-0.8b) cautions against relying on that checkpoint for tool-call routing based on a separate evaluation. These scores support inspection of this frozen set; evaluate untouched assistant requests and complete-task outcomes before choosing a deployment model.

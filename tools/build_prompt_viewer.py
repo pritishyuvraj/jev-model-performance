@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "data" / "bfcl_v1" / "cases.jsonl"
 DEFAULT_OUTPUT = ROOT / "data" / "bfcl_v1" / "viewer.html"
+DEFAULT_RESULTS_DIR = ROOT / "results"
 
 
 HTML = r'''<!doctype html>
@@ -54,6 +55,7 @@ HTML = r'''<!doctype html>
     .case-item.active { background: #1b2d50; border-color: #4e70b7; }
     .case-id { display: block; color: #95adcf; font-size: 11px; font-weight: 750; margin-bottom: 4px; }
     .case-question { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; line-height: 1.37; font-size: 13px; }
+    .case-result { display: block; color: #93a9c8; font-size: 11px; margin-top: 6px; }
     .main { min-width: 0; }
     .topbar { display: flex; gap: 16px; align-items: center; justify-content: space-between; padding: 20px clamp(20px, 4vw, 52px); border-bottom: 1px solid #26334b; background: #0d1526; }
     .topbar .title { font-size: 14px; font-weight: 700; }
@@ -64,6 +66,30 @@ HTML = r'''<!doctype html>
     .button:hover:not(:disabled) { background: #2a3e60; }
     .button:disabled { cursor: default; opacity: .45; }
     .content { max-width: 1050px; margin: 0 auto; padding: 28px clamp(20px, 4vw, 52px) 70px; }
+    .overview { max-width: 1154px; margin: 0 auto; padding: 22px clamp(20px, 4vw, 52px) 0; }
+    .overview-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px; }
+    .overview-head h2 { margin: 0 0 4px; font-size: 17px; }
+    .overview-head p { margin: 0; color: #a9b7cd; font-size: 12px; }
+    .import-log { display: flex; align-items: center; gap: 7px; color: #b7c8e2; font-size: 12px; }
+    .import-log input { width: auto; max-width: 240px; padding: 6px; font-size: 11px; }
+    .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 15px; }
+    .score-card { background: #152137; border: 1px solid #33445f; border-radius: 13px; padding: 13px 15px; }
+    .score-name { color: #e9eef8; font-weight: 750; font-size: 13px; overflow-wrap: anywhere; }
+    .score-value { color: #d9e7ff; font-size: 21px; font-weight: 800; margin: 6px 0 3px; }
+    .score-detail { color: #a9b7cd; font-size: 11px; line-height: 1.45; }
+    .comparison { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .comparison-wrap { border: 1px solid #33445f; border-radius: 13px; overflow-x: auto; background: #111b2e; }
+    .comparison th, .comparison td { text-align: left; padding: 11px 13px; border-bottom: 1px solid #293850; vertical-align: top; }
+    .comparison tr:last-child td { border-bottom: 0; }
+    .comparison th { color: #aebdd2; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+    .comparison .action { font-weight: 750; overflow-wrap: anywhere; min-width: 150px; }
+    .verdict { display: inline-block; border-radius: 999px; padding: 3px 7px; font-size: 11px; font-weight: 750; white-space: nowrap; }
+    .verdict.correct { background: #1d503c; color: #dcf8e9; }
+    .verdict.wrong { background: #62313a; color: #ffe0e5; }
+    .verdict.missing { background: #37445d; color: #c5d1e1; }
+    .log-details { min-width: 72px; margin-top: 0; }
+    .log-details pre { min-width: 250px; max-width: 480px; }
+    .picked-by { color: #9fb8e6; font-size: 11px; line-height: 1.4; margin-top: 8px; overflow-wrap: anywhere; }
     .case-heading { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; margin-bottom: 20px; }
     .pill { display: inline-block; border: 1px solid #3b4d68; background: #172339; border-radius: 999px; color: #b7c8e2; font-size: 12px; padding: 5px 9px; }
     .case-heading .id { color: #edf2fb; font-size: 15px; font-weight: 750; margin-right: 3px; overflow-wrap: anywhere; }
@@ -125,33 +151,42 @@ HTML = r'''<!doctype html>
       <div class="brand">
         <div class="eyebrow">BFCL V1 → Jev</div>
         <h1>Prompt viewer</h1>
-        <p><span id="total-count"></span> selected cases · Read only · No model run</p>
+        <p><span id="total-count"></span> selected cases · Saved model decisions</p>
       </div>
       <div class="filters">
         <label class="search"><span class="field-label">Find a prompt or tool</span><input id="search" type="search" placeholder="Search requests, IDs, tools…" autocomplete="off"></label>
         <label><span class="field-label">Category</span><select id="category"><option value="all">All categories</option></select></label>
         <label><span class="field-label">Expected route</span><select id="route"><option value="all">All routes</option><option value="tool">Choose a tool</option><option value="no_tool">No tool</option></select></label>
+        <label><span class="field-label">Model</span><select id="model-filter"><option value="all">Any model</option></select></label>
+        <label><span class="field-label">Selection result</span><select id="outcome-filter"><option value="all">All cases</option><option value="wrong">Wrong tool selection</option><option value="correct">Correct tool selection</option><option value="missing">Missing or request error</option></select></label>
         <div class="filter-count" id="filter-count" aria-live="polite"></div>
       </div>
       <div class="case-list" id="case-list" aria-label="Filtered cases"></div>
     </aside>
     <main class="main">
       <div class="topbar">
-        <div><div class="title">User → Jev router</div><div class="subtitle">The green choice is the expected BFCL-derived route.</div></div>
+        <div><div class="title">User → Jev router</div><div class="subtitle">Compare the BFCL-derived route with each model's saved selection.</div></div>
         <div class="nav"><button class="button" id="prev" type="button" aria-label="Previous case">←</button><span class="nav-count" id="nav-count"></span><button class="button" id="next" type="button" aria-label="Next case">→</button></div>
       </div>
+      <section class="overview" id="overview" aria-label="Saved model comparison"></section>
       <div class="content" id="content"></div>
     </main>
   </div>
   <script type="application/json" id="case-data">__CASE_JSON__</script>
+  <script type="application/json" id="result-data">__RESULT_JSON__</script>
   <script>
   (() => {
     "use strict";
     const cases = JSON.parse(document.getElementById("case-data").textContent);
+    const embeddedResults = JSON.parse(document.getElementById("result-data").textContent);
     const byId = new Map(cases.map(item => [item.id, item]));
+    const noFunctionActions = new Set(["no_tool", "clarify", "cannot_answer"]);
+    const models = new Map();
     const ui = {
       search: document.getElementById("search"), category: document.getElementById("category"),
       route: document.getElementById("route"), list: document.getElementById("case-list"),
+      model: document.getElementById("model-filter"), outcome: document.getElementById("outcome-filter"),
+      overview: document.getElementById("overview"),
       content: document.getElementById("content"), count: document.getElementById("filter-count"),
       navCount: document.getElementById("nav-count"), prev: document.getElementById("prev"),
       next: document.getElementById("next")
@@ -159,8 +194,51 @@ HTML = r'''<!doctype html>
     const state = { visible: cases, selectedId: null, showAnswer: true };
     const hashId = () => new URLSearchParams(location.hash.slice(1)).get("case");
     const label = value => value.replaceAll("_", " ");
+    const modelName = slug => slug.replaceAll(/[_-]+/g, " ").replace(/\b\w/g, letter => letter.toUpperCase());
     const sourceFunctions = item => Array.isArray(item.source.functions)
       ? item.source.functions : (item.source.functions ? [item.source.functions] : []);
+    function addModel(run) {
+      if (!run || !run.id || !Array.isArray(run.rows)) throw new Error("Result log is missing its model ID or rows.");
+      const rows = new Map();
+      for (const row of run.rows) {
+        if (!row || typeof row.case_id !== "string" || !byId.has(row.case_id)) {
+          throw new Error("Result log contains a case ID outside this BFCL set.");
+        }
+        if (rows.has(row.case_id)) throw new Error("Result log repeats case " + row.case_id + ".");
+        rows.set(row.case_id, row);
+      }
+      models.set(run.id, { id: run.id, name: run.name || modelName(run.id),
+        requestedModel: run.requested_model || "", rows });
+    }
+    function refreshModelOptions() {
+      const selected = ui.model.value;
+      ui.model.replaceChildren();
+      const any = element("option", "", "Any model");
+      any.value = "all";
+      ui.model.append(any);
+      for (const model of models.values()) {
+        const option = element("option", "", model.name);
+        option.value = model.id;
+        ui.model.append(option);
+      }
+      ui.model.value = models.has(selected) ? selected : "all";
+    }
+    function visibleModels() {
+      return ui.model.value === "all" ? [...models.values()] : [models.get(ui.model.value)].filter(Boolean);
+    }
+    function toolSelectionCorrect(item, row) {
+      if (!row || row.status !== "ok" || typeof row.predicted_action !== "string") return false;
+      if (item.gold_next_action_ids.includes("no_tool")) return noFunctionActions.has(row.predicted_action);
+      return item.gold_next_action_ids.includes(row.predicted_action);
+    }
+    function exactActionCorrect(item, row) {
+      return Boolean(row && row.status === "ok" && item.gold_next_action_ids.includes(row.predicted_action));
+    }
+    function outcomeFor(item, model) {
+      const row = model.rows.get(item.id);
+      if (!row || row.status !== "ok") return "missing";
+      return toolSelectionCorrect(item, row) ? "correct" : "wrong";
+    }
     function element(tag, className, value) {
       const node = document.createElement(tag);
       if (className) node.className = className;
@@ -182,11 +260,19 @@ HTML = r'''<!doctype html>
       const query = ui.search.value.trim().toLocaleLowerCase();
       const category = ui.category.value;
       const route = ui.route.value;
+      const outcome = ui.outcome.value;
+      const selectedModels = visibleModels();
       state.visible = cases.filter(item => {
         if (category !== "all" && item.category !== category) return false;
         const isNoTool = item.gold_next_action_ids.includes("no_tool");
         if (route === "no_tool" && !isNoTool) return false;
         if (route === "tool" && isNoTool) return false;
+        if (outcome !== "all") {
+          const matches = selectedModels.map(model => outcomeFor(item, model));
+          if (!matches.length) return false;
+          if (outcome === "correct" && !matches.every(value => value === "correct")) return false;
+          if (outcome !== "correct" && !matches.includes(outcome)) return false;
+        }
         if (!query) return true;
         const haystack = [item.id, item.source.question,
           ...item.jev.options.map(option => option.id + " " + option.description)].join(" ").toLocaleLowerCase();
@@ -202,11 +288,17 @@ HTML = r'''<!doctype html>
       ui.list.replaceChildren();
       ui.count.textContent = state.visible.length + " of " + cases.length + " cases";
       const fragment = document.createDocumentFragment();
+      const shownModels = visibleModels();
       state.visible.forEach(item => {
         const button = element("button", "case-item" + (item.id === state.selectedId ? " active" : ""));
         button.type = "button";
         button.setAttribute("aria-current", item.id === state.selectedId ? "true" : "false");
         button.append(element("span", "case-id", item.id), element("span", "case-question", item.source.question));
+        if (shownModels.length) {
+          const logged = shownModels.filter(model => model.rows.has(item.id)).length;
+          button.append(element("span", "case-result", logged + " / " + shownModels.length +
+            (shownModels.length === 1 ? " model log" : " model logs")));
+        }
         button.addEventListener("click", () => select(item.id));
         fragment.append(button);
       });
@@ -215,6 +307,96 @@ HTML = r'''<!doctype html>
       ui.navCount.textContent = index < 0 ? "0 / 0" : (index + 1) + " / " + state.visible.length;
       ui.prev.disabled = index <= 0;
       ui.next.disabled = index < 0 || index === state.visible.length - 1;
+    }
+    function renderOverview() {
+      ui.overview.replaceChildren();
+      const head = element("div", "overview-head");
+      const title = element("div");
+      title.append(element("h2", "", "Saved model comparison"),
+        element("p", "", "Tool selection on the currently filtered cases. Missing and failed requests count as wrong."));
+      const importControl = element("label", "import-log", "Add result log (.jsonl)");
+      const fileInput = document.createElement("input");
+      fileInput.type = "file";
+      fileInput.accept = ".jsonl,application/x-ndjson";
+      fileInput.multiple = true;
+      fileInput.addEventListener("change", importFiles);
+      importControl.append(fileInput);
+      head.append(title, importControl);
+      ui.overview.append(head);
+      if (!models.size) {
+        ui.overview.append(element("p", "section-note", "No saved model results were embedded. Add a result log or rebuild the viewer after evaluations finish."));
+        return;
+      }
+      const grid = element("div", "overview-grid");
+      for (const model of visibleModels()) {
+        let correct = 0, logged = 0, errors = 0;
+        for (const item of state.visible) {
+          const row = model.rows.get(item.id);
+          if (row) {
+            logged += 1;
+            if (row.status !== "ok") errors += 1;
+            if (toolSelectionCorrect(item, row)) correct += 1;
+          }
+        }
+        const card = element("article", "score-card");
+        const denominator = state.visible.length;
+        const percent = denominator ? (100 * correct / denominator).toFixed(1) + "%" : "—";
+        card.append(element("div", "score-name", model.name),
+          element("div", "score-value", percent),
+          element("div", "score-detail", correct + " / " + denominator + " correct tool selections"),
+          element("div", "score-detail", logged + " logged · " + errors + " request errors"));
+        if (model.requestedModel) card.append(element("div", "score-detail", model.requestedModel));
+        grid.append(card);
+      }
+      ui.overview.append(grid);
+    }
+    function renderModelSelections(container, item) {
+      const section = element("section");
+      section.append(element("h2", "", "What each model selected"));
+      section.append(element("p", "section-note", "Tool selection treats no_tool, clarify, and cannot_answer as no function on BFCL no-call cases. Exact action distinguishes those choices. Expand a row to inspect its saved log."));
+      if (!models.size) {
+        section.append(element("p", "section-note", "No model decisions loaded yet."));
+        container.append(section);
+        return;
+      }
+      const wrapper = element("div", "comparison-wrap");
+      const table = element("table", "comparison");
+      const header = document.createElement("thead");
+      const headings = document.createElement("tr");
+      for (const text of ["Model", "Selected action", "Tool selection", "Exact action", "Saved log"]) {
+        headings.append(element("th", "", text));
+      }
+      header.append(headings);
+      table.append(header);
+      const body = document.createElement("tbody");
+      for (const model of visibleModels()) {
+        const row = model.rows.get(item.id);
+        const tr = document.createElement("tr");
+        tr.append(element("td", "", model.name));
+        const action = row && row.status === "ok" ? (row.predicted_action || "No selection")
+          : row ? "Request error" : "Not evaluated";
+        tr.append(element("td", "action", action));
+        for (const correct of [toolSelectionCorrect(item, row), exactActionCorrect(item, row)]) {
+          const cell = document.createElement("td");
+          const status = !row || row.status !== "ok" ? "missing" : correct ? "correct" : "wrong";
+          const textValue = !state.showAnswer ? "Hidden" :
+            status === "missing" ? (row ? "Error" : "No result") : status === "correct" ? "Correct" : "Wrong";
+          cell.append(element("span", "verdict " + (!state.showAnswer ? "missing" : status), textValue));
+          tr.append(cell);
+        }
+        const logCell = document.createElement("td");
+        if (row) {
+          const details = element("details", "log-details");
+          details.append(element("summary", "", "View log"), element("pre", "", json(row)));
+          logCell.append(details);
+        } else logCell.append(element("span", "muted", "—"));
+        tr.append(logCell);
+        body.append(tr);
+      }
+      table.append(body);
+      wrapper.append(table);
+      section.append(wrapper);
+      container.append(section);
     }
     function addTurn(conversation, kind, speaker, textValue, note) {
       const turn = element("div", "turn " + kind);
@@ -241,6 +423,11 @@ HTML = r'''<!doctype html>
         head.append(element("div", "option-name", option.label));
         if (chosen) head.append(element("span", "selected-tag", "Expected"));
         card.append(head, element("p", "option-desc", option.description));
+        const pickedBy = visibleModels().filter(model => {
+          const result = model.rows.get(item.id);
+          return result && result.status === "ok" && result.predicted_action === option.id;
+        }).map(model => model.name);
+        if (pickedBy.length) card.append(element("div", "picked-by", "Picked by: " + pickedBy.join(", ")));
         if (kind === "tool") {
           const sourceTool = sourceFunctions(item).find(tool => tool.name === option.id);
           if (sourceTool && sourceTool.parameters) {
@@ -282,7 +469,9 @@ HTML = r'''<!doctype html>
           ? (answer === "no_tool" ? "No offered function is selected for this BFCL case." : "The chat model decides arguments, asks for missing details if needed, and handles the call.")
           : "Use Reveal expected choice to show the reference label.");
       content.append(conversation);
-      content.append(element("p", "hint", "This visualizes the routing decision only. It does not show a generated reply or an executed call."));
+      content.append(element("p", "hint", "These are saved first-step routing decisions. They do not show generated replies, function arguments, or executed calls."));
+
+      renderModelSelections(content, item);
 
       const toolbar = element("div", "toolbar");
       const toggle = element("button", "button", state.showAnswer ? "Hide expected choice" : "Reveal expected choice");
@@ -305,6 +494,7 @@ HTML = r'''<!doctype html>
       content.append(element("p", "footer", "Offline review artifact · Source: Berkeley Function Calling Leaderboard V1 · Prompt conversion: Jev model performance"));
     }
     function render() {
+      renderOverview();
       renderList();
       const item = byId.get(state.selectedId);
       if (item) renderCase(item);
@@ -315,7 +505,28 @@ HTML = r'''<!doctype html>
       const next = state.visible[index + delta];
       if (next) select(next.id);
     }
+    async function importFiles(event) {
+      const files = [...event.target.files];
+      const errors = [];
+      for (const file of files) {
+        try {
+          const slug = file.name.replace(/^bfcl_v1_/, "").replace(/\.jsonl$/i, "");
+          if (!slug || slug === file.name) throw new Error("Expected a .jsonl result file.");
+          const rows = file.name.toLowerCase().endsWith(".jsonl")
+            ? (await file.text()).split(/\r?\n/).filter(line => line.trim()).map(line => JSON.parse(line))
+            : [];
+          if (!rows.length) throw new Error("The result log is empty.");
+          addModel({ id: slug, name: modelName(slug), rows });
+        } catch (error) { errors.push(file.name + ": " + error.message); }
+      }
+      event.target.value = "";
+      refreshModelOptions();
+      filterCases();
+      if (errors.length) alert("Could not load these result logs:\n" + errors.join("\n"));
+    }
 
+    embeddedResults.forEach(addModel);
+    refreshModelOptions();
     document.getElementById("total-count").textContent = cases.length;
     [...new Set(cases.map(item => item.category))].sort().forEach(category => {
       const option = document.createElement("option");
@@ -324,6 +535,8 @@ HTML = r'''<!doctype html>
     ui.search.addEventListener("input", filterCases);
     ui.category.addEventListener("change", filterCases);
     ui.route.addEventListener("change", filterCases);
+    ui.model.addEventListener("change", filterCases);
+    ui.outcome.addEventListener("change", filterCases);
     ui.prev.addEventListener("click", () => move(-1));
     ui.next.addEventListener("click", () => move(1));
     document.addEventListener("keydown", event => {
@@ -337,6 +550,7 @@ HTML = r'''<!doctype html>
       if (!byId.has(id)) return;
       if (!state.visible.some(item => item.id === id)) {
         ui.search.value = ""; ui.category.value = "all"; ui.route.value = "all";
+        ui.model.value = "all"; ui.outcome.value = "all";
         state.visible = cases;
       }
       select(id, false);
@@ -375,9 +589,54 @@ def read_cases(path: Path) -> list[dict]:
     return cases
 
 
-def embed_json(cases: list[dict]) -> str:
+def read_results(directory: Path, case_ids: set[str], source_sha256: str) -> list[dict]:
+    """Load compatible per-case logs and reject stale or mixed-case results."""
+    if not directory.exists():
+        return []
+    runs: list[dict] = []
+    for path in sorted(directory.glob("bfcl_v1_*.jsonl")):
+        slug = path.stem.removeprefix("bfcl_v1_")
+        if not slug:
+            continue
+        meta_path = path.with_suffix(".meta.json")
+        meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
+        logged_sha256 = meta.get("run", {}).get("cases_sha256")
+        if logged_sha256 and logged_sha256 != source_sha256:
+            raise ValueError(f"Result log {path} has a different source-case SHA-256")
+        rows: list[dict] = []
+        seen: set[str] = set()
+        with path.open(encoding="utf-8") as stream:
+            for line_number, line in enumerate(stream, 1):
+                if not line.strip():
+                    continue
+                try:
+                    row = json.loads(line)
+                    case_id = row["case_id"]
+                    status = row["status"]
+                except (json.JSONDecodeError, KeyError, TypeError) as exc:
+                    raise ValueError(f"Invalid result in {path} line {line_number}: {exc}") from exc
+                if not isinstance(case_id, str) or case_id not in case_ids or case_id in seen:
+                    raise ValueError(f"Unknown or repeated case ID in {path} line {line_number}: {case_id!r}")
+                if not isinstance(status, str):
+                    raise ValueError(f"Invalid status in {path} line {line_number}: {status!r}")
+                if status == "ok" and not isinstance(row.get("predicted_action"), str):
+                    raise ValueError(f"Missing predicted action in {path} line {line_number}")
+                seen.add(case_id)
+                rows.append(row)
+        if not rows:
+            continue
+        runs.append({
+            "id": slug,
+            "name": slug.replace("_", " ").replace("-", " ").title(),
+            "requested_model": meta.get("run", {}).get("requested_model", ""),
+            "rows": rows,
+        })
+    return runs
+
+
+def embed_json(value: object) -> str:
     """Escape characters that can terminate a script tag or alter HTML parsing."""
-    data = json.dumps(cases, ensure_ascii=False, separators=(",", ":"))
+    data = json.dumps(value, ensure_ascii=False, separators=(",", ":"))
     return (
         data.replace("&", "\\u0026")
         .replace("<", "\\u003c")
@@ -391,14 +650,17 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT, help="Selected cases JSONL")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="Offline HTML output")
+    parser.add_argument("--results-dir", type=Path, default=DEFAULT_RESULTS_DIR, help="Directory of BFCL result JSONL files")
     args = parser.parse_args()
     cases = read_cases(args.input)
     source_sha256 = hashlib.sha256(args.input.read_bytes()).hexdigest()
+    runs = read_results(args.results_dir, {case["id"] for case in cases}, source_sha256)
     html = HTML.replace("__CASE_JSON__", embed_json(cases), 1)
+    html = html.replace("__RESULT_JSON__", embed_json(runs), 1)
     html = html.replace("__SOURCE_SHA256__", source_sha256, 1)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(html, encoding="utf-8")
-    print(f"Wrote {args.output} with {len(cases)} cases ({args.output.stat().st_size:,} bytes)")
+    print(f"Wrote {args.output} with {len(cases)} cases and {len(runs)} model logs ({args.output.stat().st_size:,} bytes)")
 
 
 if __name__ == "__main__":

@@ -15,6 +15,7 @@ import hashlib
 import json
 import math
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -304,7 +305,8 @@ def summarize(cases: list[dict[str, Any]], latest: dict[str, dict[str, Any]], ru
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--provider", choices=tuple(DEFAULTS), required=True)
+    parser.add_argument("--provider", required=True,
+                        help="Short result name, such as laya, kev, von, or rizzo")
     parser.add_argument("--endpoint", help="Base URL of an already-running native /v1/systemone server")
     parser.add_argument("--model", help="Model field sent in each System One request")
     parser.add_argument("--model-revision", help="Declared pinned model revision for the run manifest")
@@ -318,10 +320,14 @@ def main() -> int:
     args = parser.parse_args()
     if args.timeout <= 0 or args.retries < 0 or (args.limit is not None and args.limit < 1):
         parser.error("timeout must be positive, retries non-negative, and limit positive")
-    defaults = DEFAULTS[args.provider]
-    endpoint = (args.endpoint or defaults["endpoint"]).rstrip("/")
-    model = args.model or defaults["model"]
-    revision = args.model_revision or defaults["revision"]
+    if not re.fullmatch(r"[a-z][a-z0-9_-]*", args.provider):
+        parser.error("provider must be a lowercase name using letters, digits, _ or -")
+    defaults = DEFAULTS.get(args.provider, {})
+    endpoint = (args.endpoint or defaults.get("endpoint") or "").rstrip("/")
+    model = args.model or defaults.get("model")
+    revision = args.model_revision or defaults.get("revision")
+    if not endpoint or not model or not revision:
+        parser.error("custom providers require --endpoint, --model and --model-revision")
     cases_path = args.cases.resolve()
     output = (args.output or ROOT / "results" / f"bfcl_v1_{args.provider}.jsonl").resolve()
     meta_path = output.with_suffix(".meta.json")

@@ -1,0 +1,2 @@
+# Rizzo Flow's pinned source commit also includes the uv.lock used by setup.sh.
+rizzo-flow @ git+https://github.com/Rizzo-AI-Academy/rizzo-flow.git@b9ba007ee4d2928bbab5b1d8bfe9009c3696b6de

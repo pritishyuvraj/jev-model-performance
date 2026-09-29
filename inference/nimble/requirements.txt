@@ -1,0 +1,10 @@
+# Native CUDA scorer for Bespoke-Nimble-9B at upstream commit
+# 62076b4f2d365b5879dafcf7f6dd072a1fe76df7. Python 3.12.14.
+torch==2.8.0
+transformers==5.17.0
+peft==0.21.0
+accelerate==1.15.0
+sentencepiece==0.2.2
+pillow==12.3.0
+numpy==2.5.3
+huggingface_hub==1.33.0

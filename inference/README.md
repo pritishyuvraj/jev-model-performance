@@ -1,10 +1,22 @@
-# Laya and Kev on an NVIDIA DGX
+# Seven decision models on an NVIDIA DGX
 
-This folder runs the two **decision models** on the selected BFCL V1 routing cases. The score is exact next-tool choice; it does not measure argument generation or tool execution. Both models receive the same `jev.laya` state and choice question from each row in [`cases.jsonl`](../data/bfcl_v1/cases.jsonl). The original BFCL answer and `gold_next_action_ids` stay outside the model request.
+This folder contains the pinned environments and run instructions for Laya, Kev-0.8B, Nimble-9B, SemIf on frozen Qwen3.5-4B, Rizzo Flow 4B, Von, and NanoJev. All seven completed the same [250 selected BFCL V1 cases](../data/bfcl_v1/cases.jsonl). The primary score is whether the model selected the right function, or selected no function on BFCL no-call rows. It does not measure arguments, execution, or final answers. Each run uses the same `jev.laya` state and choice question, with adapters for models that have a different native interface. BFCL source answers and `gold_next_action_ids` stay outside the model request.
 
-Use the models' native PyTorch/CUDA `/v1/systemone` servers. [Laya typed-decisions](https://huggingface.co/convaiinnovations/laya-typed-decisions) is a non-generative ModernBERT decision model. [Kev-0.8B](https://huggingface.co/jaredpalmer/kev-0.8b) uses a Qwen3.5 base, LoRA adapter and option-pointer head, also without text generation. A generic [vLLM pooling classifier](https://docs.vllm.ai/en/stable/models/pooling_models/) or [SGLang model server](https://docs.sglang.ai/) does not implement these checkpoint-specific choice heads and question handling. Hosting their base architectures alone would score a different model. Native serving also avoids adding an inference layer for only 250 examples.
+Use each project's native decision path. Laya, Kev, Von, and Rizzo expose `/v1/systemone`; NanoJev uses its own endpoint with a local bridge; Nimble and SemIf score candidates directly in Python. A generic [vLLM pooling classifier](https://docs.vllm.ai/en/stable/models/pooling_models/) or [SGLang model server](https://docs.sglang.ai/) does not implement all of these checkpoint-specific choice heads and question handling. Hosting only a base architecture would score a different system.
 
-## Reproducible environment
+| Run | Native path | Tool selection | Reproduce | Saved case selections |
+| --- | --- | ---: | --- | --- |
+| Laya typed-decisions | ModernBERT choice server | 240/250 | [Commands below](#start-the-laya-and-kev-servers) | [JSONL](../results/bfcl_v1_laya.jsonl) |
+| Kev-0.8B | Qwen + adapter/pointer-head server | 241/250 | [Commands below](#start-the-laya-and-kev-servers) | [JSONL](../results/bfcl_v1_kev.jsonl) |
+| Bespoke Nimble 9B | Native BF16 CUDA candidate scorer | 248/250 | [Nimble](nimble/README.md) | [JSONL](../results/bfcl_v1_nimble.jsonl) |
+| SemIf / Qwen3.5-4B | Frozen-model direct option logits | 248/250 | [SemIf](semif/README.md) | [JSONL](../results/bfcl_v1_semif.jsonl) |
+| Rizzo Flow 4B | Q8_0 fine-tune through llama.cpp CUDA | 239/250 | [Rizzo](rizzo/README.md) | [JSONL](../results/bfcl_v1_rizzo.jsonl) |
+| Von | ModernBERT choice server, chains off | 228/250 | [Von](von/README.md) | [JSONL](../results/bfcl_v1_von.jsonl) |
+| NanoJev | Game-trained Qwen3-0.6B decision head and bridge | 88/250 | [NanoJev](nanojev/README.md) | [JSONL](../results/bfcl_v1_nanojev.jsonl) |
+
+The [results report](../results/README.md) links each log's summary and run metadata. The [offline viewer](../data/bfcl_v1/viewer.html) embeds all seven logs and shows every selection next to the prompt.
+
+## Shared Laya/Kev environment
 
 On `vp-dgx-65`, start in this repository's root. The setup uses the existing system Python and pip only to install pinned `uv` into the ignored `inference/.cache/uv-bootstrap`; `uv` then installs Python 3.12.14 and creates `inference/.venv`. It does not need sudo, system `venv`, or a system Python change, and leaves other user-installed `uv` versions alone.
 
@@ -12,7 +24,7 @@ On `vp-dgx-65`, start in this repository's root. The setup uses the existing sys
 bash inference/setup.sh
 ```
 
-[`requirements.txt`](requirements.txt) pins PyTorch 2.8.0, Transformers 5.17.0 and the exact Laya and Kev serving-code commits. The scored run's full dependency snapshot is [`requirements.resolved.txt`](requirements.resolved.txt). `setup.sh` installs from that snapshot when it is present, then writes the installed package set back to the same file. If the snapshot is absent, it installs the top-level requirements instead. The `.venv` contains binaries and is deliberately not committed. `setup.sh` checks that PyTorch sees CUDA; if an existing `.venv` has another Python version, it stops without replacing it.
+[`requirements.txt`](requirements.txt) pins PyTorch 2.8.0, Transformers 5.17.0 and the exact Laya and Kev serving-code commits. The scored runs' full dependency snapshot is [`requirements.resolved.txt`](requirements.resolved.txt). `setup.sh` installs from that snapshot when it is present, then writes the installed package set back to the same file. If the snapshot is absent, it installs the top-level requirements instead. The `.venv` contains binaries and is deliberately not committed. `setup.sh` checks that PyTorch sees CUDA; if an existing `.venv` has another Python version, it stops without replacing it. NanoJev also uses this environment; Nimble, SemIf, Rizzo, and Von have separate pinned setup instructions in their folders.
 
 The model weights are pinned separately from Python packages:
 
@@ -23,7 +35,7 @@ The model weights are pinned separately from Python packages:
 
 The first server start downloads its pinned weights into the Hugging Face cache. [`serve.sh`](serve.sh) defaults `HF_HOME` to `/scratch/$USER/jev-model-performance/hf`; set `HF_HOME` yourself before both launches to use another owner-controlled location. Keep the same value for later reruns.
 
-## Start the servers
+## Start the Laya and Kev servers
 
 Check current GPU use with `nvidia-smi` first. Choose free GPU indices for the two commands below; `0` and `1` are examples, not reservations. Each model fits on one H100, so tensor parallelism and all eight GPUs are unnecessary. [`serve.sh`](serve.sh) checks the selected GPU again, rejects one using more than 1 GiB or over 10% utilization, and starts the pinned native runtime on localhost.
 
@@ -66,7 +78,7 @@ inference/.venv/bin/python -m kev.serve \
 
 Kev's FP32 path matches its reference evaluation. Optional fused kernels and CUDA graphs are disabled for the initial accuracy run; no extra acceleration package is installed. Both native servers return a `choice` and probability distribution rather than generating a tool call.
 
-## Evaluate
+## Evaluate Laya and Kev
 
 With both servers ready, run from the repository root:
 
@@ -74,12 +86,12 @@ With both servers ready, run from the repository root:
 inference/.venv/bin/python inference/evaluate.py --provider laya \
   --endpoint http://127.0.0.1:8007 \
   --cases data/bfcl_v1/cases.jsonl \
-  --output results/laya-predictions.jsonl
+  --output results/bfcl_v1_laya.jsonl
 
 inference/.venv/bin/python inference/evaluate.py --provider kev \
   --endpoint http://127.0.0.1:8008 \
   --cases data/bfcl_v1/cases.jsonl \
-  --output results/kev-predictions.jsonl
+  --output results/bfcl_v1_kev.jsonl
 ```
 
 The evaluator records each case's predicted choice and reports two accuracies overall and by subset stratum:

@@ -1,16 +1,16 @@
 # Jev model performance
 
-This repository holds a **250-case BFCL-conditioned Jev routing pilot** adapted from Berkeley Function Calling Leaderboard (BFCL) V1. BFCL V1 has 2,000 source examples; the review set uses a selected subset. Laya and Kev-0.8B have been evaluated on the selected cases.
+This repository holds a **250-case BFCL-conditioned Jev routing pilot** adapted from Berkeley Function Calling Leaderboard (BFCL) V1. BFCL V1 has 2,000 source examples; the review set uses a selected subset. Seven model runs are complete: Laya, Kev-0.8B, Nimble-9B, SemIf on frozen Qwen3.5-4B, Rizzo Flow 4B, Von, and NanoJev.
 
 ## Results and reruns
 
-- [Evaluation results](results/README.md): accuracy, per-stratum scores, run identity, and interpretation.
-- [Inference setup](inference/README.md): reproducible CUDA environment, pinned model servers, and scoring commands.
-- [Saved predictions](results/bfcl_v1_laya.jsonl) and [Kev predictions](results/bfcl_v1_kev.jsonl): one model decision per case, with matching summaries and run metadata in the same folder.
+- [Evaluation results](results/README.md): all seven scores, per-stratum breakdowns, run identity, and links to every per-case selection log.
+- [Inference setup](inference/README.md): pinned environments and rerun instructions for each model.
+- [Prompt and results viewer](data/bfcl_v1/viewer.html): compare every saved model selection alongside the user request and offered tools.
 
 ## View the prompts
 
-- [Open the prompt viewer](data/bfcl_v1/viewer.html): offline, chat-style browsing of all 250 requests, offered functions, and the expected Jev routing choice. Search or filter cases, use the arrow buttons, hide or reveal the expected choice, and expand the original BFCL reference or raw Laya/MacJev payload. Each case has a stable `#case=<id>` link. The viewer is read only and does not run a model.
+- [Open the prompt viewer](data/bfcl_v1/viewer.html): offline, chat-style browsing of all 250 requests, offered functions, the expected routing choice, and each model's saved choice. Filter by model and correct/wrong tool selection, inspect option probabilities in a case's saved log, or import another result JSONL. Use the arrow buttons, hide or reveal the expected choice, and expand the original BFCL reference or raw Laya/MacJev payload. Each case has a stable `#case=<id>` link. The viewer is read only and does not run a model.
 - [Review examples](data/bfcl_v1/review.md): rendered Laya choice prompts with the expected next action and original BFCL answer.
 - [250 selected cases](data/bfcl_v1/cases.jsonl): one self-contained JSON object per selected source row, including Laya and MacJev inputs, offered tools, source documentation, and gold labels.
 - [Case index](data/bfcl_v1/index.csv): a compact list to filter by category, routing stratum, and gold action.
@@ -35,7 +35,7 @@ This is a **derived routing set**, not a BFCL leaderboard score or a universal j
 
 BFCL V1 is public, so a model may already have encountered these questions during training. Treat results as a focused comparison on this set, not evidence of performance on unseen requests.
 
-For an evaluation, send only a case's `jev.laya` or `jev.macjev` fields to the model. Keep `gold_next_action_ids` and `source` outside the model input; they are included for review and scoring. The included evaluator sends only the Laya choice state and question to both models.
+For an evaluation, send only a case's `jev.laya` or `jev.macjev` fields to the model. Keep `gold_next_action_ids` and `source` outside the model input; they are included for review and scoring. The seven saved runs used the same Jev choice state and offered actions. Model-specific adapters translated that input into each native decision interface; their details are in [inference](inference/README.md).
 
 ## Rebuild
 
@@ -50,6 +50,6 @@ python3 tools/build_prompt_viewer.py
 python3 -m unittest discover -s tests
 ```
 
-The full conversion goes to ignored `.cache/bfcl-v1-converted`. The selection command writes the 250 review cases in `data/bfcl_v1`. The viewer builder embeds those selected cases in a standalone HTML file, so you can open it without a server or network connection. Its metadata records the SHA-256 of `cases.jsonl`; rebuild it if the selected cases change. Both conversion and selection record hashes and rules so the selection can be reproduced. The upstream source and full conversion stay out of the review set.
+The full conversion goes to ignored `.cache/bfcl-v1-converted`. The selection command writes the 250 review cases in `data/bfcl_v1`. The viewer builder embeds those selected cases and available `results/bfcl_v1_*.jsonl` selection logs in a standalone HTML file, so you can open it without a server or network connection. Its metadata records the SHA-256 of `cases.jsonl`; rebuild it if the selected cases or saved results change. Both conversion and selection record hashes and rules so the selection can be reproduced. The upstream source and full conversion stay out of the review set.
 
 To repeat the tokenizer check, run `tools/check_prompt_fit.py` with the Jev harness virtual environment and pass its root using `--harness-root`. The script loads tokenizers only, not model weights.

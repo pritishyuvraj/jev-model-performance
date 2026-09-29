@@ -1,0 +1,117 @@
+{
+  "schema": "bfcl-v1-jev-eval-summary/v1",
+  "generated_at_utc": "2026-09-29T01:38:46+00:00",
+  "run": {
+    "provider": "von",
+    "requested_model": "von-1.3",
+    "declared_model_revision": "43bbca0fb17f424539416ee8eb3de33cfc3dacf3",
+    "endpoint": "http://127.0.0.1:8014",
+    "cases_path": "/data/home/pritish/jev-model-performance/data/bfcl_v1/cases.jsonl",
+    "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+    "source_tag": "v1.0",
+    "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "selection_review_sha256": "83445886259f64dcb210b645fb91f2d5b308448446b43c1eedcc653a268a115a"
+  },
+  "expected_count": 250,
+  "completed_count": 250,
+  "is_complete": true,
+  "overall": {
+    "total": 250,
+    "correct": 179,
+    "tool_selection_correct": 228,
+    "errors": 0,
+    "incorrect_responses": 71,
+    "accuracy_all_cases": 0.716,
+    "tool_selection_accuracy_all_cases": 0.912,
+    "accuracy_responded_only": 0.716
+  },
+  "by_stratum": {
+    "multi_tool_call": {
+      "total": 150,
+      "correct": 133,
+      "tool_selection_correct": 133,
+      "errors": 0,
+      "incorrect_responses": 17,
+      "accuracy_all_cases": 0.8866666666666667,
+      "tool_selection_accuracy_all_cases": 0.8866666666666667,
+      "accuracy_responded_only": 0.8866666666666667
+    },
+    "one_tool_call": {
+      "total": 50,
+      "correct": 46,
+      "tool_selection_correct": 46,
+      "errors": 0,
+      "incorrect_responses": 4,
+      "accuracy_all_cases": 0.92,
+      "tool_selection_accuracy_all_cases": 0.92,
+      "accuracy_responded_only": 0.92
+    },
+    "one_tool_no_call": {
+      "total": 50,
+      "correct": 0,
+      "tool_selection_correct": 49,
+      "errors": 0,
+      "incorrect_responses": 50,
+      "accuracy_all_cases": 0.0,
+      "tool_selection_accuracy_all_cases": 0.98,
+      "accuracy_responded_only": 0.0
+    }
+  },
+  "by_category": {
+    "executable_multiple_function": {
+      "total": 30,
+      "correct": 28,
+      "tool_selection_correct": 28,
+      "errors": 0,
+      "incorrect_responses": 2,
+      "accuracy_all_cases": 0.9333333333333333,
+      "tool_selection_accuracy_all_cases": 0.9333333333333333,
+      "accuracy_responded_only": 0.9333333333333333
+    },
+    "executable_simple": {
+      "total": 15,
+      "correct": 14,
+      "tool_selection_correct": 14,
+      "errors": 0,
+      "incorrect_responses": 1,
+      "accuracy_all_cases": 0.9333333333333333,
+      "tool_selection_accuracy_all_cases": 0.9333333333333333,
+      "accuracy_responded_only": 0.9333333333333333
+    },
+    "multiple_function": {
+      "total": 120,
+      "correct": 105,
+      "tool_selection_correct": 105,
+      "errors": 0,
+      "incorrect_responses": 15,
+      "accuracy_all_cases": 0.875,
+      "tool_selection_accuracy_all_cases": 0.875,
+      "accuracy_responded_only": 0.875
+    },
+    "relevance": {
+      "total": 50,
+      "correct": 0,
+      "tool_selection_correct": 49,
+      "errors": 0,
+      "incorrect_responses": 50,
+      "accuracy_all_cases": 0.0,
+      "tool_selection_accuracy_all_cases": 0.98,
+      "accuracy_responded_only": 0.0
+    },
+    "simple": {
+      "total": 35,
+      "correct": 32,
+      "tool_selection_correct": 32,
+      "errors": 0,
+      "incorrect_responses": 3,
+      "accuracy_all_cases": 0.9142857142857143,
+      "tool_selection_accuracy_all_cases": 0.9142857142857143,
+      "accuracy_responded_only": 0.9142857142857143
+    }
+  },
+  "error_cases": [],
+  "response_models": {
+    "von-1.3.0": 250
+  },
+  "note": "accuracy_all_cases scores the exact BFCL-derived action. tool_selection_accuracy_all_cases also credits clarify/cannot_answer on BFCL no-call cases because no function was selected. Errors count as incorrect in both. Neither scores arguments or tool execution."
+}

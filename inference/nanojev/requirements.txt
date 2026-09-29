@@ -1,0 +1,3 @@
+# NanoJev was evaluated with the repository's existing pinned CUDA environment.
+# Run `bash inference/setup.sh`; that installs this exact resolved package set.
+-r ../requirements.resolved.txt

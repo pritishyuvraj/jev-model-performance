@@ -1,0 +1,59 @@
+{
+  "schema": "bfcl-v1-jev-eval-run/v1",
+  "created_at_utc": "2026-09-29T01:32:36+00:00",
+  "run_id": "8067c02f794d00b549332eace6ea49db98896b91219f10627b2443d0563bb5f6",
+  "run": {
+    "provider": "nimble",
+    "requested_model": "bespokelabs/Bespoke-Nimble-9B",
+    "declared_model_revision": "bd792f44ec8e265be861bfcdf4e05967ffe0e858",
+    "endpoint": "native-cuda",
+    "adapter": "nimble-cuda-enum-v1",
+    "source_revision": "62076b4f2d365b5879dafcf7f6dd072a1fe76df7",
+    "base_model": "Qwen/Qwen3.5-9B",
+    "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "adapter_sha256": "29ef39b072dee97287947455337879c1e916705c2f727287922a2d81f5e2f20a",
+    "runtime": {
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "device_map": null,
+      "max_gpu_memory": null,
+      "placement": null,
+      "torch": "2.8.0+cu128",
+      "cuda": "12.8",
+      "hip": null,
+      "gpus": [
+        "NVIDIA H100 80GB HBM3"
+      ]
+    },
+    "temperature": 1.0,
+    "cases_path": "/data/home/pritish/jev-model-performance/data/bfcl_v1/cases.jsonl",
+    "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+    "source_tag": "v1.0",
+    "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "selection_review_sha256": "83445886259f64dcb210b645fb91f2d5b308448446b43c1eedcc653a268a115a"
+  },
+  "server_probe": {
+    "native_cuda_scorer": {
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "device_map": null,
+      "max_gpu_memory": null,
+      "placement": null,
+      "torch": "2.8.0+cu128",
+      "cuda": "12.8",
+      "hip": null,
+      "gpus": [
+        "NVIDIA H100 80GB HBM3"
+      ]
+    }
+  },
+  "server_identity": {
+    "model_id": "bespokelabs/Bespoke-Nimble-9B",
+    "model_revision": "bd792f44ec8e265be861bfcdf4e05967ffe0e858",
+    "base_model": "Qwen/Qwen3.5-9B",
+    "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "adapter_sha256": "29ef39b072dee97287947455337879c1e916705c2f727287922a2d81f5e2f20a",
+    "source_revision": "62076b4f2d365b5879dafcf7f6dd072a1fe76df7"
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance/results/bfcl_v1_nimble.jsonl"
+}
