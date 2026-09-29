@@ -1,0 +1,89 @@
+{
+  "schema": "bfcl-v1-jev-eval-run/v1",
+  "created_at_utc": "2026-09-29T00:13:26+00:00",
+  "run_id": "cc87c47de94e91c8d3c260dc5e633bb4a84b003f11ab7716af2ab1d1d7328f2e",
+  "run": {
+    "provider": "kev",
+    "requested_model": "kev-latest",
+    "declared_model_revision": "9a45d25eb2ab761841196625383fa1dff0e56c1e",
+    "endpoint": "http://127.0.0.1:8008",
+    "cases_path": "/data/home/pritish/jev-model-performance/data/bfcl_v1/cases.jsonl",
+    "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+    "source_tag": "v1.0",
+    "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "selection_review_sha256": "83445886259f64dcb210b645fb91f2d5b308448446b43c1eedcc653a268a115a"
+  },
+  "server_probe": {
+    "/v1/models": {
+      "models": [
+        {
+          "name": "kev-latest",
+          "description": "Kev pointer head on Qwen/Qwen3.5-0.8B-Base, serving jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e at temperature 2.35",
+          "release_date": "2026-09-24",
+          "run": "jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e",
+          "base": "Qwen/Qwen3.5-0.8B-Base",
+          "lora": 16,
+          "device": "cuda",
+          "backend": "torch",
+          "dtype": "float32",
+          "temperature": 2.3510958125672174,
+          "cuda_graphs": null,
+          "prefix_cache": {
+            "size": 4,
+            "min_state_tokens": 0,
+            "max_tokens": 65536,
+            "hits": 0,
+            "misses": 0,
+            "cached_states": 0,
+            "oom_retries": 0
+          },
+          "batches": {
+            "count": 0,
+            "requests": 0,
+            "queued": 0
+          }
+        },
+        {
+          "name": "jev-latest",
+          "description": "Kev pointer head on Qwen/Qwen3.5-0.8B-Base, serving jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e at temperature 2.35",
+          "release_date": "2026-09-24",
+          "run": "jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e",
+          "base": "Qwen/Qwen3.5-0.8B-Base",
+          "lora": 16,
+          "device": "cuda",
+          "backend": "torch",
+          "dtype": "float32",
+          "temperature": 2.3510958125672174,
+          "cuda_graphs": null,
+          "prefix_cache": {
+            "size": 4,
+            "min_state_tokens": 0,
+            "max_tokens": 65536,
+            "hits": 0,
+            "misses": 0,
+            "cached_states": 0,
+            "oom_retries": 0
+          },
+          "batches": {
+            "count": 0,
+            "requests": 0,
+            "queued": 0
+          }
+        }
+      ]
+    },
+    "/health": {
+      "unavailable": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}"
+    }
+  },
+  "server_identity": {
+    "name": "kev-latest",
+    "run": "jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e",
+    "base": "Qwen/Qwen3.5-0.8B-Base",
+    "device": "cuda",
+    "backend": "torch",
+    "dtype": "float32",
+    "temperature": 2.3510958125672174
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance/results/bfcl_v1_kev.jsonl"
+}

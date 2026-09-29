@@ -1,0 +1,9 @@
+# Linux/CUDA inference dependencies. Install with `bash inference/setup.sh`.
+# The two decision models use their native System One runtimes, not text generation.
+# Python 3.12.14 and uv 0.12.20 are pinned in setup.sh.
+torch==2.8.0
+transformers==5.17.0
+numpy==2.5.3
+peft==0.21.0
+laya[serve] @ git+https://github.com/NandhaKishorM/laya.git@9d955671415fc19f069b9cc998928075c1f255ec
+kev[serve] @ git+https://github.com/jaredpalmer/kev.git@461b5eac35d96e95c7dede21b9e0402b4cf7092d

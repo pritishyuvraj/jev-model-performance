@@ -1,6 +1,12 @@
 # Jev model performance
 
-This repository holds a **250-case BFCL-conditioned Jev routing pilot** adapted from Berkeley Function Calling Leaderboard (BFCL) V1. BFCL V1 has 2,000 source examples; the review set uses a selected subset. No model has been run or scored here.
+This repository holds a **250-case BFCL-conditioned Jev routing pilot** adapted from Berkeley Function Calling Leaderboard (BFCL) V1. BFCL V1 has 2,000 source examples; the review set uses a selected subset. Laya and Kev-0.8B have been evaluated on the selected cases.
+
+## Results and reruns
+
+- [Evaluation results](results/README.md): accuracy, per-stratum scores, run identity, and interpretation.
+- [Inference setup](inference/README.md): reproducible CUDA environment, pinned model servers, and scoring commands.
+- [Saved predictions](results/bfcl_v1_laya.jsonl) and [Kev predictions](results/bfcl_v1_kev.jsonl): one model decision per case, with matching summaries and run metadata in the same folder.
 
 ## View the prompts
 
@@ -29,7 +35,7 @@ This is a **derived routing set**, not a BFCL leaderboard score or a universal j
 
 BFCL V1 is public, so a model may already have encountered these questions during training. Treat results as a focused comparison on this set, not evidence of performance on unseen requests.
 
-For a later evaluation, send only a case's `jev.laya` or `jev.macjev` fields to the model. Keep `gold_next_action_ids` and `source` outside the model input; they are included for review and scoring.
+For an evaluation, send only a case's `jev.laya` or `jev.macjev` fields to the model. Keep `gold_next_action_ids` and `source` outside the model input; they are included for review and scoring. The included evaluator sends only the Laya choice state and question to both models.
 
 ## Rebuild
 

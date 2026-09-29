@@ -1,0 +1,51 @@
+{
+  "schema": "bfcl-v1-jev-eval-run/v1",
+  "created_at_utc": "2026-09-29T00:11:44+00:00",
+  "run_id": "6b352b5a49ea06a99beb97dd06d01349f9b185c99f7d8ff63cd37bc9571f7f08",
+  "run": {
+    "provider": "laya",
+    "requested_model": "convaiinnovations/laya-typed-decisions",
+    "declared_model_revision": "1a793eb568e6718f15941d08f85432581df534e3",
+    "endpoint": "http://127.0.0.1:8007",
+    "cases_path": "/data/home/pritish/jev-model-performance/data/bfcl_v1/cases.jsonl",
+    "cases_sha256": "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602",
+    "source_tag": "v1.0",
+    "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "selection_review_sha256": "83445886259f64dcb210b645fb91f2d5b308448446b43c1eedcc653a268a115a"
+  },
+  "server_probe": {
+    "/v1/models": {
+      "unavailable": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}"
+    },
+    "/health": {
+      "status": "ok",
+      "loaded": [
+        "typed-decisions"
+      ],
+      "revisions": {
+        "typed-decisions": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+      },
+      "device": "cuda",
+      "device_is_preference": false,
+      "checkpoint_devices": {
+        "typed-decisions": "cuda"
+      },
+      "cpu_fallbacks": {
+        "typed-decisions": {
+          "count": 0,
+          "last_reason": null
+        }
+      }
+    }
+  },
+  "server_identity": {
+    "health_device": "cuda",
+    "health_revisions": {
+      "typed-decisions": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "health_loaded": [
+      "typed-decisions"
+    ]
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance/results/bfcl_v1_laya.jsonl"
+}
