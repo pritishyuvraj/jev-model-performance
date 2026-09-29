@@ -5,6 +5,7 @@ This runner uses the [author's SemIf implementation](https://github.com/TheoLeeC
 On a Linux NVIDIA GPU with a CUDA 12.8 compatible driver, from the repository root:
 
 ```bash
+bash inference/setup.sh
 inference/semif/setup.sh
 CUDA_VISIBLE_DEVICES=3 HF_HOME=/scratch/$USER/jev-model-performance/hf \
   inference/semif/.venv/bin/python inference/semif/run.py
