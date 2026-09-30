@@ -30,7 +30,7 @@ All seven systems completed the same **250 frozen V4 Live cases** on `vp-dgx-59`
 
 The exact-action column requires canonical `no_tool` on negatives. BFCL irrelevance does not establish whether responding, clarifying, or saying the capability is unavailable is the best disposition. Treat this as a label convention; the routing column is the primary router score.
 
-Von selected no function on all 50 negatives, but selected the tool on only 53/200 positives. On positive cases its saved choices include 117 `cannot_answer`, 28 `clarify`, and one `no_tool`; this is frequent rejection of offered capabilities, with no request errors or truncation. The independent NanoJev check found its input/option mapping unchanged from V1 and correctly reflected in saved responses. Its 7/200 positive score is retained. These observations do not establish why either checkpoint performs poorly on these prompts.
+Von selected no function on all 50 negatives, but selected the correct tool on only 53/200 positives. On positive cases its saved choices include 117 `cannot_answer`, 28 `clarify`, and one `no_tool`; this is frequent rejection of offered capabilities, with no request errors or truncation. The independent NanoJev check found its input/option mapping unchanged from V1 and correctly reflected in saved responses. Its 7/200 positive score is retained. These observations do not establish why either checkpoint performs poorly on these prompts.
 
 ## Timing and probability interpretation
 
