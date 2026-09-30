@@ -24,7 +24,7 @@ def main():
     checks=json.loads((ROOT/'results/runtime/bfcl_v4/final_validation.json').read_text())
     assert checks['dataset_sha256']==data['cases_sha256'] and checks['models_checked']==7
     assert checks['all_models_passed_log_and_gold_checks'] and checks['all_checkpoint_revisions_match_v1']
-    files=[p for p in (ROOT/'results/runtime/bfcl_v4').rglob('*') if p.is_file() and p.suffix!='.pid']
+    files=[p for p in (ROOT/'results/runtime/bfcl_v4').rglob('*') if p.is_file() and not p.is_symlink() and p.suffix!='.pid']
     files += [ROOT/f'results/bfcl_v4_{key}.{suffix}' for key in models for suffix in ['jsonl','meta.json','summary.json']]
     files += [ROOT/'results/bfcl_v4_comparison.csv']
     code={name:digest(ROOT/name) for name in ['inference/evaluate.py','inference/nimble/run.py','inference/semif/run.py','inference/nanojev/bridge.py']}

@@ -1,0 +1,4 @@
+# Retain the raw console progress output, including its carriage returns and spaces.
+results/runtime/bfcl_v4/kev/server.log -whitespace
+# The reproducible CSV index uses the CSV writer's standard CRLF line endings.
+data/bfcl_v4/index.csv whitespace=cr-at-eol
