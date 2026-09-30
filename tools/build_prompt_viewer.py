@@ -5,14 +5,17 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import json
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "data" / "bfcl_v1" / "cases.jsonl"
 DEFAULT_OUTPUT = ROOT / "data" / "bfcl_v1" / "viewer.html"
 DEFAULT_RESULTS_DIR = ROOT / "results"
+DEFAULT_RESULT_PREFIX = "bfcl_v1_"
 
 
 HTML = r'''<!doctype html>
@@ -589,13 +592,24 @@ def read_cases(path: Path) -> list[dict]:
     return cases
 
 
-def read_results(directory: Path, case_ids: set[str], source_sha256: str) -> list[dict]:
+def validate_result_prefix(result_prefix: str) -> str:
+    """Keep the filename prefix literal, without paths or glob operators."""
+    if not re.fullmatch(r"[A-Za-z0-9_][A-Za-z0-9_.-]*", result_prefix):
+        raise ValueError("Result prefix must be a nonempty filename prefix using letters, digits, _, - or .")
+    return result_prefix
+
+
+def read_results(
+    directory: Path, case_ids: set[str], source_sha256: str,
+    result_prefix: str = DEFAULT_RESULT_PREFIX,
+) -> list[dict]:
     """Load compatible per-case logs and reject stale or mixed-case results."""
+    validate_result_prefix(result_prefix)
     if not directory.exists():
         return []
     runs: list[dict] = []
-    for path in sorted(directory.glob("bfcl_v1_*.jsonl")):
-        slug = path.stem.removeprefix("bfcl_v1_")
+    for path in sorted(directory.glob(f"{result_prefix}*.jsonl")):
+        slug = path.stem.removeprefix(result_prefix)
         if not slug:
             continue
         meta_path = path.with_suffix(".meta.json")
@@ -646,20 +660,61 @@ def embed_json(value: object) -> str:
     )
 
 
+def render_html(
+    cases: list[dict], runs: list[dict], source_sha256: str,
+    bfcl_version: str = "v1", dataset_name: str | None = None,
+    result_prefix: str | None = None,
+) -> str:
+    """Render a named BFCL set while preserving the original V1 default HTML."""
+    if bfcl_version not in {"v1", "v4"}:
+        raise ValueError("BFCL version must be v1 or v4")
+    prefix = validate_result_prefix(result_prefix if result_prefix is not None else f"bfcl_{bfcl_version}_")
+    name = html.escape(dataset_name or f"BFCL {bfcl_version.upper()}")
+    template = HTML.replace("<title>BFCL V1 ·", f"<title>{name} ·", 1)
+    template = template.replace(
+        '<div class="eyebrow">BFCL V1 → Jev</div>',
+        f'<div class="eyebrow">{name} → Jev</div>', 1,
+    )
+    template = template.replace(
+        "Source: Berkeley Function Calling Leaderboard V1 ·",
+        f"Source: Berkeley Function Calling Leaderboard {bfcl_version.upper()} ·", 1,
+    )
+    if bfcl_version != "v1" or prefix != DEFAULT_RESULT_PREFIX:
+        # V4 uploads must match its result namespace, even if another set shares an ID.
+        original = 'const slug = file.name.replace(/^bfcl_v1_/, "").replace(/\\.jsonl$/i, "");'
+        replacement = (
+            f'if (!file.name.startsWith({embed_json(prefix)})) '
+            f'throw new Error("Expected a result filename beginning with " + {embed_json(prefix)} + ".");\n'
+            f'          const slug = file.name.slice({len(prefix)}).replace(/\\.jsonl$/i, "");'
+        )
+        template = template.replace(original, replacement, 1)
+    template = template.replace("__SOURCE_SHA256__", source_sha256, 1)
+    template = template.replace("__CASE_JSON__", embed_json(cases), 1)
+    return template.replace("__RESULT_JSON__", embed_json(runs), 1)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=DEFAULT_INPUT, help="Selected cases JSONL")
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="Offline HTML output")
+    parser.add_argument("--bfcl-version", choices=("v1", "v4"), default="v1", help="BFCL source version (default: v1)")
+    parser.add_argument("--dataset-name", help="Display name in the page title and brand (default: BFCL V1 or BFCL V4)")
+    parser.add_argument("--result-prefix", help="Literal result filename prefix (default: bfcl_v1_ or bfcl_v4_)")
+    parser.add_argument("--input", type=Path, help="Selected cases JSONL (default: data/bfcl_VERSION/cases.jsonl)")
+    parser.add_argument("--output", type=Path, help="Offline HTML output (default: data/bfcl_VERSION/viewer.html)")
     parser.add_argument("--results-dir", type=Path, default=DEFAULT_RESULTS_DIR, help="Directory of BFCL result JSONL files")
     args = parser.parse_args()
+    args.input = args.input or ROOT / "data" / f"bfcl_{args.bfcl_version}" / "cases.jsonl"
+    args.output = args.output or ROOT / "data" / f"bfcl_{args.bfcl_version}" / "viewer.html"
+    result_prefix = args.result_prefix if args.result_prefix is not None else f"bfcl_{args.bfcl_version}_"
+    try:
+        validate_result_prefix(result_prefix)
+    except ValueError as exc:
+        parser.error(str(exc))
     cases = read_cases(args.input)
     source_sha256 = hashlib.sha256(args.input.read_bytes()).hexdigest()
-    runs = read_results(args.results_dir, {case["id"] for case in cases}, source_sha256)
-    html = HTML.replace("__CASE_JSON__", embed_json(cases), 1)
-    html = html.replace("__RESULT_JSON__", embed_json(runs), 1)
-    html = html.replace("__SOURCE_SHA256__", source_sha256, 1)
+    runs = read_results(args.results_dir, {case["id"] for case in cases}, source_sha256, result_prefix)
+    rendered = render_html(cases, runs, source_sha256, args.bfcl_version, args.dataset_name, result_prefix)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(html, encoding="utf-8")
+    args.output.write_text(rendered, encoding="utf-8")
     print(f"Wrote {args.output} with {len(cases)} cases and {len(runs)} model logs ({args.output.stat().st_size:,} bytes)")
 
 

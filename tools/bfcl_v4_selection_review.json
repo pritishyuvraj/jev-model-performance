@@ -1,0 +1,1048 @@
+{
+  "version": "bfcl-v4-routing-review/v1",
+  "seed": "bfcl-v4-live-routing-250-20260929",
+  "review_method": "Agent-assisted semantic review of original user text, full function descriptions, schemas, and positive reference tool. Accept capability match independent of argument completeness; exclude ambiguous labels or a capability not represented by the visible cards. Candidates were screened before model evaluation.",
+  "notes": [
+    "The selected Live categories originated before V4 and are included in the pinned V4 corpus.",
+    "All 2,000 original V1 source requests and our frozen 250-case V1 subset are used for normalized overlap exclusion.",
+    "Four high-similarity V1 requests were explicitly excluded in addition to the normalized-overlap rule.",
+    "Original full descriptions are retained; no capability-card rewrites are used.",
+    "Negative cases have no_tool as a canonical exact-action label; primary route scoring accepts any meta action.",
+    "A second semantic pass excluded four selected positives with unsupported requested scope or multiple matching capabilities; reviewed source variants refill the quota without rewriting prompts."
+  ],
+  "categories": {
+    "live_multiple": {
+      "accepted": {
+        "live_multiple_895-185-5": {
+          "reason": "Capability review: request 'Hi, could you make a private payment with 50 bucks with my credit card to Jerry please?' maps to Payment_1_MakePayment: Initiate a transaction to send a specified amount of money to a friend or contact using a chosen payment method.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_192-86-0": {
+          "reason": "Capability review: request 'I would like to easily be able to extract any informaton from an \\'image.png\\' based on a \\'question\\' using the vision language model vikhyatk/moondream2. The question is \"generate with technically complex attention to detail a description of what you see\"\\n' maps to analyze_image_with_question.pipeline: This function takes an image file and a question related to the image, and uses a machine learning pipeline to analyze the image and answer the question.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_735-167-6": {
+          "reason": "Capability review: request 'Find a rental in Castro Valley, CA with at least 2 bedrooms, 1 bathroom, and it must have in-unit laundry facilities?' maps to Homes_2_FindHomeByArea: Search for properties to rent or buy in a specified city, with filters for the number of bedrooms and bathrooms, as well as the presence of a garage and in-unit laundry facilities.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_617-159-10": {
+          "reason": "Capability review: request \"I'll be in Los Angeles on March 10th. Can you look up any music events happening on that date?\" maps to Events_3_FindEvents: Find cultural events, such as concerts and plays, happening in a specified city. The search can be filtered by event type and date.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_924-191-12": {
+          "reason": "Capability review: request 'I need to locate a cleaner for bathroom cleaning services located in Bangkok, specifically in the district of Sukhumvit. They should have an average rating of at least 4 stars, be available on March 4, 2024, from 3:00 p.m. onwards, and be between the ages of 25 and 35.' maps to get_service_providers: Find service providers based on various criteria such as rating, location, availability, and service types offered.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_236-106-2": {
+          "reason": "Capability review: request \"Move 'pointA' to 2,3,4\" maps to set_point: Sets a point in 3D space with given X, Y, and Z coordinates and assigns it a name.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_715-165-2": {
+          "reason": "Capability review: request 'Can you find a house in Austin, TX with laundry service, for 2 adults, having a rating of at least 4.4?' maps to Hotels_2_SearchHouse: Search for available houses based on specified criteria at a given location.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_822-177-5": {
+          "reason": "Capability review: request \"Can you find a music event in Seattle, WA that's happening on the 12th of march 2023? I'd like to buy one ticket for it.\" maps to Events_3_FindEvents: Find cultural events, such as concerts and plays, happening in a specified city and optionally on a specific date.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_430-141-19": {
+          "reason": "Capability review: request \"I want to purchase 3 tickets for the 'Eternal Warriors' movie in Los Angeles for the showing on 2023-04-15 at 19:00.?\" maps to Movies_1_BuyMovieTickets: Purchase tickets for a specific movie showing, including the number of tickets, show date and time, and location.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_350-133-14": {
+          "reason": "Capability review: request 'Can you find me Metal songs by Jinjer?' maps to Music_3_LookupMusic: Retrieve a list of songs that align with the user's musical preferences based on artist, album, genre, and release year.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_149-58-3": {
+          "reason": "Capability review: request 'Could you retrieve a list of sensor alerts, showing 10 entries per page for the network with ID L_579838452023959405?' maps to get_sensor_alerts: Retrieve a paginated list of sensor alerts within a specified timespan and optionally filtered by various criteria such as network IDs or sensor metrics.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_292-130-1": {
+          "reason": "Capability review: request \"Can you find me a house accommodation in Long Beach with a review rating of at least 4.2? It's just for myself.\" maps to Hotels_2_SearchHouse: Search for a house accommodation at a specific location, optionally filtering by laundry service availability, number of adults, and review rating.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_64-26-0": {
+          "reason": "Capability review: request \"Can you place an order for five burgers and six chicken wings from id = McDonald's? Each burger has the item ID 'burger123' and each chicken wing has the item ID 'wing456'.\" maps to uber.eat.order: Place an order for food delivery from a specified restaurant on Uber Eats, including the items to order and their quantities.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_982-215-6": {
+          "reason": "Capability review: request 'Help find a service provider Cleaning and additional ironing services, Bangkok, March 20, 2024, available space at 6:00 p.m.' maps to get_service_providers: Retrieve a list of service providers based on the given filters.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_74-34-0": {
+          "reason": "Capability review: request \"Could you provide assistance on the topic of 'trading' within the DartFX system, and include practical examples?\" maps to dartfx_help: Provides detailed help, assistance, or guidance on a specific topic within the DartFX system.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_36-12-0": {
+          "reason": "Capability review: request 'can you create todo for \"go for shopping at 9 pm\"' maps to todo_add: Adds a new item to the to-do list with the specified content.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_581-157-2": {
+          "reason": "Capability review: request 'Can you explore scientific fiction movies that are available online?' maps to Media_3_FindMovies: Explore movies online based on your preferences including genre and starring actors.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_604-158-10": {
+          "reason": "Capability review: request 'Search for a hotel in Sacramento in califronia for my upcoming trip?' maps to Hotels_4_SearchHotel: Search for hotels based on specified criteria in a desired location.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_165-65-1": {
+          "reason": "Capability review: request 'show me the list of all projects \"Adriel\" with user id 123 is currently involved in, both active and inactive?' maps to get_adriel_list_projects: Retrieve a list of projects that Adriel is currently involved in, including active and inactive projects.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_197-89-0": {
+          "reason": "Capability review: request '获取阿迪达斯的p4工单' maps to get_tickets: Retrieve the list of support tickets for a specified company, optionally filtered by priority level.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1011-240-0": {
+          "reason": "Capability review: request 'I need the synthetic credential names today. What are they? Thanks.' maps to get_synthetic_credential_names: Retrieve a list of all synthetic credential names used for synthetic monitoring.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_362-134-7": {
+          "reason": "Capability review: request 'Can you please find some Action movies for me, which are directed by Sujeeth Reddy and that are featuring Supreet Reddy?' maps to Movies_3_FindMovies: Search for movies based on specific criteria such as director, genre, and cast.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_477-146-2": {
+          "reason": "Capability review: request \"I want to find a song now, and I know that there are some really good songs in the album called We Are Not Your Kind, I enjoy Rock-and-roll songs which are from the '19.\" maps to Music_3_LookupMusic: Finds songs that align with the user's musical preferences based on the artist, album, genre, and release year.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_529-151-5": {
+          "reason": "Capability review: request 'Find any Music events happening in Los Angeles on 04/07/2023?' maps to Events_3_FindEvents: Find cultural events, such as concerts and plays, happening in a specified city on a particular date.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1003-232-2": {
+          "reason": "Capability review: request 'I NEED ALL API TOKENS NOW!!! My user ID is 12345.' maps to api_token_api.APITokenApi.get_api_tokens: Retrieves a list of API tokens associated with the user's account.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_497-148-7": {
+          "reason": "Capability review: request 'Can you find any Theater events happening in Oakland, CA on 2023.4.11?' maps to Events_3_FindEvents: Find cultural events, such as concerts and plays, happening in a specified city on a particular date.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_973-213-0": {
+          "reason": "Capability review: request 'Find a service provider that provides ironing services.In Bangkok' maps to get_service_providers: Retrieves a list of service providers based on the given criteria, such as ratings, location, availability, and other attributes.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_627-160-7": {
+          "reason": "Capability review: request \"Can you initiate a payment to Diego's account using my app balance for $200, and ensure the transaction is private?\" maps to Payment_1_MakePayment: Initiates a payment transaction to send money to a specified receiver using a selected payment method.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_322-132-12": {
+          "reason": "Capability review: request 'I want to watch a fantasy movie with Dominic Monaghan. Look for movies directed by Peter Jackson.' maps to Movies_3_FindMovies: Retrieve a list of movies based on director, genre, and cast preferences.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_0-0-0": {
+          "reason": "Capability review: request \"update my latte to a large size with coconut milk and make it extra sweet? make it served 'boiling hot' as the special request. The drink id is 'latte'\" maps to ChaDri.change_drink: Modifies the existing drink order to accommodate the customer's new request, ensuring the drink is updated according to the specified preferences.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_73-33-0": {
+          "reason": "Capability review: request \"I need to add a new Postgres server configuration. The nickname will be 'PrimaryDB', host is '192.168.0.12', port is 5432, the database name is 'main_db', username is 'admin', and the password is 'securePass123'.\" maps to add_postgres_server: Adds a new Postgres server configuration or updates an existing one. This allows for the management of multiple Postgres server connections.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_398-139-2": {
+          "reason": "Capability review: request 'get a Music event happening in San Diego on 2023-05-02?' maps to Events_3_FindEvents: Find cultural events, such as concerts and plays, happening in a specified city on a given date.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1005-234-0": {
+          "reason": "Capability review: request 'Give the snapshot for host agent zzwzeem,  up to the current time' maps to host_agent_api.HostAgentApi.get_agent_snapshot: Retrieves a snapshot of details for a specific host agent within a given time frame.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_540-152-2": {
+          "reason": "Capability review: request \"I'm looking to rent a home in Fremont with at least 3 bedrooms, 2 bathrooms, I have a car so ideally garage. Can you find options for me?\" maps to Homes_2_FindHomeByArea: Search for a property to rent or buy in a specified city, filtering by number of bedrooms, number of bathrooms, garage availability, and in-unit laundry facilities.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_286-129-1": {
+          "reason": "Capability review: request 'Search for therapist help my mental health issues in san jose' maps to Services_4_FindProvider: Discover a therapist based on the user's specific needs and location.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_230-103-1": {
+          "reason": "Capability review: request \"What's the address of Liam Neeson?\" maps to get_contact_information: Retrieve the contact information for an individual based on their name or identification number. One of the parameters 'name' or 'id_no' must be provided, but not both.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_222-96-0": {
+          "reason": "Capability review: request 'Could you arrange for a comfortable Uber ride for me from 456 Elm St, Springville, IL with a maximum wait time of 10 minutes?' maps to uber.ride: Find a suitable Uber ride for customers based on their location, preferred ride type, and maximum wait time.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_70-30-1": {
+          "reason": "Capability review: request 'Provide me with the documentation links and usage instructions for troubleshooting in DartFX?' maps to dartfx_help: Provides assistance by returning the documentation links and usage instructions for the DartFX library.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_3-2-0": {
+          "reason": "Capability review: request 'Get weather of Ha Noi for me' maps to api.weather: Retrieve current weather information for a specified location.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_283-128-6": {
+          "reason": "Capability review: request 'I want to find a restaurant in San Francisco that serves Izakaya and it needs to be cheap or fairly inexpensive.' maps to Restaurants_2_FindRestaurants: Searches for restaurants based on specified location, category, and other optional preferences.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_78-35-2": {
+          "reason": "Capability review: request \"I'm trying to understand how to use the charts feature in DartFX, and I'd like to get assistance in Spanish, please.\" maps to dartfx_help: Provides assistance on a specific topic within the DartFX application. Returns detailed information and guidance for the user.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_68-29-0": {
+          "reason": "Capability review: request \"I need to set up a new Postgres server connection for my project. The nickname is 'ProjectDB', the host should be 'http://foo.com', the port number is 5432, the default database name is 'project_data', the username is 'user1', and the password I think is '12345'.\" maps to add_postgres_server: Add or create a new Postgres server configuration with the specified parameters.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_785-173-7": {
+          "reason": "Capability review: request \"I need to talk to someone about how to deal with my boss at work. I would really appreciate your help locating a therapist. I'd like to find a therapist that works out of Sunnyvale.\" maps to Services_4_FindProvider: Find a suitable therapist in a specified city according to user's requirements.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_727-166-2": {
+          "reason": "Capability review: request \"I need to book an appointment with John's Barber Shop for a haircut on March 15th at 2 in the afternoon\" maps to Services_1_BookAppointment: Book an appointment with a hair stylist or salon. The appointment time and date must be specified.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_937-193-0": {
+          "reason": "Capability review: request \"Can you provide me with the list of projects assigned to the team with the UUID '123e4567-e89b-12d3-a456-426614174000'?\" maps to acl_api.AclApi.retrieve_projects: Retrieve a list of projects assigned to the specified team, with options to exclude inactive or non-root projects.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_233-105-0": {
+          "reason": "Capability review: request 'retrieve the contact details for Rayson Goh?' maps to get_contact_information: Retrieve the contact details of a person using their name or identification number. At least one identifier (name or identification number) is required for the lookup.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_408-140-4": {
+          "reason": "Capability review: request 'I need a Shared ride for 2. The destination is the 123 Park Branham Apartments, San Jose' maps to RideSharing_2_GetRide: Books a cab to the specified destination, accommodating the requested number of seats and the preferred ride type.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_249-113-0": {
+          "reason": "Capability review: request 'what version?' maps to version_api.VersionApi.get_version: Retrieve the current version of the application, including its name and version number, formatted in JSON.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_158-61-0": {
+          "reason": "Capability review: request 'Can you tell me the list of projects and their statuses that Adriel is currently working on for user ID 7623, and include the completed projects as well?' maps to get_adriel_projects: Retrieves a list of projects that Adriel is currently working on, including project names and their respective statuses.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_194-87-1": {
+          "reason": "Capability review: request 'compute 443 * 349' maps to CalcProduct: Calculates the product of two numeric values.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_682-163-7": {
+          "reason": "Capability review: request 'Can you tell me the weather in Seattle, WA on the 4th of march 2023? today is 2023.10.1' maps to Weather_1_GetWeather: Retrieves the weather information for a specified city on a given date.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_848-179-2": {
+          "reason": "Capability review: request \"Hi I'm hungry and want to go out to eat. Preferably something Italian with vegetarian options that serves Pizza and Pasta in new york.\" maps to Restaurants_2_FindRestaurants: Search for restaurants based on their location, category, price range, and availability of vegetarian options and outdoor seating.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_392-138-0": {
+          "reason": "Capability review: request 'Find a hair stylist in Austin?' maps to Services_1_FindProvider: Search for a hair stylist located within a specified city and filter results based on unisex availability.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_952-201-0": {
+          "reason": "Capability review: request 'Order 5 fries from uber eats mc donalds' maps to uber.eat.order: Order food on Uber Eats by specifying the restaurant and the items with their respective quantities.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_161-63-0": {
+          "reason": "Capability review: request \"Can you provide the full details of the project named 'portfolio-web', including its status and Adriel's role in it?\" maps to get_detail_adriel_project: Retrieves the full details of a specific project that Adriel was involved in, including project status and the role Adriel played.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_72-32-0": {
+          "reason": "Capability review: request \"I need some assistance setting up my new Postgres server. Add a server with the nickname 'PrimaryDB', host IP as '192.168.0.10', port number 5432, connecting to the 'main' database, with 'admin_user' as username and 'secure*pass123' as the password?\" maps to add_postgres_server: Add or create a new Postgres server configuration with the specified details. This allows the application to manage multiple Postgres server instances easily.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_511-149-8": {
+          "reason": "Capability review: request 'Search for a one-way Economy class flight leaving from Chicago to Shanghai with Delta Airlines? Departing on the 15th of April 2023.' maps to Flights_4_SearchOnewayFlight: Search for one-way flights from an origin to a destination on a specified date, with options for seating class and preferred airlines.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1007-236-0": {
+          "reason": "Capability review: request 'What software is installed having version 5.5?' maps to software_versions: Retrieve information about the installed software, including runtime and package manager details. Use optional filters to refine the results.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_552-153-1": {
+          "reason": "Capability review: request 'I want to go to a Salon which should be an Unisex one. I am now in Walnut Creek so please search for the one located here.' maps to Services_1_FindProvider: Search for a hair stylist within a specified city and filter by whether the salon is unisex or not.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_992-223-0": {
+          "reason": "Capability review: request 'Delete the Apdex config for \"d0404\"' maps to delete_apdex_configuration: Deletes the specified Apdex configuration by its unique identifier.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_854-180-2": {
+          "reason": "Capability review: request 'Could you search for a bus itinerary for me? I need to travel from Philadelphia, PA to New York City, NY on March 14th.' maps to Buses_3_FindBus: Search for a bus itinerary between two cities on a specified date. The search can be filtered based on the number of passengers and the bus route category.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_223-97-0": {
+          "reason": "Capability review: request \"list all the files and directories in the '/out/programs' directory, including hidden ones and in descending order by name\" maps to list_directory_contents: List all the files and directories within the specified directory path.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_40-15-0": {
+          "reason": "Capability review: request \"I'm planning to bake a cake Pre heat the oven for 36 minutes at 201 degrees.\" maps to oven_preheat: Preheat the oven for a specified duration at a given temperature.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_39-14-1": {
+          "reason": "Capability review: request 'average rating and reviews and comments for Charlie Brown interviewer?' maps to review_of_interviewer: Retrieve the average rating and reviews for a specified interviewer based on their full name.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_997-228-0": {
+          "reason": "Capability review: request 'What is the host count for February 15th 2022?' maps to usage_api.UsageApi.get_hosts_per_day: Retrieve the number of hosts counted for a specified day, month, and year.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_62-24-0": {
+          "reason": "Capability review: request 'Remove the second item from my todo list.' maps to todoIdx: Provides functionality for managing a todo list, including the ability to delete an item or mark an item as complete based on its index in the list.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_66-27-0": {
+          "reason": "Capability review: request \"I need to establish a new Postgres server for our Canada office. The server's domain is 'http://plgah.ca', the database should be 'finance_db', the username will be 'pascal', and use a secure password 123123.\" maps to add_postgres_server: Add a new PostgreSQL server configuration or update an existing one with the provided settings.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_961-205-1": {
+          "reason": "Capability review: request 'trigger the web search function; where is beijing' maps to web_search: Perform a web search for a given query and return relevant results.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_975-214-1": {
+          "reason": "Capability review: request 'Can you locate a service provider in Bangkok who offers both ironing and cleaning services, including bathroom washing, with a good reputation?' maps to get_service_providers: Retrieve a list of service providers based on various search criteria, such as ratings, availability, and service types.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_944-196-2": {
+          "reason": "Capability review: request 'I think the music is too loud right now, could you turn it down to 70?' maps to set_volume: Set the global volume for all audio playback. The volume level can be specified as an integer value ranging from 0 (mute) to 100 (maximum volume).. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_139-53-1": {
+          "reason": "Capability review: request 'Could you tell me the current price of AAPL on the NASDAQ?' maps to stock_price.get: Retrieves the current stock price for a given ticker symbol from a specified exchange.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_909-188-0": {
+          "reason": "Capability review: request \"Verify if there's a YouTube video titled 'The Secrets of the Taj Mahal' published by 'TravelHistory' with tags including 'Taj Mahal', 'India', and 'architecture'?\" maps to youtube.check_videos: Verify the existence of YouTube videos based on their title, publisher, and associated tags.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_812-176-3": {
+          "reason": "Capability review: request \"I'd like to set a new alarm at 17:00 and label it 'Music practice'.\" maps to Alarm_1_AddAlarm: This function sets a new alarm with a specified time and an optional name.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_191-85-0": {
+          "reason": "Capability review: request \"Sort this list of names in ascending order: ['Sam', 'Alice', 'Jack']. \\nFirst, identify the appropriate function.\" maps to sort_list: Sorts a list of strings in either ascending or descending order based on the specified order.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_37-13-0": {
+          "reason": "Capability review: request \"I need to delete a to-do item that says 'go for shopping at 9 pm' from my list.\" maps to todo_delete: Deletes a to-do item from the list based on the specified content.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_221-95-0": {
+          "reason": "Capability review: request \"Segment all objects in an image at './yoha.jpg'\" maps to segment: Segments all objects within a provided image and identifies distinct elements for further analysis.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_263-126-0": {
+          "reason": "Capability review: request 'When is my gym session?' maps to EventQuery: Search for calendar events that match a given text query within a user's calendar. The search considers both the title and description of the events.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1004-233-0": {
+          "reason": "Capability review: request 'Produce the access log for query \"llama\", at offset 434 and page size \\'nine\\'.' maps to audit_log_api.AuditLogApi.get_access_logs: Retrieve a list of access logs from the audit log API, with options to specify offset, query filters, and page size for pagination.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_776-172-1": {
+          "reason": "Capability review: request 'I would like to find any SUVs available in Los Angeles from today until the 7th of March? I would like to pick it up at 10:00 AM.' maps to RentalCars_3_GetCarsAvailable: Retrieve a list of available rental cars in a specified city during a given rental period.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_378-135-2": {
+          "reason": "Capability review: request 'I need help looking for a Family Therapist in Mountain View.' maps to Services_4_FindProvider: Discovers therapists based on the user's specified conditions and preferences within a given city.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1016-245-0": {
+          "reason": "Capability review: request \"Set up a new global application alert configuration with the name 'UrgentAlert77f7', for an error rate threshold of 5%, and send notifications to 'admin@example.com' and 'support@example.com'?\" maps to create_global_application_alert_config: Create a new global application alert configuration setting for monitoring and notifications.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_555-154-1": {
+          "reason": "Capability review: request \"I have friends coming over from new york, I'm looking to rent a Sedan in Los Angeles from April 14th, 2023 until April 18th, 2023.\" maps to RentalCars_3_GetCarsAvailable: Retrieve a list of available rental cars based on the specified location and rental period.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_969-210-1": {
+          "reason": "Capability review: request \"Can you place an order for me at McDonald's, 123 Fastfood Lane, Chicago, IL for five burgers and six chicken wings?\" maps to uber.eat.order: Place an order on Uber Eats, specifying the restaurant and the quantities of selected items.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1012-241-0": {
+          "reason": "Capability review: request \"Could you provide me with a list of synthetic monitoring locations sorted by the creation date, and only showing those that include 'alpha', 'beta', and 'gamma' in their details? Let's have 50 locations starting from first location.\" maps to get_synthetic_locations: Retrieves a list of all available synthetic locations for monitoring. The function supports sorting, pagination, and filtering options to organize and select the desired subset of locations.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1018-247-0": {
+          "reason": "Capability review: request 'Provide me with all the configured websites. My API is called YOUR_API_KEY' maps to website_configuration_api.get_websites: Retrieves a list of website configurations currently set in the system.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_134-51-0": {
+          "reason": "Capability review: request 'What is the price of Apple on NYSE?' maps to stock_price.get: Retrieves the current stock price for a specified ticker symbol from a given stock exchange.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1025-254-0": {
+          "reason": "Capability review: request \"The maintenance config is needed for 'sandcastle'.\" maps to MaintenanceConfigurationApi.get_maintenance_config: Retrieve the maintenance configuration settings for a given system or application identified by an ID.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_996-227-0": {
+          "reason": "Capability review: request \"Add a new service configuration for a service named 'fdsa'. The configuration should have a timeout of 30 seconds, retry count of 5, the endpoint URL 'https://api.fdsa-service.com', and it requires authentication.\" maps to add_service_config: Adds a new service configuration to the application settings, allowing the application to acknowledge and use the service parameters specified.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1019-248-0": {
+          "reason": "Capability review: request 'Delete the release RL50' maps to releases_api.ReleasesApi.delete_release: Deletes a specific release identified by a unique release ID.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_766-170-4": {
+          "reason": "Capability review: request 'Can you find a bus itinerary from Austin, TX to Dallas, TX for March 13th that accommodates three passengers?' maps to Buses_3_FindBus: Searches for bus itineraries between two cities on a specified date and accommodates a certain number of passengers.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_136-52-0": {
+          "reason": "Capability review: request \"I'm curious about the current weather conditions in London, United Kingdom. Can you provide me with that information?\" maps to weather.get_weather: Get the current weather conditions, including temperature, wind speed, and precipitation, for a specified city within a country.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1006-235-0": {
+          "reason": "Capability review: request \"How many hosts are being monitored? The API Key is 'gorilla-123'\" maps to get_monitoring_state: Returns the count of hosts currently being monitored by the infrastructure resources API.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_259-123-0": {
+          "reason": "Capability review: request 'I need project my_version_proj, with v 1.2.3' maps to project_api.ProjectApi.get_project_by_name_and_version: Retrieve details of a project specified by its unique name and version.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1050-277-0": {
+          "reason": "Capability review: request 'Can you tell me what the weather will be like in Atlanta on March 7th, 2023?' maps to Weather_1_GetWeather: Retrieves the weather information for a specified city on a given date.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_260-124-0": {
+          "reason": "Capability review: request 'tell me the current version information of app, with name and version number?' maps to version_api.VersionApi.get_version: Retrieve the current version information of the application, including the application name and its version number.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_7-3-2": {
+          "reason": "Capability review: request \"我想在 mbox 系统中创建一个新的工作空间，基于 git 仓库的 master 分支。工作空间的名字叫做 'DevelopersHub'。\" maps to create_workspace: Creates a new workspace in the mbox system, based on a specified branch of the aweme git repository.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_140-54-0": {
+          "reason": "Capability review: request 'Could you tell me the current weather conditions in London, including the temperature and wind speed?' maps to weather.get: Get the current weather conditions, including temperature, wind speed, and precipitation, for a specified city and country.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_196-88-0": {
+          "reason": "Capability review: request '获取阿迪达斯的工单' maps to get_tickets: Retrieve a list of support tickets for a specified company.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_142-55-0": {
+          "reason": "Capability review: request 'Could you provide the current weather data for London in the UK, including the temperature, wind speed, and precipitation levels?' maps to weather.get_weather_data: Retrieves current weather data including temperature, wind speed, and precipitation levels for a specified city and country.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1028-256-0": {
+          "reason": "Capability review: request 'Give the snapshot for host agent zzwzee  for the last 60 minutes?' maps to host_agent_api.get_agent_snapshot: Retrieves the details of a snapshot captured by a host agent within a specified time window.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1035-263-0": {
+          "reason": "Capability review: request 'I forgot all the API tokens, can you remind me of them? My user ID is 12345.' maps to api_token_api.APITokenApi.get_api_tokens: Retrieve a list of all API tokens associated with the user account.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_993-224-0": {
+          "reason": "Capability review: request \"Make me an Apdex report for 'ns9934' starting from 1617176400000 to 1617262800000?\" maps to get_apdex_report: Generate an Apdex Report for a specified Apdex ID within a given time range.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1022-251-0": {
+          "reason": "Capability review: request 'What is the host count for February 2022?' maps to get_hosts_per_month: Retrieves the count of hosts monitored by the system for a given month and year.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_905-186-2": {
+          "reason": "Capability review: request 'Can you book 4 business class train tickets from Portland, OR to Seattle, WA for the journey on May 15, 2023 starting at one day before, and ensure trip protection is included?' maps to Trains_1_GetTrainTickets: Reserves tickets for a train journey between specified cities on a given date and time, with options for the number of adults, trip protection, and fare class.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_144-56-0": {
+          "reason": "Capability review: request 'Can you tell me the lowest temperature reading across all sensors for my organization from the latest data available?' maps to get_sensor_readings_latest: Return the latest available reading for each metric from each sensor, sorted by sensor serial number.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_34-11-0": {
+          "reason": "Capability review: request 'Could you provide me with the latest news for Letterkenny?' maps to get_news_report: Retrieves the latest news for a specified location formatted as 'City, State'.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_126-48-0": {
+          "reason": "Capability review: request 'Give me an analysis trail for my project SUPERFANCY with component UUID AB1010CD and vulnerability ef903ac-893-f00' maps to analysis_api.AnalysisApi.retrieve_analysis: Retrieves the detailed analysis trail for a given project, component, and vulnerability.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_42-16-1": {
+          "reason": "Capability review: request 'can you list my kubernetes pods in the namespace cascade-sandbox?' maps to get_pods: Retrieves a list of all pods within a specified namespace in a Kubernetes cluster.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_182-77-0": {
+          "reason": "Capability review: request 'Can you tell me what the greatest common divisor of 100 and 120 is?' maps to math_gcd: Calculates the greatest common divisor (GCD) of two non-negative integers.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_994-225-0": {
+          "reason": "Capability review: request \"Bring back mobile application alerts for configuration ID 'sl8' and with creation timestamp '2023-03-05T16:45:00Z'\" maps to EventSettingsApi.restore_mobile_app_alert_config: Restores the configuration of mobile app alerts to a previous state using the specified ID. This can be used to revert changes or recover a configuration that was mistakenly altered.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_956-203-0": {
+          "reason": "Capability review: request 'I need to see all the mandates associated with our partner, regardless of their status. ' maps to partner.mandates: Fetches the mandates associated with a partner based on the specified status. If no status is provided, all mandates are retrieved.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_157-60-0": {
+          "reason": "Capability review: request 'Can you tell me the list of projects that Adriel has been involved in from January 1st, 2021 to December 31st, 2021?' maps to get_adriel_projects: Retrieve a list of project names that Adriel has contributed to within a specified time frame.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_251-115-0": {
+          "reason": "Capability review: request 'What is the version?' maps to version_api.VersionApi.get_version: Retrieves the current version of the application along with its name in a simple JSON object format.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_989-220-0": {
+          "reason": "Capability review: request 'Provide me with all the actively configured websites.' maps to get_websites: Retrieve a list of all configured websites with their associated settings and metadata.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_156-59-0": {
+          "reason": "Capability review: request 'Can you retrieve the analysis trail for the vulnerability ef903ac-893-f00 within component AB1010CD of the project SUPERFANCY?' maps to analysis_api.AnalysisApi.retrieve_analysis: Retrieves the trail of analysis for a given vulnerability within the specified component of a project.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1032-260-0": {
+          "reason": "Capability review: request 'What are the synthetic locations, give me 5?' maps to get_synthetic_locations: Retrieve a list of all synthetic monitoring locations available for configuring synthetic tests.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1013-242-0": {
+          "reason": "Capability review: request \"Could you provide me with a list of all synthetic locations available for monitoring, sorted in ascending order? Also, I need to apply a filter for locations named 'alpha', 'beta', and 'gamma'.\" maps to get_synthetic_locations: Retrieves a list of all synthetic locations available for monitoring. The list can be sorted, filtered, and paginated using the provided parameters.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_81-36-2": {
+          "reason": "Capability review: request \"I'd like to integrate a new server into our MTNA RDS platform, using the hostname http://plga.ca. The API key is '1234324'.\" maps to add_mtnards_server: Adds a new server configuration to the MTNA Rich Data Services (RDS) platform, allowing for data management and analytics operations.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_250-114-0": {
+          "reason": "Capability review: request 'Version?' maps to version_api.VersionApi.get_version: Retrieve the current version of the application, including its name and version number in a simple JSON object format.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1030-258-0": {
+          "reason": "Capability review: request 'Can you tell me the geo mapping rules for the website \"larry_rotter\"?' maps to get_website_geo_mapping_rules: Retrieve the geographic mapping rules configured for a specific website by its unique identifier.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_258-122-0": {
+          "reason": "Capability review: request \"see details for the 'Orion' version 2.1.3.\" maps to project_api.ProjectApi.get_project_by_name_and_version: Fetches the details of a project identified by its unique name and version number.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_127-49-0": {
+          "reason": "Capability review: request \"Find some information on 'the history of kites and how they're made'?\" maps to search_engine.query: Conducts a search based on the provided prompt and returns relevant real-time information, specific details, or general facts from various sources, including internet browsing and data from Google.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_224-98-0": {
+          "reason": "Capability review: request 'Reschedule my next appointment with id dentist to November 1, 2024 at 4pm EST.' maps to reschedule: Moves a specified event to a new date and time, adjusting for time zone differences.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_246-110-0": {
+          "reason": "Capability review: request 'What is the application version? Do not add parameters!' maps to version_api.VersionApi.get_version: Retrieve the current version of the application, including the application name and its semantic versioning string.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_991-222-0": {
+          "reason": "Capability review: request 'Rename website \"Frank\" to \"Bob\". Web ID is 1234' maps to website_configuration_api.WebsiteConfigurationApi.rename_website: Renames an existing website with a new name based on the provided website ID.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_67-28-0": {
+          "reason": "Capability review: request \"I need to add a new Postgres server with the host address 'http://plgah.ca', database 'maindb', the username 'pascal', and the password 'securepassword123'.\" maps to add_postgres_server: Adds or creates a new PostgreSQL server configuration to connect to a database instance.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_245-109-0": {
+          "reason": "Capability review: request 'What is the application version?' maps to version_api.VersionApi.get_version: Retrieve the current version information of the application, including its name and version number.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_247-111-0": {
+          "reason": "Capability review: request 'Can you retrieve the analysis trail for the vulnerability ef903ac-893-f00 within the component AB1010CD of my project with id SUPERFANCY?' maps to analysis_api.AnalysisApi.retrieve_analysis: Retrieves the analysis trail for a specific vulnerability within a component of a project.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_177-74-0": {
+          "reason": "Capability review: request \"I'm starting from New York, NY. Could you provide me with details for a trip, including potential destinations, estimated costs, and any travel advisories?\" maps to get_trip: Retrieve trip details for a specified location, including possible destinations, estimated costs, and travel advisories.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_63-25-0": {
+          "reason": "Capability review: request \"I want to order five 'burgers' and six 'chicken wings' from uber eat with id: McDonald's.\" maps to uber.eat.order: Places an order for food from Uber Eats, specifying the chosen restaurant, items to order, and their quantities.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1045-272-0": {
+          "reason": "Capability review: request 'Find a therapist who specializes in family counseling in Lafayette, and accepts insurance?' maps to Services_4_FindProvider: Discover a therapist based on the user's specific needs and location.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1024-253-0": {
+          "reason": "Capability review: request 'What versions of Infrana Alert are being used by \"delta\"?' maps to find_infra_alert_config_versions: Retrieves a list of all versions of an infrastructure alert configuration based on the provided ID, including those that have been deleted. The configurations are returned in descending order by their creation date.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_911-190-0": {
+          "reason": "Capability review: request 'Show me the profile information for the service provider with the UID of 1?' maps to view_service_provider_profile: Retrieve and display the profile information of a specified service provider.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1009-238-0": {
+          "reason": "Capability review: request \"I need to review the geographical mapping rules configured for my website. The site's unique identifier is '123e4567-e89b-12d3-a456-426614174000'.\" maps to get_website_geo_mapping_rules: Retrieve custom geographical mapping rules that are configured for a specific website based on its unique identifier.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_186-81-0": {
+          "reason": "Capability review: request '北京后天的天气如何？' maps to weather_forecast.get: Retrieve the weather forecast for a specific future date in a given location, presented in the desired temperature unit.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_163-64-0": {
+          "reason": "Capability review: request \"Can you retrieve the detailed information about the 'portfolio-web' project that Adriel is working on, including the list of tasks and financial details?\" maps to get_detail_adriel_project: Retrieve detailed information about a specific project that Adriel has been assigned to.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1033-261-0": {
+          "reason": "Capability review: request \"Can you retrieve a list of all synthetic locations available for monitoring and filter the results for locations named 'alpha', 'beta', and 'gamma', with a limit of 20 results?\" maps to SyntheticSettingsApi.get_synthetic_locations: Retrieve a list of all synthetic locations available for monitoring. The response can be sorted, filtered, and paginated to obtain the desired subset of locations.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_954-202-0": {
+          "reason": "Capability review: request 'Hi, I am Karan. Could you tell me the current status of my flight with Delta? My name is Karan Sharma, and my ticket number is IND4567.' maps to flight.status.check: Checks the current status of a flight by airline, passenger name, and ticket number.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_167-67-0": {
+          "reason": "Capability review: request \"fetch the profile information for Adriel with user_id '12345', including his personal details and preferences?\" maps to get_adriel_profile: Fetch the profile information of a user named Adriel, including basic personal details and preferences.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_941-195-0": {
+          "reason": "Capability review: request 'play Baby Shark' maps to play_song: Initiates playback of a song based on a search query provided by the user.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_972-212-1": {
+          "reason": "Capability review: request 'Looking for service providers with 5 -star review scores that provide package services in Bangkok, Lat Phrao District' maps to get_service_providers: Find service providers based on various criteria such as ratings, availability, location, and service types.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_145-57-0": {
+          "reason": "Capability review: request \"Can you tell me the current price of a 'winter jacket' in Berkeley, CA?\" maps to get_shopping: Get the current price of a given item at a specified location.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_970-211-0": {
+          "reason": "Capability review: request 'Fetch the annual income statement for APPL in JSON format with a limit of 2 records' maps to fmp.income_statement: Fetches income statement data for a given stock symbol or Central Index Key (CIK), for a specified period. The user may also specify the data format and the maximum number of records to return.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_1021-250-0": {
+          "reason": "Capability review: request \"I need to restore the default settings for mobile app alerts that have the configuration ID 'sl8'. The creation timestamp of the configuration is 2023-04-01T10:00:00Z.\" maps to restore_mobile_app_alert_config: Restores the configuration settings for mobile app alerts to their default values based on a given configuration ID.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_71-31-0": {
+          "reason": "Capability review: request \"I need to set up a connection to our company's database. The server is called 'EnterpriseDB', the host is 'db.company.com', the database name is 'sales_data', my username is 'dbadmin', and the password is 'secure*pwd123'.\" maps to add_postgres_server: Add or create a new Postgres server configuration to connect to a database.. Other offered cards describe a different operation or scope. Argument values remain the chat model's responsibility."
+        },
+        "live_multiple_51-21-0": {
+          "reason": "Explicit order-status request with order ID and product; inventory/search/product-detail cards do not check an existing order."
+        },
+        "live_multiple_835-178-10": {
+          "reason": "Explicitly asks to search for songs by album, genre and release year; lookup matches and playback is a later capability."
+        },
+        "live_multiple_219-94-1": {
+          "reason": "Explicit historical sensor time range selects raw history; latest and interval-summary cards describe different temporal operations."
+        },
+        "live_multiple_708-164-24": {
+          "reason": "Movies_3_FindMovies directly supports the requested Sci-fi genre and Steven Spielberg director filters. Cultural-event search is restricted to Music/Theater, and event-ticket purchase is not requested. No screening dates or availability claims are requested."
+        },
+        "live_multiple_860-181-1": {
+          "reason": "The request explicitly asks to find trains from San Francisco to Los Angeles on April 15 2023; Trains_1_FindTrains supports route and date discovery, while GetTrainTickets reserves tickets and is not requested."
+        },
+        "live_multiple_861-181-2": {
+          "reason": "The request explicitly asks to reserve train tickets from Sacramento to Portland on April 22 at 10:00; GetTrainTickets supports route/date/departure-time reservation. FindTrains only discovers available journeys and cannot reserve tickets."
+        },
+        "live_multiple_936-192-1": {
+          "reason": "The user explicitly asks to set an alarm at the stated absolute date/time for a meeting. set_alarm implements that specified alarm operation; set_countdown is a duration timer and no countdown duration or current-time conversion is requested."
+        },
+        "live_multiple_958-204-0": {
+          "reason": "The request asks for active SIPs of all clients associated with a partner, exactly matching partner.sips scope and active-status filtering; the other offered functions retrieve mandates rather than SIPs."
+        }
+      },
+      "excluded": {
+        "live_multiple_220-94-2": "No time range or latest qualifier: latest versus historical readings is ambiguous.",
+        "live_multiple_843-178-18": "User requests playback but reference selects music lookup; multiple plausible next capabilities.",
+        "live_multiple_52-21-1": "Inventory and product details both expose availability; description cards do not establish a unique route.",
+        "live_multiple_1047-274-0": "Looking for a house to book can mean search before booking; reference booking route is not uniquely supported.",
+        "live_multiple_988-219-0": "An opaque event ID does not identify built-in versus custom event scope; multiple retrieval cards overlap.",
+        "live_multiple_253-117-0": "Unspecified project metrics overlap general metrics and vulnerability badges; source label is not unique for capability selection.",
+        "live_multiple_60-22-7": "The Indonesian request asks size-L stock availability for product ABC123. Both inventory_management and get_product_details explicitly support product-ID and size availability, making a singleton inventory-management route ambiguous under capability-only scoring.",
+        "live_multiple_24-5-1": "Product search and product details overlap size availability; scope boundary depends on unstated product identity.",
+        "live_multiple_1023-252-0": "Both offered API/application version retrieval tools match the request.",
+        "live_multiple_254-118-0": "Two policy violation badge tools differ primarily by argument form; capability descriptions overlap.",
+        "live_multiple_1026-255-0": "Request asks for all API tokens but source selects shareable dashboard tokens despite a general token retrieval alternative.",
+        "live_multiple_1010-239-0": "Retrieval by dashboard ID versus dashboard-list query cannot be resolved from the opaque dashboard name alone.",
+        "live_multiple_255-119-0": "Both badge tools can report policy violations; missing version/ID readiness does not establish unique capability.",
+        "live_multiple_183-78-0": "Several offered translation tools can translate English to Danish; no requested backend preference.",
+        "live_multiple_1041-268-0": "The interval-based versus raw history route is ambiguous in the wording.",
+        "live_multiple_160-62-1": "Both project-list and detailed-project-list tools can answer the requested current projects/status.",
+        "live_multiple_712-164-28": "Second semantic review: the request asks for movies playing this weekend, but the movie finder exposes only genre/director/cast and no showtime/date/theater capability; cultural-event search is restricted to Music/Theater. This is unsupported requested capability, not a missing argument.",
+        "live_multiple_935-192-0": "Second semantic review: both the offered absolute-time alarm and duration countdown can implement a meeting reminder in one minute after chat-model argument conversion; a unique countdown label would test representation preference.",
+        "live_multiple_862-181-3": "Second semantic review: the user explicitly requests train reservation and availability checking without specifying the first action; both offered capabilities match parts of the request, so the singleton reference route is ambiguous.",
+        "live_multiple_959-204-1": "Second semantic review: SIPs of Aditya requests a named-client scope while partner.sips documents listing all partner clients and has only status filtering; the necessary named-client selection context is not exposed.",
+        "live_multiple_710-164-26": "The request asks for a comedy playing this weekend, while Movies_3_FindMovies only exposes director/genre/cast criteria and no screening-date or theater capability; cultural-event search is restricted to Music/Theater."
+      }
+    },
+    "live_simple": {
+      "accepted": {
+        "live_simple_129-83-1": {
+          "reason": "The request asks to list nodes in fabric fab-ed, which is the documented network-node GET capability; validating the malformed IP is the chat model argument task."
+        },
+        "live_simple_93-54-0": {
+          "reason": "play_artist explicitly plays all tracks associated with the named artist, matching the request for all Kaarija tracks."
+        },
+        "live_simple_92-53-0": {
+          "reason": "play_artist starts playback of the named artist music, matching the request to play Kaarija."
+        },
+        "live_simple_65-29-5": {
+          "reason": "todo supports its add action and task content, matching adding Hi charlie to the task list."
+        },
+        "live_simple_75-36-3": {
+          "reason": "detect_beats_and_filter exposes confidence percentile and time-window filtering, matching the 93rd-percentile and 0.5-second criteria."
+        },
+        "live_simple_253-135-0": {
+          "reason": "uber.eat.order supports restaurant, item names and corresponding quantities, matching five burgers and six chicken wings from McDonalds."
+        },
+        "live_simple_104-61-2": {
+          "reason": "calculate_tax supports purchase amount and state and computes applicable sales tax; the requested tax can be obtained from its total-with-tax output."
+        },
+        "live_simple_116-72-0": {
+          "reason": "sum_numbers sums a list of numbers, matching adding 133 and 34."
+        },
+        "live_simple_88-49-0": {
+          "reason": "log_food records a named food or drink with portion amount, ounces and snack meal, matching the chai-tea consumption log."
+        },
+        "live_simple_118-74-0": {
+          "reason": "get_temperature retrieves current temperature for a location in Celsius, matching Hyderabad India."
+        },
+        "live_simple_110-67-0": {
+          "reason": "record includes the ATM-location intent and accepts queries for classification, matching classifying Need ATM location."
+        },
+        "live_simple_47-20-0": {
+          "reason": "multiply multiplies two integers, matching the requested multiplication of 3 and 2."
+        },
+        "live_simple_152-95-9": {
+          "reason": "cmd_controller.execute supports chained Windows commands, allowing directory listing and file creation; correct command construction belongs to the chat model."
+        },
+        "live_simple_10-3-6": {
+          "reason": "get_current_weather accepts Location State and Celsius, matching the Yosemite/Mariposa weather request."
+        },
+        "live_simple_173-99-7": {
+          "reason": "cmd_controller.execute runs Windows commands, matching opening Calculator with start calc."
+        },
+        "live_simple_96-57-0": {
+          "reason": "get_current_weather retrieves weather for City State, matching Boston MA."
+        },
+        "live_simple_82-43-0": {
+          "reason": "sitefinity_create_contentitem supports News content creation with a title, matching the Julian is testing news article."
+        },
+        "live_simple_138-91-0": {
+          "reason": "reschedule moves the identified event to a date/time and supports Europe/London, matching Bob-123 on November 1 2023 at 4pm."
+        },
+        "live_simple_46-19-0": {
+          "reason": "ThinQ_Connect exposes cool mode, medium wind, monitoring, air cleaning, power saving and target temperature, matching the requested appliance settings."
+        },
+        "live_simple_76-37-0": {
+          "reason": "language_translator.translate supports English input and French output, matching translation of What is your name."
+        },
+        "live_simple_220-117-12": {
+          "reason": "Movies_3_FindMovies supports director and Thriller genre criteria, matching the Alexander Mackendrick movie search."
+        },
+        "live_simple_248-130-0": {
+          "reason": "acl_api.AclApi.retrieve_projects supports a team UUID, exclusion of inactive projects and root-only filtering, matching team 12 active root projects."
+        },
+        "live_simple_109-66-0": {
+          "reason": "record classifies queries into automatic-withdrawal, payment and loan-income intents, covering the five supplied banking questions."
+        },
+        "live_simple_203-116-11": {
+          "reason": "Weather_1_GetWeather exposes city and explicit date retrieval, matching weather in Washington DC on March 1 2023."
+        },
+        "live_simple_230-121-0": {
+          "reason": "play_song supports song ID, artist and high quality, matching Roar by Katy Perry with the supplied identifier."
+        },
+        "live_simple_191-115-1": {
+          "reason": "raptor.mpn.specs retrieves specifications for an MPN without requiring images, matching part 3pak7 specifications."
+        },
+        "live_simple_45-18-1": {
+          "reason": "ThinQ_Connect exposes cool mode, cooling temperature and air-cleaning operation, matching 20 Celsius with air cleaning enabled."
+        },
+        "live_simple_126-82-0": {
+          "reason": "telemetry.flowrules.interfaceInfo.get supports fabric, node, pod, Ethernet interface and status info, matching Global-Fabric node 1200 pod 3."
+        },
+        "live_simple_131-84-1": {
+          "reason": "requests.get retrieves interface telemetry and supports the supplied fabric/node/pod, Ethernet type and Speed information criterion."
+        },
+        "live_simple_238-125-1": {
+          "reason": "play_spotify_song supports a track-and-artist search and playback, matching listening to Dil Nu by Maninder Buttar."
+        },
+        "live_simple_68-32-0": {
+          "reason": "sum adds two numeric operands, matching 5.0 plus 3.0."
+        },
+        "live_simple_95-56-0": {
+          "reason": "process_data supports numeric normalization and one-hot category encoding, matching the supplied numbers and color categories."
+        },
+        "live_simple_252-134-0": {
+          "reason": "flight.status.check retrieves flight status from airline, passenger name and ticket number, matching Karan and IND4567 on Indigo."
+        },
+        "live_simple_90-51-0": {
+          "reason": "temperature retrieves current temperature for a City Country location, matching Paris France."
+        },
+        "live_simple_119-75-0": {
+          "reason": "GetPrimeMinisters retrieves current prime-minister names for a list of countries, matching Australia Canada and India."
+        },
+        "live_simple_243-126-1": {
+          "reason": "set_volume sets global playback volume as a percentage, matching 30 percent volume."
+        },
+        "live_simple_105-62-0": {
+          "reason": "classify supports casual greetings and account-linking categories, matching hello and the two account-linking sentences."
+        },
+        "live_simple_86-47-0": {
+          "reason": "sort_array sorts integers ascending, matching arranging the supplied integer list smallest to largest."
+        },
+        "live_simple_186-111-0": {
+          "reason": "get_service_providers supports ironing service, Chonburi, minimum rating and date-time availability bounds, matching 4.5 stars and 16:00-18:00 on March 12 2024."
+        },
+        "live_simple_235-124-0": {
+          "reason": "play_spotify_song searches by track and artist and plays the track, matching Friends by Marshmello."
+        },
+        "live_simple_100-59-1": {
+          "reason": "connectBluetooth connects a Bluetooth device by name, matching JBL Flip 4."
+        },
+        "live_simple_70-34-0": {
+          "reason": "get_sensor_alerts supports sensor serial filtering, current-day time bounds and pagination count, matching Q3CC-CRT3-SZ2G and ten alerts per page."
+        },
+        "live_simple_250-132-0": {
+          "reason": "uber.eat.order supports restaurant, menu items and aligned quantities, matching two Big Macs and one McFlurry on Uber Eats."
+        },
+        "live_simple_135-88-0": {
+          "reason": "requests.get retrieves a URL and accepts a limit query parameter, matching api.example.com data with fifty items."
+        },
+        "live_simple_246-128-0": {
+          "reason": "book_flight supports departure location and departure date, matching arranging a New York departure on March 15 2024."
+        },
+        "live_simple_229-120-0": {
+          "reason": "requests.get retrieves Business Unit products with a user-versus-all selector, matching products associated with the user."
+        },
+        "live_simple_40-17-0": {
+          "reason": "ThinQ_Connect exposes AIR_CLEAN mode, HIGH wind, monitoring and power controls, matching starting the requested air purifying function."
+        },
+        "live_simple_91-52-0": {
+          "reason": "fetchPerson retrieves person details by integer ID, matching individual number 4."
+        },
+        "live_simple_30-8-0": {
+          "reason": "aws.lexv2_models.list_exports supports bot ID, version, ascending order and maxResults, matching my-bot-id v2 with fifty exports."
+        },
+        "live_simple_22-5-0": {
+          "reason": "ChaFod changes the food selection using its BURGER category, matching the request explicitly identifying Whopper as a burger."
+        },
+        "live_simple_251-133-0": {
+          "reason": "flight.status.check accepts flight ID, passenger name and ticket number, matching Indigo 6E123 for Karan with IND4567."
+        },
+        "live_simple_227-118-1": {
+          "reason": "text_to_speech.convert supports Chinese zh-CN, male voice and WAV output, matching the supplied Chinese phrase."
+        },
+        "live_simple_233-123-0": {
+          "reason": "book_flight supports a City Country departure and local date/time, matching booking from Paris on March 12 2023 at 15:00."
+        },
+        "live_simple_21-4-1": {
+          "reason": "change_food modifies a food item with a modification request, matching making chicken dish extra spicy."
+        },
+        "live_simple_139-92-0": {
+          "reason": "requests.get retrieves an anomalies summary with a fabric query parameter, matching network222 at the specified IP endpoint."
+        },
+        "live_simple_50-22-0": {
+          "reason": "get_latest_carbon_intensity retrieves most recent carbon-intensity data by zone, matching live data for Great Britain."
+        },
+        "live_simple_53-24-0": {
+          "reason": "todo_add adds supplied text as a to-do item, matching the verbatim shopping reminder."
+        },
+        "live_simple_185-110-0": {
+          "reason": "get_service_providers supports ironing, Chonburi, rating and earliest available date, matching providers available from tomorrow using the explicit September 29 2023 anchor."
+        },
+        "live_simple_132-85-0": {
+          "reason": "requests.get retrieves Device Connector Versions JSON from a URL, matching the supplied device-connector-versions endpoint."
+        },
+        "live_simple_114-70-0": {
+          "reason": "update_user_profile supports user ID and email/age profile fields, matching updating user 12345 to john.doe@example.com and age 30."
+        },
+        "live_simple_98-58-0": {
+          "reason": "get_weather_by_coordinates supports city and latitude/longitude, matching current Chennai weather at the supplied coordinates."
+        },
+        "live_simple_69-33-0": {
+          "reason": "analysis_api.AnalysisApi.retrieve_analysis retrieves the analysis trail keyed by project, component and vulnerability UUIDs, matching the supplied three identifiers."
+        },
+        "live_simple_81-42-0": {
+          "reason": "sitefinity_create_contentitem supports the NewsItem type and title, matching the Julian is testing12 article creation."
+        },
+        "live_simple_124-80-0": {
+          "reason": "get_tickets supports company, open status and result limit, matching the Chinese request for ten unresolved tickets for Hongxing Technology."
+        },
+        "live_simple_120-76-0": {
+          "reason": "weather.forecast supports a location, date range and Celsius units, matching Paris April 3-5 2023."
+        }
+      },
+      "excluded": {
+        "live_simple_33-10-0": "The input is an already-generated no-answer statement about logistic regression; it contains no request to parse, validate or transform that statement, so selecting answer.string requires inventing an unstated task.",
+        "live_simple_37-14-0": "The input merely presents an already-generated answer statement and does not ask parseAnswer to validate it; the intended operation is ambiguous.",
+        "live_simple_29-7-2": "The request specifies going to McDonalds and buying food, while the sole capability places a delivery order; the provided request does not unambiguously ask for delivery or an online order.",
+        "live_simple_162-96-1": "The input is a JSON response listing copyright objects, without a request to retrieve or analyze the descriptors; an implicit extraction task would need to be added to justify get_items.",
+        "live_simple_121-77-0": "The request requires a bar chart, but generate_chart documents only generic chart generation and has no chart-type input or bar-chart guarantee; the requested chart form is unsupported by the offered schema.",
+        "live_simple_164-97-0": "The input is a completed copyright-analysis statement with holder and confidence already supplied, and contains no request to retrieve copyright information; the positive tool operation is unstated.",
+        "live_simple_187-112-0": "The request requires availability specifically from 16:00 to 18:00, but this provider schema supports date-only YYYY-MM-DD bounds and documents no hour-window filter.",
+        "live_simple_178-103-1": "get_service_id retrieves an identifier for a service type, while the user asks to find a housekeeper providing that service; the schema offers no provider search or provider results.",
+        "live_simple_39-16-0": "The request requires hourly temperature/wind/precipitation over ten days, but fetch_weather_data exposes only location, units and language with no hourly variables or forecast-horizon controls.",
+        "live_simple_245-127-0": "The user asks to find a flight around a given departure time, while book_flight only books a flight and documents no search/list-results capability.",
+        "live_simple_175-101-0": "The Thai request asks to find a housekeeper offering ironing; get_service_id only retrieves the service-type identifier and cannot find providers.",
+        "live_simple_181-106-0": "The user asks for housekeepers satisfying location and minimum-rating criteria, but get_service_id promises only a service identifier rather than provider discovery.",
+        "live_simple_180-105-0": "The request asks for housekeepers in Chatuchak District, but get_service_id returns only a service identifier and also has no district field or provider-search capability.",
+        "live_simple_140-93-0": "The user asks to send a message to Jeff, but greet_partner only generates greeting text and exposes no messaging destination or sending capability; the source conflates drafting with delivery.",
+        "live_simple_35-12-0": "The explicit request asks what logistic regression is, but answer.string only parses an existing language-model answer; it cannot answer the knowledge question and there is no parsing instruction."
+      }
+    },
+    "live_irrelevance": {
+      "accepted": {
+        "live_irrelevance_177-29-0": {
+          "reason": "The input is a greeting to Manush; managing a todo list is neither requested nor needed."
+        },
+        "live_irrelevance_377-81-38": {
+          "reason": "The user asks whether the model supports conversation; an Open-Meteo weather request cannot establish that capability."
+        },
+        "live_irrelevance_69-2-57": {
+          "reason": "The request concerns domain comments using an API key; the only offered function retrieves weather by geographic location."
+        },
+        "live_irrelevance_526-162-1": {
+          "reason": "The user assigns the assistant the identity Sara; the function introduces a person and a relationship to another person, which is not requested."
+        },
+        "live_irrelevance_117-7-7": {
+          "reason": "The user requests Indigo flight status, while the only function places an Uber Eats food order."
+        },
+        "live_irrelevance_818-314-2": {
+          "reason": "The input states an identifier-format mismatch; the function fetches products and branches with triangulation runs and cannot validate or explain the identifier format."
+        },
+        "live_irrelevance_424-101-1": {
+          "reason": "The user asks which supplied intent label matches show me my balance; this can be answered from the supplied text, while the offered function only fetches an HTTP response."
+        },
+        "live_irrelevance_508-149-1": {
+          "reason": "The request is detailed network-interface information; the offered endpoint retrieves Device Connector Versions rather than interface details."
+        },
+        "live_irrelevance_856-345-1": {
+          "reason": "The user asks who Shashi Tej Reddy is; weather forecasts cannot retrieve person information."
+        },
+        "live_irrelevance_860-349-0": {
+          "reason": "The Chinese question asks who the Shenzhou 8 astronauts were; calculating personal income tax cannot provide that information."
+        },
+        "live_irrelevance_825-318-0": {
+          "reason": "London weather is requested; the only function authenticates a user and returns a token."
+        },
+        "live_irrelevance_469-130-1": {
+          "reason": "The user asks who the CEO of Wakam is; username/password authentication cannot supply company leadership information."
+        },
+        "live_irrelevance_199-32-12": {
+          "reason": "The user asks whether a shirt is available in L and 4L; the function authenticates users and has no inventory lookup capability."
+        },
+        "live_irrelevance_452-120-0": {
+          "reason": "The user asks for SaaS pricing advice from competitor offerings; the function mechanically adjusts a supplied base price using customer IP and a floor, without competitor analysis or pricing recommendation capability."
+        },
+        "live_irrelevance_843-333-0": {
+          "reason": "The task is translating a supplied English sentence into Spanish; credential verification cannot translate text."
+        },
+        "live_irrelevance_830-323-0": {
+          "reason": "The Chinese request asks for Wuhan weather; the function retrieves user database details and cannot retrieve weather."
+        },
+        "live_irrelevance_524-161-0": {
+          "reason": "The user asks the assistant name; a function greeting another user by that user name is not needed to answer assistant identity."
+        },
+        "live_irrelevance_109-6-0": {
+          "reason": "The Vietnamese request asks for Hanoi weather; the only function initiates an Uber carpool ride."
+        },
+        "live_irrelevance_470-131-0": {
+          "reason": "The user asks for current time; the offered function explicitly returns only the date without time information."
+        },
+        "live_irrelevance_460-125-1": {
+          "reason": "The user asks to add 2 and 4; retrieving transportation modes between geographic coordinates cannot compute that sum."
+        },
+        "live_irrelevance_461-126-0": {
+          "reason": "The input compliments the assistant; no income-tax calculation is requested or needed."
+        },
+        "live_irrelevance_720-238-1": {
+          "reason": "The user asks what 1+1 is; flight booking cannot perform the requested arithmetic."
+        },
+        "live_irrelevance_732-247-0": {
+          "reason": "The user requests an Uber Plus ride in Berkeley; the only function fetches user financial mandates."
+        },
+        "live_irrelevance_480-136-0": {
+          "reason": "The user requests logout; the only function logs users in and returns a token, with no logout operation."
+        },
+        "live_irrelevance_276-60-1": {
+          "reason": "The user requests random beats; the function detects and filters beat timestamps in an existing audio file, and cannot generate new beats."
+        },
+        "live_irrelevance_808-307-0": {
+          "reason": "The requested operation deletes release RL50; the only function creates a new software release entry."
+        },
+        "live_irrelevance_497-143-0": {
+          "reason": "The user requests Python source code for concatenating two strings; the function concatenates actual input strings and returns a string, rather than generating source code."
+        },
+        "live_irrelevance_427-102-1": {
+          "reason": "The user asks to classify supplied utterances into supplied intent labels; the chat can classify these directly, while the offered function fetches HTTP data and does not classify text."
+        },
+        "live_irrelevance_815-313-0": {
+          "reason": "The user requests access logs; the function retrieves alert configuration conditions and notification settings, rather than access-log events."
+        },
+        "live_irrelevance_450-118-1": {
+          "reason": "The input is a greeting; processing financial transactions or applying currency conversions is not requested."
+        },
+        "live_irrelevance_852-342-0": {
+          "reason": "The user asks about an ionisation method; the only function generates reports from user activity data and cannot answer this scientific query."
+        },
+        "live_irrelevance_844-334-0": {
+          "reason": "The user asks to translate supplied Hebrew-script text into English; inventory stock adjustment cannot translate text."
+        },
+        "live_irrelevance_810-309-0": {
+          "reason": "The user requests the Instana API version; the offered function creates website alert configurations and cannot retrieve software versions."
+        },
+        "live_irrelevance_223-34-12": {
+          "reason": "The user requests deleting in-stock clothing in a price range; the offered function searches products but provides no delete or mutation operation."
+        },
+        "live_irrelevance_105-4-1": {
+          "reason": "The request is to find a restaurant; the function changes a food selection among PIZZA, BURGER, SALAD, SOUP and STEAK, and cannot search restaurants."
+        },
+        "live_irrelevance_842-332-0": {
+          "reason": "The task is creating a picture; the only function performs a financial transfer between accounts."
+        },
+        "live_irrelevance_711-235-0": {
+          "reason": "The request books an Uber cab; the offered function plays a song through Spotify."
+        },
+        "live_irrelevance_228-35-3": {
+          "reason": "The user requests exchanging pants for size M; the function reports order status and tracking, with no exchange or order-modification operation."
+        },
+        "live_irrelevance_809-308-0": {
+          "reason": "The user requests deleting an Apdex configuration; the offered function creates a new Apdex configuration and provides no delete operation."
+        },
+        "live_irrelevance_476-134-0": {
+          "reason": "The user requests adding a vaccination to an agenda; the function searches Google and cannot create calendar or agenda entries."
+        },
+        "live_irrelevance_443-113-1": {
+          "reason": "The user asks the color of the sea; a date-range weather forecast has no sea-color capability, and general explanation can be given without that tool."
+        },
+        "live_irrelevance_479-135-1": {
+          "reason": "The user requests an explanation of Turbonomic and cloud observability comparisons; a geographic weather forecast cannot provide software-product comparisons."
+        },
+        "live_irrelevance_240-44-0": {
+          "reason": "The requested operation adds a SQL server; the offered tool provides help on DartFX trading/account/security topics and cannot create a server."
+        },
+        "live_irrelevance_440-111-0": {
+          "reason": "The user asks the color of the sea; the function simulates sea-foam formation from agitation and organic material rather than answering sea-color facts."
+        },
+        "live_irrelevance_10-1-0": {
+          "reason": "The user requests an Uber Eats order of burgers and wings; the function finds an Uber passenger ride and cannot place a food order."
+        },
+        "live_irrelevance_119-8-0": {
+          "reason": "The user wants to visit McDonalds and buy pizza; listing Amazon Lex bot exports cannot assist that restaurant purchase or journey."
+        },
+        "live_irrelevance_833-325-0": {
+          "reason": "The input is a greeting; user authentication is not requested or needed."
+        },
+        "live_irrelevance_400-83-0": {
+          "reason": "The requested operation multiplies 8.5 and 3.2; the only function adds two numbers and provides no multiplication operation."
+        },
+        "live_irrelevance_837-327-1": {
+          "reason": "Oi is a Portuguese greeting; no Google search is requested or needed."
+        },
+        "live_irrelevance_399-82-0": {
+          "reason": "Hey is a greeting; authenticating a user is not requested."
+        },
+        "live_irrelevance_279-61-0": {
+          "reason": "The user asks the assistant name; translating text between languages is not requested or needed."
+        },
+        "live_irrelevance_728-244-0": {
+          "reason": "The user expresses wanting rest; no food order or delivery is requested."
+        },
+        "live_irrelevance_170-24-0": {
+          "reason": "The user introduces their machine-learning background and social profile; the tool manages todos and neither social connection nor a todo operation is requested."
+        },
+        "live_irrelevance_848-338-0": {
+          "reason": "Hi is a greeting; authentication or token creation is not requested."
+        },
+        "live_irrelevance_157-18-1": {
+          "reason": "The input supplies role and interaction instructions but contains no request to fetch interviewers; performing an interviewer-list query is not yet needed."
+        },
+        "live_irrelevance_775-284-0": {
+          "reason": "The request is a ten-day weather forecast with temperature, wind and precipitation; the only function adds two numbers."
+        },
+        "live_irrelevance_332-77-0": {
+          "reason": "The user requests travel planning for Paris; sorting an array of integers cannot plan the trip."
+        },
+        "live_irrelevance_708-232-0": {
+          "reason": "The input is a personal self-description and does not request translation; the only tool translates English into Chinese."
+        },
+        "live_irrelevance_531-164-1": {
+          "reason": "The user asks the assistant name; looking up another persons spouse cannot provide assistant identity."
+        },
+        "live_irrelevance_743-254-3": {
+          "reason": "The Portuguese question asks who the assistant is; requesting an Uber ride is not needed to answer identity."
+        },
+        "live_irrelevance_853-343-0": {
+          "reason": "The user asks who Shashi Tej Reddy is; archiving documents cannot retrieve or explain a persons identity."
+        },
+        "live_irrelevance_169-23-1": {
+          "reason": "The user requests Boston weather; beer recommendations cannot retrieve weather."
+        },
+        "live_irrelevance_444-114-0": {
+          "reason": "The user asks the color of the sea; creating a user account profile has no capability to answer that fact."
+        },
+        "live_irrelevance_529-163-0": {
+          "reason": "The user asks the assistant name; geographic weather retrieval is not needed or applicable."
+        },
+        "live_irrelevance_415-94-0": {
+          "reason": "The user asks how the assistant day was; the doNothing function specifically handles declining Wi-Fi or Bluetooth connections, which are not involved."
+        },
+        "live_irrelevance_867-353-0": {
+          "reason": "The user requests todays Indian Premier League game; user credential verification cannot retrieve sports schedules."
+        },
+        "live_irrelevance_484-138-1": {
+          "reason": "The Polish task requests a CSS card that rotates on hover; income-tax calculation cannot create CSS or UI code."
+        },
+        "live_irrelevance_447-116-1": {
+          "reason": "The user greets the assistant and asks its capabilities; changing profile details is not requested."
+        },
+        "live_irrelevance_407-89-0": {
+          "reason": "Hi is a greeting; a geographic weather query is not requested."
+        },
+        "live_irrelevance_335-79-0": {
+          "reason": "The user asks what a cronut is; logging a consumed food portion cannot define food terminology."
+        },
+        "live_irrelevance_854-344-0": {
+          "reason": "The user asks who Shashi Tej Reddy is; computing income tax cannot provide person information."
+        },
+        "live_irrelevance_432-107-0": {
+          "reason": "The user requests guidance on classifying bank-routing and card-activation queries; HTTP response retrieval does not classify text and no external request is asked for."
+        },
+        "live_irrelevance_445-115-0": {
+          "reason": "The user asks the color of a dessert; a search restricted to blue sea pictures cannot identify the dessert color."
+        },
+        "live_irrelevance_813-311-0": {
+          "reason": "The user requests an existing dashboard called dashing; the only function creates a new custom dashboard and cannot retrieve an existing one."
+        },
+        "live_irrelevance_301-75-0": {
+          "reason": "The input states that the United States is in North America; it contains no search request, so a web-search call is unnecessary."
+        },
+        "live_irrelevance_441-112-0": {
+          "reason": "The user asks the color of the sea; console-printing a supplied message cannot determine that fact, and no console output is requested."
+        },
+        "live_irrelevance_849-339-0": {
+          "reason": "The user requests a spaghetti recipe; user authentication cannot provide cooking instructions."
+        },
+        "live_irrelevance_408-90-0": {
+          "reason": "The input is a colloquial expression of surprise or frustration; it requests no login or authentication operation."
+        },
+        "live_irrelevance_771-280-0": {
+          "reason": "The input states a meeting involving Saloni and Sahil; it does not request checking whether text contains the word Gaurav."
+        },
+        "live_irrelevance_436-109-0": {
+          "reason": "The user requests guidance on categorizing bank-information queries; the offered function fetches an HTTP response and does not perform text classification."
+        },
+        "live_irrelevance_510-150-1": {
+          "reason": "The user requests network-interface details for fabric test; the offered endpoint retrieves recommendations for an advisory rather than interface information."
+        }
+      },
+      "excluded": {
+        "live_irrelevance_178-29-1": "Demo is an underspecified fragment; use the clear greeting from the same source group.",
+        "live_irrelevance_699-228-0": "Cab-booking capability matches the request; missing seats/full destination information is an argument issue.",
+        "live_irrelevance_317-76-15": "Temperature retrieval can use the broad HTTP GET capability; missing URL/geographic parameters do not establish irrelevance.",
+        "live_irrelevance_561-172-2": "The input is a Windows execution command and the tool executes Windows commands; syntax/context issues concern arguments.",
+        "live_irrelevance_540-168-3": "System command execution can create a reminder or scheduled task; capability relevance is plausible despite missing details.",
+        "live_irrelevance_118-7-8": "An in-person restaurant visit versus delivery is a partial-capability boundary; use clearly unrelated flight-status request from the same group.",
+        "live_irrelevance_9-0-9": "The holiday API restriction is hidden in a URL-property description, while the top-level tool is generic GET; omit to avoid capability-card ambiguity.",
+        "live_irrelevance_507-149-0": "The user asks how to form a request for the same Device Connector Versions capability; code-versus-execution intent is ambiguous.",
+        "live_irrelevance_826-319-0": "Get the data 1,3 has no identifiable operation; unclear input should not set a semantic gold route.",
+        "live_irrelevance_414-93-1": "Generic GET can retrieve the requested tourism API data; missing endpoint/method details are argument readiness issues.",
+        "live_irrelevance_772-281-0": "The user did not provide a query is a source artifact rather than a substantive user task; omit from the research sample.",
+        "live_irrelevance_468-130-0": "Authentication capability matches logging in; missing credentials do not imply no applicable tool.",
+        "live_irrelevance_864-351-0": "News passage contains no explicit user operation and could be contextual input to the offered question tool; omit ambiguous task intent.",
+        "live_irrelevance_284-66-0": "Creating a Sitefinity news item matches the tool; missing title and metadata are parameter issues.",
+        "live_irrelevance_858-347-0": "Input describes the offered API rather than specifying a task; implicit retrieval intent is unclear.",
+        "live_irrelevance_515-154-0": "Interface details overlap queue retrieval as a partial capability; missing interface/server details alone do not establish irrelevance.",
+        "live_irrelevance_438-110-0": "Generic number processing and placeholder function have undefined semantics; no stable gold capability judgment.",
+        "live_irrelevance_463-128-0": "Could you provide that has no referent; intent is ambiguous.",
+        "live_irrelevance_719-238-0": "Flight-booking capability matches the request; missing dates/departure location concern parameters.",
+        "live_irrelevance_455-122-0": "hm is an underspecified fragment; omit unclear intent.",
+        "live_irrelevance_522-159-0": "The offered greeting includes the assistant identity Sara, making it a plausible response to the name question; partial capability ambiguity.",
+        "live_irrelevance_404-86-0": "Artist playback can partially serve the song request but cannot target a track; exclude this partial-capability boundary.",
+        "live_irrelevance_124-10-0": "The input includes model-output text that the offered answer.string analyzer can process; source-task intent is ambiguous.",
+        "live_irrelevance_430-105-0": "The user explicitly asks an HTTP GET and supplies an endpoint, matching the offered GET capability.",
+        "live_irrelevance_501-146-1": "Node information overlaps specific node-interface telemetry; scope is too broad for a clean negative.",
+        "live_irrelevance_338-80-1": "Multiplication can serve part of the multi-operation arithmetic request; exclude partial capability and task decomposition ambiguity.",
+        "live_irrelevance_449-118-0": "Currency conversion and transaction processing match the offered capability; absent transactions concern parameters.",
+        "live_irrelevance_866-352-0": "Geocoding retrieval can use the offered generic GET; missing URL is an argument issue.",
+        "live_irrelevance_422-100-0": "The offered record function supports an outofscope category, matching the request to record weather-query classification.",
+        "live_irrelevance_827-320-0": "Tourist-location fragment overlaps Amap location search; intent and search scope are ambiguous.",
+        "live_irrelevance_698-227-1": "Service-provider search matches the requested housekeeper criteria, including ratings/late arrivals; missing service/province IDs concern arguments.",
+        "live_irrelevance_104-4-0": "Whopper is an ambiguous food-selection fragment and unsupported enum value; do not infer a no-tool gold from that parameter restriction.",
+        "live_irrelevance_733-248-0": "Mandate retrieval matches the request; missing user ID and multiple-status filtering concern parameters.",
+        "live_irrelevance_150-15-3": "Setting cool mode matches the offered ThinQ appliance-control operation.",
+        "live_irrelevance_857-346-0": "Appearance description could be an implicit image request but is not explicit; omit fragmentary task intent.",
+        "live_irrelevance_457-124-0": "Weather capability matches the request; measurement-unit clarification is a parameter issue.",
+        "live_irrelevance_578-181-0": "Product specifications may partially address the requested part price; tool output scope is insufficiently explicit for a clean negative.",
+        "live_irrelevance_569-177-0": "Service-ID retrieval may be a useful prerequisite for finding a housekeeper; exclude partial-capability/decomposition ambiguity.",
+        "live_irrelevance_721-239-0": "9:45 is an unclear fragment and could be a song title; no reliable negative route.",
+        "live_irrelevance_416-95-0": "Asking for SSID is a plausible Wi-Fi diagnostic next step.",
+        "live_irrelevance_846-336-0": "Bus arrival data can use generic GET; missing endpoint and API context do not establish irrelevance.",
+        "live_irrelevance_448-117-0": "Landscape summarization matches the requested map summary; actual map tiles are missing arguments.",
+        "live_irrelevance_514-153-0": "Top-anomaly-flow capability matches; March32 is an invalid argument rather than an irrelevant tool.",
+        "live_irrelevance_11-1-1": "Visiting a restaurant could require a passenger ride; use the clear food-delivery mismatch from the same group.",
+        "live_irrelevance_502-147-0": "Fabric-node retrieval matches the request; missing endpoint IP and other placeholders concern arguments.",
+        "live_irrelevance_462-127-0": "HTTP GET parameters explicitly support weather-location retrieval; missing URL alone does not make the capability irrelevant.",
+        "live_irrelevance_401-83-1": "Sum names the operation supported by the tool; absent operands are parameter readiness issues.",
+        "live_irrelevance_152-16-1": "The tool controls appliance temperature; 50 exceeds the documented range but is an invalid argument, not an irrelevant capability.",
+        "live_irrelevance_807-306-0": "The user did not provide a query is a source artifact; omit from substantive-user evaluation.",
+        "live_irrelevance_291-72-0": "ede is an unintelligible fragment, making intent and exact gold route unclear.",
+        "live_irrelevance_523-160-0": "A person-introduction generator could be used to produce an identity response; this is a partial-capability boundary.",
+        "live_irrelevance_419-97-0": "where this cals has unclear intent and should not determine a semantic gold tool route.",
+        "live_irrelevance_729-244-1": "The user did not provide a query is an artifact; use the clear rest statement from this source group instead.",
+        "live_irrelevance_828-321-0": "dsfsdf is gibberish with no stable intent; omit ambiguous input.",
+        "live_irrelevance_530-164-0": "Spouse-name retrieval matches the request, including the maiden-name option; missing spouse_of is a parameter issue.",
+        "live_irrelevance_532-164-2": "Do you know Daniel is ambiguous as to entity and desired information; omit rather than assign a definitive route.",
+        "live_irrelevance_871-356-0": "A calculator/statistics capability may serve the unspecified mathematical problems; intent is too broad for a clean negative.",
+        "live_irrelevance_505-148-2": "Interface telemetry retrieval matches the request; absent node/pod/IP parameters are argument issues.",
+        "live_irrelevance_847-337-0": "The revenue statement contains no explicit operation and could invite implicit verification; omit underspecified intent.",
+        "live_irrelevance_521-158-0": "Network anomaly summaries may partially provide interface-related information; scope is too broad for a clean mismatch.",
+        "live_irrelevance_814-312-0": "Get the event shoes is unclear and may refer to a named custom event; no stable negative label.",
+        "live_irrelevance_405-87-0": "All-artist playback partially serves the specific-song request; exclude the partial-capability boundary.",
+        "live_irrelevance_512-151-1": "The request explicitly retrieves Cisco Nexus anomaly data and the offered function retrieves anomalies; missing endpoint is a parameter issue.",
+        "live_irrelevance_210-33-0": "Restock-check capability matches the Indonesian inventory-level request; absent IDs/threshold concern parameters.",
+        "live_irrelevance_412-92-1": "The error/gibberish fragment does not identify a reliable operation.",
+        "live_irrelevance_483-138-0": "Tax calculation matches the income-tax query; missing filing status is an argument issue.",
+        "live_irrelevance_446-116-0": "Profile update matches the email/privacy request; missing user ID is an argument issue.",
+        "live_irrelevance_557-170-0": "The user did not provide a query is a source artifact; omit from substantive-user evaluation.",
+        "live_irrelevance_456-123-0": "The input is a Python fragment without an explicit operation; omit rather than infer a task.",
+        "live_irrelevance_567-175-0": "Service-ID retrieval can be a prerequisite to finding an ironing housekeeper; exclude partial capability and task decomposition ambiguity.",
+        "live_irrelevance_406-88-0": "The offered generic dataset-search tool can search for Lu Xun information; missing dataset choice is a parameter/context issue.",
+        "live_irrelevance_454-121-1": "Transportation retrieval matches the road-trip request; missing API URL is a parameter issue.",
+        "live_irrelevance_428-103-0": "The user explicitly requests a GET from the supplied intent endpoint, matching the offered capability.",
+        "live_irrelevance_513-152-0": "Insights-group retrieval may partially support network-node information; output scope is insufficiently explicit for a clean mismatch.",
+        "live_irrelevance_420-98-0": "where this cals has unclear intent; exclude ambiguous query.",
+        "live_irrelevance_146-14-0": "Mode is an underspecified appliance-control request and overlaps the offered control capability.",
+        "live_irrelevance_509-150-0": "Advisory recommendations are exactly the offered retrieval capability; missing endpoint is a parameter issue.",
+        "live_irrelevance_840-330-0": "A girl-with-dog fragment is an ambiguous task and overlaps pet-related entity inputs; omit inferred intent.",
+        "live_irrelevance_339-81-0": "Excluded by root near-V1 request-similarity audit; also a weather request with weather capability and incomplete parameters.",
+        "live_irrelevance_403-85-0": "Excluded by root near-V1 request-similarity audit; do not include despite otherwise clear weather-versus-music mismatch.",
+        "live_irrelevance_310-76-8": "Excluded by root near-V1 request-similarity audit.",
+        "live_irrelevance_485-139-0": "Excluded by root near-V1 request-similarity audit."
+      }
+    }
+  }
+}

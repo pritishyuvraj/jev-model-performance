@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score BFCL V1 Jev tool choices against a local System One HTTP server.
+"""Score frozen BFCL Jev tool choices against a local System One HTTP server.
 
 Only ``jev.laya.state`` and ``jev.laya.questions`` are sent to the server.
 BFCL source records and gold labels stay in this evaluator. Both models see the
@@ -42,6 +42,20 @@ DEFAULTS = {
 }
 STRATA = ("multi_tool_call", "one_tool_call", "one_tool_no_call")
 NO_FUNCTION_ACTIONS = frozenset(("no_tool", "clarify", "cannot_answer"))
+
+
+def dataset_run_fields(manifest: dict[str, Any] | None) -> dict[str, Any]:
+    """Record V4's reviewed prompt contract without changing existing V1 run IDs."""
+    if not manifest or not str(manifest.get("schema", "")).startswith("bfcl-v4-"):
+        return {}
+    return {"dataset_schema": manifest["schema"],
+            "selection_review_sha256": manifest["selection_review_sha256"],
+            "meta_card_version": manifest["meta_card_version"]}
+
+
+def eval_schema(kind: str, run: dict[str, Any]) -> str:
+    version = "v4" if str(run.get("dataset_schema", "")).startswith("bfcl-v4-") else "v1"
+    return f"bfcl-{version}-jev-eval-{kind}/v1"
 
 
 def sha256(path: Path) -> str:
@@ -288,7 +302,7 @@ def summarize(cases: list[dict[str, Any]], latest: dict[str, dict[str, Any]], ru
         by_stratum[row["stratum"]].append(row)
         by_category[row["category"]].append(row)
     return {
-        "schema": "bfcl-v1-jev-eval-summary/v1",
+        "schema": eval_schema("summary", run),
         "generated_at_utc": utc_now(),
         "run": run,
         "expected_count": len(cases),
@@ -347,6 +361,7 @@ def main() -> int:
         "source_tag": source_manifest.get("source_tag") if source_manifest else None,
         "source_commit": source_manifest.get("source_commit") if source_manifest else None,
         "selection_review_sha256": (source_manifest.get("selection_review") or {}).get("sha256") if source_manifest else None,
+        **dataset_run_fields(source_manifest),
     }
     run_id = hashlib.sha256(json.dumps(run_config, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     if output.exists() and not meta_path.exists():
@@ -358,7 +373,7 @@ def main() -> int:
     else:
         probe = server_probe(endpoint, api_key, min(args.timeout, 10.0))
         metadata = {
-            "schema": "bfcl-v1-jev-eval-run/v1",
+            "schema": eval_schema("run", run_config),
             "created_at_utc": utc_now(),
             "run_id": run_id,
             "run": run_config,

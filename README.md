@@ -30,6 +30,7 @@ The checkpoints and inference methods belong to their upstream authors; this rep
 
 ## Results and reruns
 
+- [BFCL V4 Live routing set](data/bfcl_v4/README.md): 250 reviewed prompts with no normalized request overlap against all 2,000 original V1 rows or our frozen V1 subset. [Prompt and results viewer](data/bfcl_v4/viewer.html).
 - [Evaluation results](results/README.md): all seven scores, per-stratum breakdowns, run identity, and links to every per-case selection log.
 - [Comparison charts](charts/README.md): model size, observed latency, and gold-function probability against exact right-tool accuracy, with reproducible PNG and SVG figures.
 - [Inference setup](inference/README.md): pinned environments and rerun instructions for each model.
