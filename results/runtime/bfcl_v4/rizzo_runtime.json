@@ -1,0 +1,34 @@
+{
+  "gpu": 4,
+  "port": 18017,
+  "model_revision": "55633c8cbd2b826bd3eefdeb05310450996649df",
+  "weight_sha256": "dbec3c89d33984772324e65a8ed56b48e958e301b856cb870a7c1b385d01691a",
+  "code_revision": "b9ba007ee4d2928bbab5b1d8bfe9009c3696b6de",
+  "compiled_llama_cpp_revision": "161755f29e415e2c33efe906e91843c068efd664",
+  "precision": "q8_0",
+  "kv_cache_precision": "f16",
+  "context_limit": 8192,
+  "context_cells": 10240,
+  "batch_size": 4,
+  "prefill_chunk": 512,
+  "temperature": 1.0,
+  "runtime_libraries": {
+    "source_host": "dgxh100-065",
+    "llama_cpp_commit": "161755f29e415e2c33efe906e91843c068efd664",
+    "runtime_files_sha256": {
+      "llama.cpp/build/bin/libggml-base.so.0.24.0": "09ab9d7575c3cd2d80ec6434b7900900fe2e880a15f4222758451432261f6da9",
+      "llama.cpp/build/bin/libggml-cpu.so.0.24.0": "bfbb9c42fe35ecd739fd9b2a9d1b816e3e1543d0326145bdda2d62a0f48ac13d",
+      "llama.cpp/build/bin/libggml-cuda.so.0.24.0": "55396220ff504210920fc2c7501bba48c0a730b7ad01a683395081ecdfec3cd0",
+      "llama.cpp/build/bin/libggml.so.0.24.0": "cd7a7eaaa14faeb6dc47b28776d5408fcae8a2302e810afea4fde9b25e9969a0",
+      "llama.cpp/build/bin/libllama.so.0.4.1": "d20c16593d4de2a906b38ddcecf579ca50883d8c7b75b15616844d28e3ee847c"
+    },
+    "rizzo_weights_sha256": "dbec3c89d33984772324e65a8ed56b48e958e301b856cb870a7c1b385d01691a",
+    "nanojev_weights_sha256": "f68c47d66998231b86b7e91b4ed5e82ae23acf104c8b7cd6d165c3ac7b7ffe1b",
+    "copied_at_unix": 1790727933.837731
+  },
+  "schema": "bfcl-v4-model-runtime/v1",
+  "hostname": "dgxh100-059",
+  "dataset_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "run_root": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929",
+  "started_at_utc": "2026-09-30T00:32:29.964460+00:00"
+}

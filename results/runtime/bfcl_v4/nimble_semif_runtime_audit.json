@@ -1,0 +1,79 @@
+{
+  "schema": "bfcl-v4-native-runtime-audit/v1",
+  "host": "dgxh100-059",
+  "snapshot_commit_declared_by_orchestrator": "aa4130c30e3146ec1d5e2b228ccc49923934139a",
+  "snapshot_git_metadata_present": false,
+  "shared_environments_modified": false,
+  "dtype": "bfloat16",
+  "hf_home": "/data/home/pritish/.cache/jev-model-performance-dgx59/hf",
+  "hf_hub_offline": true,
+  "smoke_cases": 2,
+  "resume_same_run_identity": true,
+  "weight_cache": "Copied with dereferenced symlinks from original V1 cache on dgxh100-065 to shared task cache; Nimble adapter SHA matches V1 and merged READY matches pinned identity.",
+  "models": {
+    "nimble": {
+      "physical_gpu_index": 2,
+      "environment": {
+        "CUDA_VISIBLE_DEVICES": "2",
+        "HF_HOME": "/data/home/pritish/.cache/jev-model-performance-dgx59/hf",
+        "HF_HUB_OFFLINE": "1",
+        "HF_HUB_DISABLE_TELEMETRY": "1"
+      },
+      "runner_sha256": "5e8f40ccc2f491faba588e65d5a456d20e7f870e74d3a832642d4b147999305f",
+      "smoke_argv": [
+        "inference/nimble/.venv/bin/python",
+        "inference/nimble/run.py",
+        "--cases",
+        "data/bfcl_v4/cases.jsonl",
+        "--output",
+        "results/bfcl_v4_nimble.jsonl",
+        "--merged-dir",
+        "/data/home/pritish/.cache/jev-model-performance-dgx59/nimble-9b-merged-bd792f44",
+        "--limit",
+        "2"
+      ],
+      "full_argv": [
+        "inference/nimble/.venv/bin/python",
+        "inference/nimble/run.py",
+        "--cases",
+        "data/bfcl_v4/cases.jsonl",
+        "--output",
+        "results/bfcl_v4_nimble.jsonl",
+        "--merged-dir",
+        "/data/home/pritish/.cache/jev-model-performance-dgx59/nimble-9b-merged-bd792f44"
+      ],
+      "package_audit": "results/runtime/bfcl_v4/nimble_packages.txt",
+      "input_preflight": "results/runtime/bfcl_v4/nimble_input_preflight.json"
+    },
+    "semif": {
+      "physical_gpu_index": 3,
+      "environment": {
+        "CUDA_VISIBLE_DEVICES": "3",
+        "HF_HOME": "/data/home/pritish/.cache/jev-model-performance-dgx59/hf",
+        "HF_HUB_OFFLINE": "1",
+        "HF_HUB_DISABLE_TELEMETRY": "1"
+      },
+      "runner_sha256": "cc55d6b036b3d582407167e6cd009e253fdedc487b4f2494fc61dcbfebd8af11",
+      "smoke_argv": [
+        "inference/semif/.venv/bin/python",
+        "inference/semif/run.py",
+        "--cases",
+        "data/bfcl_v4/cases.jsonl",
+        "--output",
+        "results/bfcl_v4_semif.jsonl",
+        "--limit",
+        "2"
+      ],
+      "full_argv": [
+        "inference/semif/.venv/bin/python",
+        "inference/semif/run.py",
+        "--cases",
+        "data/bfcl_v4/cases.jsonl",
+        "--output",
+        "results/bfcl_v4_semif.jsonl"
+      ],
+      "package_audit": "results/runtime/bfcl_v4/semif_packages.txt",
+      "input_preflight": "results/runtime/bfcl_v4/semif_input_preflight.json"
+    }
+  }
+}

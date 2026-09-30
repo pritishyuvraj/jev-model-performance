@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild the seven-model BFCL V1 comparison from frozen per-case logs.
+"""Rebuild a seven-model BFCL comparison from frozen per-case logs.
 
 No inference is performed. Percentile 95 uses linear interpolation at
 0.95 * (n - 1) on sorted observed wall-clock response times.
@@ -52,9 +52,10 @@ def percentile(values: list[float], fraction: float) -> float:
     return ordered[lower] + (ordered[upper] - ordered[lower]) * (index - lower)
 
 
-def validate_run(root: Path, model_id: str, cases: dict[str, dict], case_hash: str) -> tuple[list[dict], str]:
-    log_path = root / f"results/bfcl_v1_{model_id}.jsonl"
-    meta = json.loads((root / f"results/bfcl_v1_{model_id}.meta.json").read_text(encoding="utf-8"))
+def validate_run(root: Path, model_id: str, cases: dict[str, dict], case_hash: str,
+                 bfcl_version: str = "v1") -> tuple[list[dict], str]:
+    log_path = root / f"results/bfcl_{bfcl_version}_{model_id}.jsonl"
+    meta = json.loads((root / f"results/bfcl_{bfcl_version}_{model_id}.meta.json").read_text(encoding="utf-8"))
     rows = read_jsonl(log_path)
     if meta["run"]["cases_sha256"] != case_hash:
         raise ValueError(f"{model_id}: source case hash differs")
@@ -82,10 +83,12 @@ def validate_run(root: Path, model_id: str, cases: dict[str, dict], case_hash: s
     return rows, sha256(log_path)
 
 
-def build_rows(root: Path) -> list[dict]:
-    case_path = root / "data/bfcl_v1/cases.jsonl"
+def build_rows(root: Path, bfcl_version: str = "v1") -> list[dict]:
+    if bfcl_version not in {"v1", "v4"}:
+        raise ValueError("BFCL version must be v1 or v4")
+    case_path = root / f"data/bfcl_{bfcl_version}/cases.jsonl"
     case_hash = sha256(case_path)
-    manifest = json.loads((root / "data/bfcl_v1/manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads(case_path.with_name("manifest.json").read_text(encoding="utf-8"))
     source_cases = read_jsonl(case_path)
     cases = {case["id"]: case for case in source_cases}
     if (manifest["cases_sha256"] != case_hash or len(cases) != len(source_cases)
@@ -96,7 +99,7 @@ def build_rows(root: Path) -> list[dict]:
 
     output = []
     for model_id, name, parameters, label in MODELS:
-        rows, log_hash = validate_run(root, model_id, cases, case_hash)
+        rows, log_hash = validate_run(root, model_id, cases, case_hash, bfcl_version)
         call_rows = [row for row in rows if row["gold_action"] != "no_tool"]
         exact_call = sum(row["predicted_action"] == row["gold_action"] for row in call_rows)
         selection = sum(
@@ -135,14 +138,16 @@ def build_rows(root: Path) -> list[dict]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT, help="Benchmark repository root")
-    parser.add_argument("--output", type=Path, default=Path("results/bfcl_v1_comparison.csv"))
+    parser.add_argument("--bfcl-version", choices=("v1", "v4"), default="v1")
+    parser.add_argument("--output", type=Path, help="Default: results/bfcl_VERSION_comparison.csv")
     parser.add_argument("--check", action="store_true", help="Fail if the committed CSV is stale")
     args = parser.parse_args()
     buffer = io.StringIO(newline="")
     writer = csv.DictWriter(buffer, fieldnames=FIELDS, lineterminator="\n")
     writer.writeheader()
-    writer.writerows(build_rows(args.root))
-    output = args.output if args.output.is_absolute() else args.root / args.output
+    writer.writerows(build_rows(args.root, args.bfcl_version))
+    selected_output = args.output or Path(f"results/bfcl_{args.bfcl_version}_comparison.csv")
+    output = selected_output if selected_output.is_absolute() else args.root / selected_output
     if args.check:
         if not output.exists() or output.read_text(encoding="utf-8") != buffer.getvalue():
             raise SystemExit(f"Stale comparison file: {output}")

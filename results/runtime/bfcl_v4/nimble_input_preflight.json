@@ -1,0 +1,4812 @@
+{
+  "schema": "bfcl-v4-native-input-preflight/v1",
+  "model": "nimble",
+  "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "case_count": 250,
+  "source_revision": "62076b4f2d365b5879dafcf7f6dd072a1fe76df7",
+  "model_identity": {
+    "model_id": "bespokelabs/Bespoke-Nimble-9B",
+    "model_revision": "bd792f44ec8e265be861bfcdf4e05967ffe0e858",
+    "base_model": "Qwen/Qwen3.5-9B",
+    "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "adapter_sha256": "29ef39b072dee97287947455337879c1e916705c2f727287922a2d81f5e2f20a",
+    "source_revision": "62076b4f2d365b5879dafcf7f6dd072a1fe76df7"
+  },
+  "token_limit": 8192,
+  "min_input_tokens": 265,
+  "max_input_tokens": 470,
+  "mean_input_tokens": 338.492,
+  "no_truncation": true,
+  "source_and_gold_excluded_from_model_payload": true,
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "transformers": "5.17.0",
+    "visible_gpu": "2",
+    "gpu_names": [
+      "NVIDIA H100 80GB HBM3"
+    ]
+  },
+  "rows": [
+    {
+      "case_id": "live_multiple_997-228-0",
+      "input_tokens": 376,
+      "prompt_sha256": "55cece3c0fd4b61c561d1910b9de63550b04da417b5664c5700623611599430e",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "usage_api.UsageApi.get_hosts_per_day",
+        "get_monitoring_state",
+        "usage_api.UsageApi.get_hosts_per_month"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_430-141-19",
+      "input_tokens": 397,
+      "prompt_sha256": "b73c21db1392dc37632bdfcbe507da4dde99ef2010853b834554aa7c29cb0e8d",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Movies_1_BuyMovieTickets",
+        "Movies_1_FindMovies",
+        "Movies_1_GetTimesForMovie"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_996-227-0",
+      "input_tokens": 397,
+      "prompt_sha256": "1c38513350c4f08bd7dcd55163d39c78e25efe348279f539fd0670a9cf9d4fcc",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "add_service_config",
+        "ApplicationSettingsApi.get_service_configs",
+        "ApplicationSettingsApi.order_service_config"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_776-172-1",
+      "input_tokens": 350,
+      "prompt_sha256": "2b4a00387ef2cd441eab7f0a14440b72d3f67b17df39e2bfc17c9421a6ad7f48",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "RentalCars_3_GetCarsAvailable",
+        "RentalCars_3_ReserveCar"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_140-54-0",
+      "input_tokens": 322,
+      "prompt_sha256": "0bab8c2219d192d4f3ed3857c59876027751d6168684e5a057f3c112afa96983",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "weather.get",
+        "stock_price.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_139-53-1",
+      "input_tokens": 321,
+      "prompt_sha256": "e235a71e240ecea792f000d7f5a62df6e35fac622da21c15e9dc328dc3e5a782",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "weather.get",
+        "stock_price.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_142-55-0",
+      "input_tokens": 330,
+      "prompt_sha256": "8b1094e558904abd80a56b1a2f3625e7892bcb61c26aa12ef4924c2946299463",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "weather.get_weather_data",
+        "stock_price.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_245-109-0",
+      "input_tokens": 360,
+      "prompt_sha256": "7522be6535125b0b9a2dae471fde11290f38f215ec00dba3e7c7e342693e96fb",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "version_api.VersionApi.get_version",
+        "oidc_api.OidcApi.is_available",
+        "project_api.ProjectApi.update_project"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_134-51-0",
+      "input_tokens": 316,
+      "prompt_sha256": "116a3c85985504ec9329fe594fc01ab671fc57355564c1d2472ce8ebe7218d55",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "weather.get",
+        "stock_price.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_259-123-0",
+      "input_tokens": 366,
+      "prompt_sha256": "c61158f5a0c7989b08fc62229679e9e78c58139ed05415e0c4eebfa34441486a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "project_api.ProjectApi.get_project_by_name_and_version",
+        "project_api.update_project",
+        "badge_api.BadgeApi.get_project_vulnerabilities_badge"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_7-3-2",
+      "input_tokens": 440,
+      "prompt_sha256": "72455dc2bef474734a799958a4e3160c448f27e335de02f4861db0dd1d2ecc74",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "start_oncall",
+        "create_workspace",
+        "generate_password"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_956-203-0",
+      "input_tokens": 350,
+      "prompt_sha256": "4f4cf54446ca255c03fda46d19383b1dd65de01282fb4fe79111b64b5f986717",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user.mandates",
+        "partner.mandates"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_263-126-0",
+      "input_tokens": 326,
+      "prompt_sha256": "26bec4c1cceb2a7abe0c6672a9b99d00b152f35802a3fb4639bff490efce1c09",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "EventQuery",
+        "reschedule_event"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_126-48-0",
+      "input_tokens": 352,
+      "prompt_sha256": "1178388ed0ad9e0ca0e47af7ef92e8be996063ef910f63eec73f9c942387445d",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "acl_api.AclApi.retrieve_projects",
+        "analysis_api.AnalysisApi.retrieve_analysis"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_1019-248-0",
+      "input_tokens": 351,
+      "prompt_sha256": "cfa7feabaf32d5ac9aa09f389eca1d96f70933481a23184c85081d638f630baa",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "releases_api.ReleasesApi.delete_release",
+        "releases_api.ReleasesApi.post_release",
+        "releases_api.ReleasesApi.put_release"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_191-85-0",
+      "input_tokens": 354,
+      "prompt_sha256": "5da8eeefda6470fb45a97582873a2edecd7ed0cc984d09670f9a50cd17f58693",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "sort_list",
+        "filter_list",
+        "sum_elements"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_362-134-7",
+      "input_tokens": 370,
+      "prompt_sha256": "e5e2bf6b9197f3027fc830a8affe926a36ee32610d4cc8e58d6536df04f65d66",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Movies_3_FindMovies",
+        "Music_3_PlayMedia",
+        "Music_3_LookupMusic"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1050-277-0",
+      "input_tokens": 375,
+      "prompt_sha256": "21d55c8551f7fc374b353cf3de425f5ddcd7fc04fb6f8e11c2ce4a7aeace7139",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "RideSharing_2_GetRide",
+        "Travel_1_FindAttractions",
+        "Weather_1_GetWeather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_992-223-0",
+      "input_tokens": 371,
+      "prompt_sha256": "dbd12b005bd24804fefce4dc39e20f45bc59a8817fc248cd90045097a2c207e9",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "apdex_settings_api.ApdexSettingsApi.create_apdex_configuration",
+        "delete_apdex_configuration",
+        "get_all_apdex_configurations"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1024-253-0",
+      "input_tokens": 390,
+      "prompt_sha256": "fdd3bfa18944525fd16593f576cf4202cc061084b26ef9ea64f8708114e10119",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "create_website_alert_config",
+        "create_infra_alert_config",
+        "find_infra_alert_config_versions"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_71-31-0",
+      "input_tokens": 353,
+      "prompt_sha256": "5ced6a9fb28e6ec5de05c15b8a9388d7f56d36202fd4e398c960da16c442572c",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "add_postgres_server"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_197-89-0",
+      "input_tokens": 312,
+      "prompt_sha256": "c72490604fdf66a04b9c9240887e41ecd4fde5756e466166f4f5ff3296c0359a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "get_tickets"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_224-98-0",
+      "input_tokens": 335,
+      "prompt_sha256": "70f6beef81a48e40fb79a3b6fe3146923ecdbff36be9672641e4e64f3a838f06",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "reschedule",
+        "list_events"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_1032-260-0",
+      "input_tokens": 354,
+      "prompt_sha256": "213be8ce6499f5bab0687779608b0934f899330be1394a9285c348a7b8b8981c",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "SyntheticSettingsApi.get_synthetic_location",
+        "get_synthetic_locations",
+        "SyntheticSettingsApi.get_synthetic_tests"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1011-240-0",
+      "input_tokens": 369,
+      "prompt_sha256": "a7daf559fbe27e01b8d2453ea3452a134ebf583fd251106fbb460f5f69c63ff6",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_synthetic_credential_names",
+        "delete_synthetic_credential",
+        "create_synthetic_credential"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_223-97-0",
+      "input_tokens": 358,
+      "prompt_sha256": "b6eda8dffe4a55fd40f4e6c4dedc41ee908310bba182ab9807158b766957e76a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.ride",
+        "segment_all_objects",
+        "list_directory_contents"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1003-232-2",
+      "input_tokens": 381,
+      "prompt_sha256": "33178b142bca833efd1c27c6c5a384ff9724191ed20778bc0eabff1e7abdf430",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "api_token_api.APITokenApi.get_api_tokens",
+        "CustomDashboardsApi.get_shareable_api_tokens",
+        "api_token_api.APITokenApi.post_api_token"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1033-261-0",
+      "input_tokens": 396,
+      "prompt_sha256": "190f97f28f976a2c035de17e7fbd7e6d60028edd1d6a958884ac5834e2691e6b",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "SyntheticSettingsApi.get_synthetic_locations",
+        "SyntheticSettingsApi.get_synthetic_location",
+        "SyntheticSettingsApi.get_synthetic_tests"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1004-233-0",
+      "input_tokens": 390,
+      "prompt_sha256": "c49b92a1bd5ac362fed38ea5d3a94488e73500108f1a859357742ea22a4024cf",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "audit_log_api.AuditLogApi.get_access_logs",
+        "audit_log_api.AuditLogApi.get_audit_logs",
+        "ApplicationAnalyzeApi.get_trace_download"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_627-160-7",
+      "input_tokens": 332,
+      "prompt_sha256": "631f1028a99969f0058d5aabad2036c99d61ece2883a4fb3aef00c7bfae1f395",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Payment_1_RequestPayment",
+        "Payment_1_MakePayment"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_219-94-1",
+      "input_tokens": 431,
+      "prompt_sha256": "c6dbb3a77cbdf51fe9c2ba24a61077f13357c02259873d40a656e96d70c5b3ba",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_sensor_readings_latest",
+        "get_sensor_readings_history_by_interval",
+        "get_sensor_readings_history"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_952-201-0",
+      "input_tokens": 319,
+      "prompt_sha256": "c5799354014ad52df98a4031a188b2771371405894fcab1e5af467e7d6183f3e",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.eat.order",
+        "flight.status.check"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_1025-254-0",
+      "input_tokens": 365,
+      "prompt_sha256": "583a0f880377ef8544b33ee87b2e03cace1a2397eec34441764534fbc91293ac",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_maintenance_configs",
+        "MaintenanceConfigurationApi.get_maintenance_config",
+        "get_maintenance_configs_v2"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_708-164-24",
+      "input_tokens": 364,
+      "prompt_sha256": "ebc87661ce83a1a3732dbd1b3076391969b54843e6b9548ad02b0484e20079d1",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Events_3_FindEvents",
+        "Events_3_BuyEventTickets",
+        "Movies_3_FindMovies"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_766-170-4",
+      "input_tokens": 351,
+      "prompt_sha256": "a90b63df8b3cddc7e35a7f7d1b36529da73599309427c0487460ca70b50b9e1b",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Buses_3_FindBus",
+        "Buses_3_BuyBusTicket"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_34-11-0",
+      "input_tokens": 323,
+      "prompt_sha256": "a7d8b6c599bd5f1919661c1820619dc2198164555c45fd2aee76365cf1a40a67",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_tesco_locations",
+        "get_news_report"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_1012-241-0",
+      "input_tokens": 414,
+      "prompt_sha256": "e817ebe0f1fed177ab286140f97c21c8ca35f96a0774782a80e5e0777c932adc",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "SyntheticSettingsApi.get_synthetic_location",
+        "get_synthetic_locations",
+        "get_location_summary_list"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_177-74-0",
+      "input_tokens": 328,
+      "prompt_sha256": "0773b1e44be7a36ace6df38501bc7d42842e5c37aa554b61154cadd46f5a43f2",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "sort_array",
+        "get_trip"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_989-220-0",
+      "input_tokens": 351,
+      "prompt_sha256": "95960a2fbd14711a037b0e4adbdb45fa3233e564e9f6276d413f986310fdeb55",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_websites",
+        "website_configuration_api.WebsiteConfigurationApi.get_website",
+        "ApplicationSettingsApi.get_service_configs"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_954-202-0",
+      "input_tokens": 345,
+      "prompt_sha256": "cdffec721c47b828a38bd2d7ff2477d1143e7716e222b869c382a509ef1fe1a7",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "flight.status.check",
+        "uber.eat.order"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_292-130-1",
+      "input_tokens": 341,
+      "prompt_sha256": "5c721f515a80d4f929e7056d797dea68f3f074b85773dd32b32022225bce6d2c",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Hotels_2_BookHouse",
+        "Hotels_2_SearchHouse"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_251-115-0",
+      "input_tokens": 366,
+      "prompt_sha256": "0c59a7382f0155fae129a193026101b1d1919581dbf3578580b113dc55ab6ab2",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "badge_api.BadgeApi.get_project_policy_violations_badge1",
+        "project_api.ProjectApi.get_project_by_name_and_version",
+        "version_api.VersionApi.get_version"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_230-103-1",
+      "input_tokens": 366,
+      "prompt_sha256": "6d52ff64ea5e9f639bc57eeae12f976da1783c4b580a63783c5e34a015a48268",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "get_area_of_square",
+        "get_contact_information"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_222-96-0",
+      "input_tokens": 331,
+      "prompt_sha256": "d2c79940fe818aeeab6c12aadcfa1150ef44355f683f9ceb87c81ce150592f66",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.ride",
+        "send.message"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_144-56-0",
+      "input_tokens": 330,
+      "prompt_sha256": "080e07c5180086aad0b234297d9557497927d87eef76119cc4c0ccfeab43667c",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_sensor_alerts",
+        "get_sensor_readings_latest"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_909-188-0",
+      "input_tokens": 342,
+      "prompt_sha256": "bf4bc27e141abd6eb4dd2f7e08e6f72022dc7e65575a219cf74c5bb9ed3f45f6",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "youtube.check_videos",
+        "youtube.get_video_rating"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_682-163-7",
+      "input_tokens": 387,
+      "prompt_sha256": "178ecef4cdc144719bd059e2e5d8815ac3c7ed1719127248a0c46329fce273fd",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "RideSharing_2_GetRide",
+        "Travel_1_FindAttractions",
+        "Weather_1_GetWeather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_785-173-7",
+      "input_tokens": 375,
+      "prompt_sha256": "aa41811984045dee60c2f17ed59eb1c445f4b1ddea59db022c606947bab33c86",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Services_4_BookAppointment",
+        "Services_4_FindProvider",
+        "Weather_1_GetWeather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1022-251-0",
+      "input_tokens": 353,
+      "prompt_sha256": "2c939650a32ceffcebc0f23eb29b852bb0aa2cf2e504f50e49785dbf2450ca80",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_monitoring_state",
+        "get_hosts_per_month",
+        "usage_api.UsageApi.get_hosts_per_day"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_958-204-0",
+      "input_tokens": 382,
+      "prompt_sha256": "dbe6a1a04a76b71e6bef15f0850c1a8a7b09a7b9641e3974e92ac4955cf60b70",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "client.mandates",
+        "partner.mandates",
+        "partner.sips"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_378-135-2",
+      "input_tokens": 317,
+      "prompt_sha256": "0bc393d44aa5ac3d45bfb41f8597fa180c868961766c4269e22a68786f65d484",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Services_4_BookAppointment",
+        "Services_4_FindProvider"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_221-95-0",
+      "input_tokens": 316,
+      "prompt_sha256": "4a023b080ab520862fb2d656923eb0377b877d06ec20eb600e02517e1c7b8685",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.ride",
+        "segment"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_1006-235-0",
+      "input_tokens": 357,
+      "prompt_sha256": "745434e03f3c6ee2b6f5e7a083685f2ae4b65ea646106a769125d248d20a451f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_monitoring_state",
+        "InfrastructureCatalogApi.get_infrastructure_catalog_plugins",
+        "get_website_catalog_metrics"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1021-250-0",
+      "input_tokens": 417,
+      "prompt_sha256": "fa7d5de146dbfc1d79e68ce9020fa23f91f2acd22291ea3762642b819c58096d",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "restore_mobile_app_alert_config",
+        "EventSettingsApi.create_mobile_app_alert_config",
+        "find_mobile_app_alert_config"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_258-122-0",
+      "input_tokens": 380,
+      "prompt_sha256": "470e1cbe2b84889c240c5bfbfd606a2603010ad21e52d2b7b1e17f667029d276",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "project_api.ProjectApi.get_project_by_name_and_version",
+        "badge_api.BadgeApi.get_project_vulnerabilities_badge",
+        "badge_api.BadgeApi.get_project_policy_violations_badge1"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_994-225-0",
+      "input_tokens": 420,
+      "prompt_sha256": "a4e300827845ea96842d043bc9debfbdc71314e9a50069a3480c364d6ccca544",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "EventSettingsApi.restore_mobile_app_alert_config",
+        "find_mobile_app_alert_config",
+        "find_mobile_app_alert_config_versions"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_286-129-1",
+      "input_tokens": 368,
+      "prompt_sha256": "bf351451b081c6e7e6d286e995ab555a5fb3c82c9def189bf9fdf295f6b9c555",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Movies_3_FindMovies",
+        "Services_4_BookAppointment",
+        "Services_4_FindProvider"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_233-105-0",
+      "input_tokens": 360,
+      "prompt_sha256": "79bc2eb6777e5f90726e35f3b762b169c87d31d38f29f3a22c12b9ff16cfed2f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "get_area_of_square",
+        "get_contact_information"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_81-36-2",
+      "input_tokens": 417,
+      "prompt_sha256": "92a2c35e39abbc31ac23d5eb3aba1519b120e09ad8a0ecd8cfb19e0f44457078",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "dartfx_help",
+        "get_current_weather",
+        "add_mtnards_server",
+        "add_postgres_server"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_37-13-0",
+      "input_tokens": 354,
+      "prompt_sha256": "51e736e566936de6b7cbd572502f4b8ed05482db481b2001302a552e27f3e040",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "todo.add",
+        "todo_delete",
+        "todo.update"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1013-242-0",
+      "input_tokens": 395,
+      "prompt_sha256": "9785505b45a46c21d6b7cfc2ecc4e8c9ec3d1573f141c7717daca83af0dc899f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_synthetic_locations",
+        "SyntheticSettingsApi.get_synthetic_location",
+        "get_location_summary_list"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_555-154-1",
+      "input_tokens": 448,
+      "prompt_sha256": "e49c0d525a00229cc0487626d79bf5549a5eaad2ab94ff1cb2b60e7d7a9c76af",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Events_3_FindEvents",
+        "Events_3_BuyEventTickets",
+        "RentalCars_3_GetCarsAvailable",
+        "RentalCars_3_ReserveCar"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_1030-258-0",
+      "input_tokens": 378,
+      "prompt_sha256": "059ebb972699b98ac882d2cd96021a8cdc78232dc1fc139ea641bd625bc70988",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_website_geo_mapping_rules",
+        "set_website_geo_mapping_rules",
+        "get_mobile_app_geo_mapping_rules"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_66-27-0",
+      "input_tokens": 358,
+      "prompt_sha256": "bd0d8a319eeedc82038aa82497518b1b24b5b0534a7accccd8f1e3df7829739d",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "add_postgres_server"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_982-215-6",
+      "input_tokens": 329,
+      "prompt_sha256": "aab254959a30fc7717ae5cb9401513ceec709ca3067eada81d9c1c3a31be8535",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_service_providers",
+        "view_service_provider_profile"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_941-195-0",
+      "input_tokens": 317,
+      "prompt_sha256": "e27ca3ec90c0ab4db81971bfbc01adcaf5e6e1bc67b7ec3cc4eec36da1c0291f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "set_volume",
+        "play_song"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_540-152-2",
+      "input_tokens": 436,
+      "prompt_sha256": "1f9034dfd499c194afe38f471c2da8a08db83cf06e1e5e8182b880f38714351a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Alarm_1_GetAlarms",
+        "Alarm_1_AddAlarm",
+        "Homes_2_FindHomeByArea",
+        "Homes_2_ScheduleVisit"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_924-191-12",
+      "input_tokens": 381,
+      "prompt_sha256": "43be0c769ad428157b398216ea6de56038aa0ae7028e33e421fadaca0512544d",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_service_providers",
+        "view_service_provider_profile"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_161-63-0",
+      "input_tokens": 451,
+      "prompt_sha256": "cca2f5cf2e01c9fa0785c5d5bed4395321c355e9c730cec90ae6208e94c2f148",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_adriel_projects",
+        "get_detail_adriel_project",
+        "get_adriel_experiences",
+        "get_adriel_education"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_156-59-0",
+      "input_tokens": 431,
+      "prompt_sha256": "6d14f96c2e85e3987ca3786705d9f4516b835893d1663e73bc438ac86348c16a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "acl_api.add_mapping",
+        "acl_api.delete_mapping",
+        "acl_api.AclApi.retrieve_projects",
+        "analysis_api.AnalysisApi.retrieve_analysis"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_937-193-0",
+      "input_tokens": 407,
+      "prompt_sha256": "6c14d491985aca01edc96faf2f23417bd9deed1e50634e849c0ac157dc994b55",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "acl_api.AclApi.retrieve_projects",
+        "project_property_api.ProjectPropertyApi.get_properties",
+        "finding_api.FindingApi.analyze_project"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_322-132-12",
+      "input_tokens": 386,
+      "prompt_sha256": "eacc1662b5a76c54a36107117c586bb7d371dadf0a886bacb99c556fa65a5e61",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Movies_3_FindMovies",
+        "Restaurants_2_ReserveRestaurant",
+        "Restaurants_2_FindRestaurants"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_250-114-0",
+      "input_tokens": 348,
+      "prompt_sha256": "c599b8ef3a9a7cf9bbe7b25f44ec680e0aa5ae8b78184a4c8686be5ec862a362",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "version_api.VersionApi.get_version",
+        "project_api.ProjectApi.get_project_by_name_and_version",
+        "project_api.ProjectApi.update_project"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_70-30-1",
+      "input_tokens": 408,
+      "prompt_sha256": "f60e92d4fb636717296c44c7679e0a7af9d4db41aeed3b715bd1d83070a4d521",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "add_postgres_server",
+        "add_mtnards_server",
+        "dartfx_help",
+        "list_servers"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_194-87-1",
+      "input_tokens": 325,
+      "prompt_sha256": "6ed550ef9555f0cca26f4f87ab6e40d3d03616e21b39c5eff0ee4f80ff211017",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "getCurrentTime",
+        "CalcProduct",
+        "sum"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_529-151-5",
+      "input_tokens": 331,
+      "prompt_sha256": "7a7450bb9f6e11faf9d4c2591405155a314ab6f4be9015b90f1ed4941a18a4c4",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Events_3_FindEvents",
+        "Events_3_BuyEventTickets"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_67-28-0",
+      "input_tokens": 347,
+      "prompt_sha256": "4938e49a1b6f591a40040df2d236b22c277f784ea035191892171f1a137dca4a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "add_postgres_server"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_969-210-1",
+      "input_tokens": 338,
+      "prompt_sha256": "e13f514dcdb65efa7357248cc4f8725272cfe2ade2a0904c80ba31ef5ada6a66",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.eat.order",
+        "uber.ride"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_727-166-2",
+      "input_tokens": 378,
+      "prompt_sha256": "ecb5bc08c51e1d9b41ad677a17ceadc5b5aeb8631480641f35aff909f3c36ea9",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Services_1_BookAppointment",
+        "Services_1_FindProvider",
+        "Weather_1_GetWeather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_854-180-2",
+      "input_tokens": 457,
+      "prompt_sha256": "103c820846f661c7787f2418a7b5e3c650f36b1fba89858153b4046e8a6d9748",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Buses_3_FindBus",
+        "Buses_3_BuyBusTicket",
+        "Hotels_4_ReserveHotel",
+        "Hotels_4_SearchHotel"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_848-179-2",
+      "input_tokens": 347,
+      "prompt_sha256": "16d0f078f3346577358d44d8ee6be7a6414eed648a797edd45bbc54e39be5066",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Restaurants_2_ReserveRestaurant",
+        "Restaurants_2_FindRestaurants"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_497-148-7",
+      "input_tokens": 426,
+      "prompt_sha256": "38b649f49f1ef5862a758d47590e7349d1e6ec2ff547a0fb5b43fe4bc4358f08",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Events_3_FindEvents",
+        "Events_3_BuyEventTickets",
+        "Payment_1_RequestPayment",
+        "Payment_1_MakePayment"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_246-110-0",
+      "input_tokens": 362,
+      "prompt_sha256": "fbcbbf58b0a60e70510d1646a540a83fcec6f03d798ec1217e604da399495677",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "version_api.VersionApi.get_version",
+        "repository_api.RepositoryApi.get_repository_meta_component",
+        "oidc_api.OidcApi.is_available"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_961-205-1",
+      "input_tokens": 303,
+      "prompt_sha256": "3a475048e283470647e2c4b7277992e1e587e17187a80e342c6015c141443b70",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "web_search"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_1045-272-0",
+      "input_tokens": 371,
+      "prompt_sha256": "0911f5eafa8711d6deae539d0dbbb6e4dd8ea7a1db110b9ba1d2a3f040c33086",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Movies_3_FindMovies",
+        "Services_4_BookAppointment",
+        "Services_4_FindProvider"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_993-224-0",
+      "input_tokens": 411,
+      "prompt_sha256": "912b35dcbef2894d55b76f39530ea1c063d8ff8dce074fa861e9be3443bd0a99",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_apdex_report",
+        "apdex_settings_api.ApdexSettingsApi.create_apdex_configuration",
+        "apdex_settings_api.ApdexSettingsApi.get_all_apdex_configurations"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_163-64-0",
+      "input_tokens": 393,
+      "prompt_sha256": "03ab5c2a890801ebd8046ecdcba273a619ce82db985d0447ba54c0a9902c042c",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_detail_adriel_project",
+        "get_adriel_experiences",
+        "get_adriel_education"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1028-256-0",
+      "input_tokens": 370,
+      "prompt_sha256": "6a2f7a2ec79961cc13b5d66d0dfbcf77b6edf3cf5d1c7948e7427cc40c1e7bdf",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "host_agent_api.get_agent_snapshot",
+        "host_agent_api.HostAgentApi.search_host_agents",
+        "host_agent_api.HostAgentApi.update_agent"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_511-149-8",
+      "input_tokens": 463,
+      "prompt_sha256": "f8ed4900a1bc3c5c16ec2f02514918bd92d2fb4503a043a18e37bc7e0685117d",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Flights_4_SearchOnewayFlight",
+        "Flights_4_SearchRoundtripFlights",
+        "Trains_1_GetTrainTickets",
+        "Trains_1_FindTrains"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_260-124-0",
+      "input_tokens": 360,
+      "prompt_sha256": "a3468213a1351d83339d8c248838664baca548179a0353117acdeb680b30c452",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "project_api.ProjectApi.update_project",
+        "version_api.VersionApi.get_version",
+        "project_api.ProjectApi.get_project_by_name_and_version"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_165-65-1",
+      "input_tokens": 425,
+      "prompt_sha256": "bcdc543454b07a78c843f48d5688383f198bab4ebed635df23b6a58dbf3a9f63",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_detail_adriel_project",
+        "get_adriel_list_projects",
+        "get_adriel_experiences",
+        "get_adriel_education"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_1035-263-0",
+      "input_tokens": 392,
+      "prompt_sha256": "565abc1d8a27d0598c2d1dad52f4040b2b718cefff3393ea9638637a0cc01a2f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "CustomDashboardsApi.get_shareable_api_tokens",
+        "api_token_api.APITokenApi.post_api_token",
+        "api_token_api.APITokenApi.get_api_tokens"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_973-213-0",
+      "input_tokens": 320,
+      "prompt_sha256": "228114689e2c8c48c1c02bdcd6277654c9cc40be24c8ed4ebc10b3d73bc6f418",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_service_providers",
+        "view_service_provider_profile"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_249-113-0",
+      "input_tokens": 362,
+      "prompt_sha256": "b69a3660e2f3383884e2cfb3e4e885968165d2b61bd344ac78181d2bd9240851",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "version_api.VersionApi.get_version",
+        "project_api.ProjectApi.get_project_by_name_and_version",
+        "badge_api.BadgeApi.get_project_policy_violations_badge1"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_42-16-1",
+      "input_tokens": 315,
+      "prompt_sha256": "9f1c41536732d9240d929a07687b83ab022e10636d50264b1c2ac1a9506b795b",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_pods",
+        "get_services"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_604-158-10",
+      "input_tokens": 314,
+      "prompt_sha256": "bff1dd18d6bd17861b3b6f6f238925b72ec632675dad5a3f67550a4df0f74cc3",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Hotels_4_ReserveHotel",
+        "Hotels_4_SearchHotel"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_735-167-6",
+      "input_tokens": 443,
+      "prompt_sha256": "734cb3d5b18e3f731b1e61071a07b4270db143b631b0a2036c9f660a8fcfc25b",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Homes_2_FindHomeByArea",
+        "Homes_2_ScheduleVisit",
+        "Messaging_1_ShareLocation",
+        "RideSharing_2_GetRide"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_196-88-0",
+      "input_tokens": 304,
+      "prompt_sha256": "622a2dc005113493e6921d453ee1af032ce2bf6d51ec5727351008214f072887",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "get_tickets"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_715-165-2",
+      "input_tokens": 384,
+      "prompt_sha256": "2369737ee7c6fca46e101fc12a2705f183e6a69e2611d57f7156fc21e9ff6cc1",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Hotels_2_BookHouse",
+        "Hotels_2_SearchHouse",
+        "Travel_1_FindAttractions"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_350-133-14",
+      "input_tokens": 394,
+      "prompt_sha256": "12b11da8606851ccd42fa78d47a8cce0c706eaf07d0b882761efae935be74241",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Media_3_FindMovies",
+        "Media_3_PlayMovie",
+        "Music_3_PlayMedia",
+        "Music_3_LookupMusic"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_36-12-0",
+      "input_tokens": 307,
+      "prompt_sha256": "7bc3c831c1b4aa48628784eb0b36ac70dbffe53bdc78f62a4b5be66ea259c266",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "todo_add",
+        "todo_delete"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_835-178-10",
+      "input_tokens": 382,
+      "prompt_sha256": "aecb0931180658881637a37f0f1c5a71e997f753fda7c8432143d460cb4ba843",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Music_3_PlayMedia",
+        "Music_3_LookupMusic",
+        "Weather_1_GetWeather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_905-186-2",
+      "input_tokens": 464,
+      "prompt_sha256": "f27d02c86ef763aff2149be823a0f3e31ae776004711592f63b1e3eb2d81df2d",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Hotels_2_BookHouse",
+        "Hotels_2_SearchHouse",
+        "Trains_1_GetTrainTickets",
+        "Trains_1_FindTrains"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_283-128-6",
+      "input_tokens": 384,
+      "prompt_sha256": "b40f67c7c62d1822ad7dc8cb18029ae95a8ffda4fae37a11a69a5dc733211cc7",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Restaurants_2_ReserveRestaurant",
+        "Restaurants_2_FindRestaurants",
+        "RideSharing_2_GetRide"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_149-58-3",
+      "input_tokens": 467,
+      "prompt_sha256": "4b6bf2b17f2eba747d88fd34e2885855dcbd143af07c7ca0704949b954975962",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_sensor_alerts",
+        "get_sensor_readings_latest",
+        "get_sensor_readings_history_by_interval",
+        "get_sensor_readings_history"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_895-185-5",
+      "input_tokens": 434,
+      "prompt_sha256": "e00c160e0a833bf5d323540fca452b6299e27c32f369d7b172e329a00117f5ec",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Payment_1_RequestPayment",
+        "Payment_1_MakePayment",
+        "Restaurants_2_ReserveRestaurant",
+        "Restaurants_2_FindRestaurants"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_581-157-2",
+      "input_tokens": 347,
+      "prompt_sha256": "99849213557a18944f520c252e30a015a2bc85af5a2e5d269a5d36918f899022",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Media_3_FindMovies",
+        "Media_3_PlayMovie",
+        "Weather_1_GetWeather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_991-222-0",
+      "input_tokens": 368,
+      "prompt_sha256": "ea505abb041a2b402bc8968ef1823d4b92b9fa803ed8777664737b0e2bfb00a2",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "website_configuration_api.WebsiteConfigurationApi.rename_website",
+        "website_configuration_api.WebsiteConfigurationApi.create_website",
+        "website_configuration_api.delete_website"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_975-214-1",
+      "input_tokens": 335,
+      "prompt_sha256": "6f05949f989e910f1f093eca00b9cfac302a791070e69113c7f792a9852ba1f9",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_service_providers",
+        "view_service_provider_profile"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_73-33-0",
+      "input_tokens": 432,
+      "prompt_sha256": "fb14ae5e69f523c6a6f65a796953fbf51a0397662c75ef782ae5cb1545ba82a3",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "add_postgres_server",
+        "dartfx_help"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_236-106-2",
+      "input_tokens": 372,
+      "prompt_sha256": "7242e6776d2df8fbd272897ab3bdd89149ac78adf3c616ad49dd165852e7d7ff",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "set_integer",
+        "set_string",
+        "set_float",
+        "set_point"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_51-21-0",
+      "input_tokens": 411,
+      "prompt_sha256": "0a551543de747eb18228e627b7675bdb662c68d83055360ef2a89e993315a383",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "inventory_management",
+        "product_search",
+        "order_status_check",
+        "get_product_details"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_552-153-1",
+      "input_tokens": 416,
+      "prompt_sha256": "c5d7c4d9d58faae4a023f958df50ceb8aded9367026335d76ff09e6b64b84da0",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Services_1_BookAppointment",
+        "Services_1_FindProvider",
+        "Services_4_BookAppointment",
+        "Services_4_FindProvider"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_392-138-0",
+      "input_tokens": 318,
+      "prompt_sha256": "a80c9ae7b92cb29d1f9f2e914c7c02c65ec3158f2ef555cb1d4c79be639400e1",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Services_1_BookAppointment",
+        "Services_1_FindProvider"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_247-111-0",
+      "input_tokens": 397,
+      "prompt_sha256": "58174b661c8f17bdfd76fb94a8074ec36509c6889913c0128ccd7b77b1d6ef98",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "analysis_api.AnalysisApi.retrieve_analysis",
+        "finding_api.FindingApi.analyze_project",
+        "violationanalysis_api.ViolationanalysisApi.retrieve_analysis1"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_192-86-0",
+      "input_tokens": 444,
+      "prompt_sha256": "858e251b6ca07d79308c5196c33c26bdc543cba84fdab11482a0711d7b5159f2",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "transformers.pipeline",
+        "initialize_question_answering_pipeline",
+        "analyze_image_with_question.pipeline"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1016-245-0",
+      "input_tokens": 381,
+      "prompt_sha256": "75fbf7652e775df1c6b56ce6b87ca07ab41ecc63c28d48e4801978acd2876605",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "create_global_application_alert_config",
+        "enable_global_application_alert_config",
+        "create_mobile_app_alert_config"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_63-25-0",
+      "input_tokens": 340,
+      "prompt_sha256": "113dc77490fd97d4ce4571b2e1b4989a64d5ead5bbcb45a7e38027b75d115a41",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.ride",
+        "uber.eat.order"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_127-49-0",
+      "input_tokens": 393,
+      "prompt_sha256": "5284f70976780f6bb90c433d3202bd89451cc97a1189cb791859cf0a1ac0c7fe",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "search_engine.query",
+        "generate_image",
+        "generate_human_image"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_186-81-0",
+      "input_tokens": 308,
+      "prompt_sha256": "b17b5bfc62c4622fa8745012060b7a77c1ba92c8441dd9902cf4d232fe153cf2",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "weather_forecast.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_72-32-0",
+      "input_tokens": 424,
+      "prompt_sha256": "4457b37433a22021d6aa1d4aa95cb19957053be62aeb9feea89084f3bce53666",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "add_postgres_server",
+        "dartfx_help"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_0-0-0",
+      "input_tokens": 354,
+      "prompt_sha256": "04e8c22869a52eb1b9747dc58e523782b32844cb629b9df4db5ed2f91d15b553",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "ChaFod",
+        "ChaDri.change_drink"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_158-61-0",
+      "input_tokens": 344,
+      "prompt_sha256": "0b2fd80b8025c8fc27533cffa8ce7346d693bf33b622c7d86f206e8e7aab35f8",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "get_adriel_projects"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_157-60-0",
+      "input_tokens": 338,
+      "prompt_sha256": "acb16ca3e9bb86f15651c8e375c6f86497ea5fad994f9d87aa88c2c1ff032136",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "get_adriel_projects"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_617-159-10",
+      "input_tokens": 420,
+      "prompt_sha256": "41f722cafb2cc136292b338ae1316703b4c5e7de64b0be598155ca14903c25fc",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Events_3_FindEvents",
+        "Events_3_BuyEventTickets",
+        "Hotels_4_ReserveHotel",
+        "Hotels_4_SearchHotel"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_74-34-0",
+      "input_tokens": 359,
+      "prompt_sha256": "2f44d37403ca9de19d902c66f5211da0e0dea17ba378c237fd54f8f066444219",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "add_postgres_server",
+        "dartfx_help"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_68-29-0",
+      "input_tokens": 367,
+      "prompt_sha256": "b6337f9c0ac8252e90dcfc1839777be8ab20f2fb02544375c547a983ebb1509f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "add_postgres_server"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_3-2-0",
+      "input_tokens": 316,
+      "prompt_sha256": "0d8c7f19a721319b873b54f630d464c59024b1ed5c17159045e83802c9d199cd",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.ride",
+        "api.weather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_40-15-0",
+      "input_tokens": 317,
+      "prompt_sha256": "4a54bf1e4d27eb9bf8e5e16c52ea2309f3f132542c953ee5f4a15376988471eb",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "run_microwave",
+        "oven_preheat"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_911-190-0",
+      "input_tokens": 309,
+      "prompt_sha256": "2a3db01acfae6102edff0e997b30af666f7e6888a4e02062464ac1dfc0e7332a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_service_providers",
+        "view_service_provider_profile"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_1009-238-0",
+      "input_tokens": 408,
+      "prompt_sha256": "b183235feba76d61be70de80312c9e839df5dbf156da179c823a49d80075d69a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_website_geo_mapping_rules",
+        "set_website_geo_mapping_rules",
+        "website_configuration_api.get_website_geo_location_configuration"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_398-139-2",
+      "input_tokens": 375,
+      "prompt_sha256": "0c30cb4b2628da138f54ee103255efa37eb34cccdd9a1edc8c6b6a602e9b3f7e",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Events_3_FindEvents",
+        "Events_3_BuyEventTickets",
+        "RideSharing_2_GetRide"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_972-212-1",
+      "input_tokens": 332,
+      "prompt_sha256": "7141941fa80e0fdbc5a120c2340b67e4f5e13fcb99b5ae1be97d10b088668615",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_service_providers",
+        "view_service_provider_profile"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_145-57-0",
+      "input_tokens": 350,
+      "prompt_sha256": "3bab8c54ccd690f5aabfb98b155ca1fc63bcd345645052d82a76ddbe1639eb38",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "get_current_news",
+        "get_shopping"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_1005-234-0",
+      "input_tokens": 369,
+      "prompt_sha256": "e0f88a50836f2b38865fc2ff77d759c9c7e58b628bf930ad7d2d38f6705981ff",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "host_agent_api.HostAgentApi.get_agent_snapshot",
+        "host_agent_api.HostAgentApi.search_host_agents",
+        "get_agent_support_information"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_812-176-3",
+      "input_tokens": 327,
+      "prompt_sha256": "fbc8bd5642b6390494cb94325e60f3fcd06dc7df76b71e6eccaaa780a5137966",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Alarm_1_GetAlarms",
+        "Alarm_1_AddAlarm"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_78-35-2",
+      "input_tokens": 431,
+      "prompt_sha256": "0f7a7f55d73c8f08a0f4dad766ffe84a29a669f1808ededad7f549032394d184",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather",
+        "add_mtnards_server",
+        "add_postgres_server",
+        "dartfx_help"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_64-26-0",
+      "input_tokens": 391,
+      "prompt_sha256": "01d85d3b7c220a6337153d49c05ff0298d2dbbf55613191024f284f9281390ac",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.ride",
+        "uber.eat.order",
+        "get_current_weather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_167-67-0",
+      "input_tokens": 417,
+      "prompt_sha256": "9e19772e758707b7504eea3b9a570068831b99d206d58e1c42817a36b29d25b5",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_detail_adriel_project",
+        "get_adriel_list_projects",
+        "get_adriel_experiences_and_education",
+        "get_adriel_profile"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_182-77-0",
+      "input_tokens": 321,
+      "prompt_sha256": "0704721467a9a4b2b9329dd1359e4371e39a2dd3f34da56d02e3802fb7f3fa0f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "math_gcd",
+        "estimate_derivative"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_944-196-2",
+      "input_tokens": 333,
+      "prompt_sha256": "6a74c0a20cf3d3b9d814068719c38ef4682d435c1fc01a936baec5e770247f39",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "set_volume",
+        "play_song"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_477-146-2",
+      "input_tokens": 353,
+      "prompt_sha256": "59eb4ecd9c96a61f63dba21e4cb307e5b91da47be603a8f8d946171c095d4e58",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Music_3_PlayMedia",
+        "Music_3_LookupMusic"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_936-192-1",
+      "input_tokens": 332,
+      "prompt_sha256": "6c46089b4918971465b2e58c19036d4c9fd6de80323fd81507904355019a2a99",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "set_alarm",
+        "set_countdown"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_62-24-0",
+      "input_tokens": 328,
+      "prompt_sha256": "f478bfec1588214b42dd9b213f5c34b491ec1e780f73beff9a9215ee76c4b0c8",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "todo.list_action",
+        "todoIdx"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_39-14-1",
+      "input_tokens": 315,
+      "prompt_sha256": "8977175631571188de04acca37fcdd2566566b16c2c383a21a59b928fdd9644d",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_interviewer_list",
+        "review_of_interviewer"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_822-177-5",
+      "input_tokens": 437,
+      "prompt_sha256": "9630c8b79800ef9a46ebe3e32ebc27b206920eabb55201329c8b6144f902b6f7",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Buses_3_FindBus",
+        "Buses_3_BuyBusTicket",
+        "Events_3_FindEvents",
+        "Events_3_BuyEventTickets"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "case_id": "live_multiple_860-181-1",
+      "input_tokens": 352,
+      "prompt_sha256": "96457f069332e0c8c7dfa8b195da1fa708154400e0b5b84de6a77cd7cd40d795",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Trains_1_GetTrainTickets",
+        "Trains_1_FindTrains"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_136-52-0",
+      "input_tokens": 325,
+      "prompt_sha256": "a820926b812987931081f6e09ef2566b26f9d1e6538e8c3fd182e2f299bfeb6a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "weather.get_weather",
+        "stock_price.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "case_id": "live_multiple_1007-236-0",
+      "input_tokens": 354,
+      "prompt_sha256": "f2ccd56b368e0d89c1bdd5baabbbcf293a5faa99a9ef2180f29edd359b9d8eb7",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "software_versions",
+        "health_api.HealthApi.get_version",
+        "ApplicationSettingsApi.get_application_configs"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_multiple_408-140-4",
+      "input_tokens": 385,
+      "prompt_sha256": "01b07600808fbb2d95051bff76f1e222dbec7fa52dc244955f976c2c5c35ce11",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "Music_3_PlayMedia",
+        "Music_3_LookupMusic",
+        "RideSharing_2_GetRide"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "case_id": "live_simple_252-134-0",
+      "input_tokens": 298,
+      "prompt_sha256": "fcad052a15fa6eeef4e0be85c3f766d626fb9715f5397e2c6389025409151b44",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "flight.status.check"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_131-84-1",
+      "input_tokens": 342,
+      "prompt_sha256": "6bfd83a8632d9f5790734e26558d650df922df624ccaedb58bb0cd3e57fe977e",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_186-111-0",
+      "input_tokens": 329,
+      "prompt_sha256": "c0750f50fa68c1abc2c4c937279020dae7a69a2d217180abf2d031708d8557cd",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_service_providers"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_135-88-0",
+      "input_tokens": 286,
+      "prompt_sha256": "fa2ca84ff83c411363146e9ee258f3639f3daf31188316b08bdeaa2d0479eff4",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_191-115-1",
+      "input_tokens": 293,
+      "prompt_sha256": "87762ec1d3f5911b1f47833776cbc5e1589e291e35e4e92600f739a3384f5631",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "raptor.mpn.specs"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_251-133-0",
+      "input_tokens": 307,
+      "prompt_sha256": "d9016307f9f4916ae248fb712c4726d7622143a905f0ba739eef598451a3a1ef",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "flight.status.check"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_129-83-1",
+      "input_tokens": 294,
+      "prompt_sha256": "18f739dd6c1d87000ff994ce9863bd8e014fa33a9bb224be0c35091e79783a68",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_105-62-0",
+      "input_tokens": 276,
+      "prompt_sha256": "42add8dfe281e80779c12bb67a1a08eaa482228e442c308873002e4808514807",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "classify"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_116-72-0",
+      "input_tokens": 275,
+      "prompt_sha256": "37954690650bea9ad216d7cabf9ea15d82551a52d9a3b74ca2558c55742a8746",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "sum_numbers"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_88-49-0",
+      "input_tokens": 301,
+      "prompt_sha256": "82f52506b30f8d9c3c5888929ca94d491a6769ae254805581d8cf5aef740a1e8",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "log_food"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_253-135-0",
+      "input_tokens": 279,
+      "prompt_sha256": "bd104836ff9465f5f0673cf73a8f71389dd5627765976bcce5c11179830a31ae",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.eat.order"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_229-120-0",
+      "input_tokens": 277,
+      "prompt_sha256": "ba5fca7907cbb639d351d3ac9ec211e4540e5abfbb9ac0974f42adb9c067614f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_81-42-0",
+      "input_tokens": 307,
+      "prompt_sha256": "767198f55dd998f6241b481edce5602afaf559901b79d832061ccb2f2d46e60c",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "sitefinity_create_contentitem"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_10-3-6",
+      "input_tokens": 306,
+      "prompt_sha256": "57b9792ca7ecfa5b923a614ee4efd6c9b8a6b63fa4fd5daffa3f0ea9d8fbb405",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_30-8-0",
+      "input_tokens": 322,
+      "prompt_sha256": "19ad0baa8bb97e97b792993fba54172f9c3bbb830d44bc41325867d875014a8f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "aws.lexv2_models.list_exports"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_47-20-0",
+      "input_tokens": 267,
+      "prompt_sha256": "d0afcec799fd2eebfed627ba746069434b0e326d73c1812a8df2c8fb9c8d615a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "multiply"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_233-123-0",
+      "input_tokens": 307,
+      "prompt_sha256": "1a41bc0c9241b1570d63f69471046a0572b3c8a9be2ed61407d0b9812fcba54f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "book_flight"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_91-52-0",
+      "input_tokens": 278,
+      "prompt_sha256": "3c474bc4b1160bc9e4aeb7582fe8f3159165e5ff055208c68399683fd6104fdd",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "fetchPerson"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_98-58-0",
+      "input_tokens": 303,
+      "prompt_sha256": "0428e960e31d5fee9ef7353e3bb7c9ce051436d53f75b98b99a371cc7711f869",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_weather_by_coordinates"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_69-33-0",
+      "input_tokens": 328,
+      "prompt_sha256": "d2bbafca966a769415257a5981249ad91c70d5ce0cf3ef1f5ce9124c305ca77e",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "analysis_api.AnalysisApi.retrieve_analysis"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_132-85-0",
+      "input_tokens": 283,
+      "prompt_sha256": "5fa10860c3adae06d11df6419f3fa62be505fefbad318e26ad7f4cb99e726560",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_50-22-0",
+      "input_tokens": 287,
+      "prompt_sha256": "84bd1cb5fae763384988bf72c8a3e121dea66fdd6c8a6b9df5bac7c5a0732e69",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_latest_carbon_intensity"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_243-126-1",
+      "input_tokens": 295,
+      "prompt_sha256": "1c96b67f7e0f5caff4bf26f111980593071676e0badcfd99a19dc3a9b782637f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "set_volume"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_70-34-0",
+      "input_tokens": 319,
+      "prompt_sha256": "a317619e92915420df61ba0bc943c881bad2b1cb3221c354873f27844640429b",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_sensor_alerts"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_95-56-0",
+      "input_tokens": 355,
+      "prompt_sha256": "bba4aa698ebaa7a2cdebc5f7c218634085ad4db4c7416f4abf79bbb19793fe40",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "process_data"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_22-5-0",
+      "input_tokens": 286,
+      "prompt_sha256": "77825194bdf18d84103fdc877ea67cae790cec2c3bd28c2dc76cb6c572fab274",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "ChaFod"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_86-47-0",
+      "input_tokens": 297,
+      "prompt_sha256": "19121b9cdceed2d283b4a49e04b2bc6b63113577511f0ef2a8be9af7c7416e8a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "sort_array"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_93-54-0",
+      "input_tokens": 274,
+      "prompt_sha256": "f8f7496d3c8a79c80f1c2168de0904a737151ca622412725ebefc44825171e97",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "play_artist"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_114-70-0",
+      "input_tokens": 297,
+      "prompt_sha256": "6b7a89a9146597dbcb0e398521b154d38259d975a6943e45950e093cbc68d639",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "update_user_profile"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_238-125-1",
+      "input_tokens": 289,
+      "prompt_sha256": "51c657ad93e45710a522020aef3ccf0105df3c73c07310a3f30095ba2d0a3524",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "play_spotify_song"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_227-118-1",
+      "input_tokens": 296,
+      "prompt_sha256": "3d58134c883f6a95c60040370d3328c00378856cb512acd9cfdcdd827541025e",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "text_to_speech.convert"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_126-82-0",
+      "input_tokens": 310,
+      "prompt_sha256": "7e158231d64995e719cc08138bbda99790ddd874e05a1a97901b663c4794b0be",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "telemetry.flowrules.interfaceInfo.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_173-99-7",
+      "input_tokens": 298,
+      "prompt_sha256": "e6e8037fc631bb08a2683f314c857fbada4c524d88f264f14a0f2c202d7e19db",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "cmd_controller.execute"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_45-18-1",
+      "input_tokens": 303,
+      "prompt_sha256": "c2f652d773de90690c4b5825201be2d9b3093cd141c4a57f9b62f2a1694f8199",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "ThinQ_Connect"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_65-29-5",
+      "input_tokens": 282,
+      "prompt_sha256": "6c5c131685b8f2f7a7801aa28b9260ea78b0d9f5fa800ac9bea553bf9f76a9e7",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "todo"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_40-17-0",
+      "input_tokens": 310,
+      "prompt_sha256": "9c221516ffc517932468f83cbac9d4607655d9443fdef97f3fc8faa048e18676",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "ThinQ_Connect"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_90-51-0",
+      "input_tokens": 268,
+      "prompt_sha256": "b346004c15fca09f05583a1ca01b9f1f8158d0ba1a089a67627299827f3bb57f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "temperature"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_120-76-0",
+      "input_tokens": 304,
+      "prompt_sha256": "bfb62c747fe9d9772a2580a472f6bf3b35906c98b5abd145af1750af9b37bec9",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "weather.forecast"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_92-53-0",
+      "input_tokens": 283,
+      "prompt_sha256": "79816354e2b4891cded9540a68df7397cbb258dfd0ed436236c3d10133b886ad",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "play_artist"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_235-124-0",
+      "input_tokens": 278,
+      "prompt_sha256": "d1d44ddc3bbee884fe34897a9357932e38683c218f24d049653a40331cea0d76",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "play_spotify_song"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_248-130-0",
+      "input_tokens": 289,
+      "prompt_sha256": "d79395033741bf2383398f47d382e68a5284b0bd347bb52f82def23f18f7ac87",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "acl_api.AclApi.retrieve_projects"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_246-128-0",
+      "input_tokens": 287,
+      "prompt_sha256": "7ed2447f2c54b6f5a4da2de95130c887c990c3e5357e55245cfc912a179e51de",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "book_flight"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_124-80-0",
+      "input_tokens": 288,
+      "prompt_sha256": "8ef7fb06b4e467cb1f52a5e5d0abb650a562dcb9df325e4053d32cc5d27db16d",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_tickets"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_96-57-0",
+      "input_tokens": 283,
+      "prompt_sha256": "cb736ac6850e1f487298acd5beff75cd915dea805f27bd8612028946e6ab034f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_46-19-0",
+      "input_tokens": 336,
+      "prompt_sha256": "da88da6dd1fb7c2432f187abf8a998e03a709b70ed3e959e867772d7e79ac78b",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "ThinQ_Connect"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_104-61-2",
+      "input_tokens": 292,
+      "prompt_sha256": "0936964774425c0eac612c7c012a43c62fac11a01b068be4a27418950bf146a1",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "calculate_tax"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_139-92-0",
+      "input_tokens": 341,
+      "prompt_sha256": "0c6a2bcd2734983db8a89b02786768270a2d4b301b370f8df1b1014507b2baca",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_53-24-0",
+      "input_tokens": 282,
+      "prompt_sha256": "dcda1a77d41d03a466ef5aaf11a2e23c36c9a24219272b608fdf70341101c39a",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "todo_add"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_152-95-9",
+      "input_tokens": 303,
+      "prompt_sha256": "4f5076fc8ca0eef8e012e7cf0152911bc79cb54684e8325e32344bc832114bef",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "cmd_controller.execute"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_simple_118-74-0",
+      "input_tokens": 277,
+      "prompt_sha256": "e6584a347a9b1ef522acec599289a51afec4922d02751ca7370147988ef246c2",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_temperature"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_240-44-0",
+      "input_tokens": 280,
+      "prompt_sha256": "137af71e48b067aeef0f8ab5908b556521b6ef678c24dc7fc1cc6ac2740b4303",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "dartfx_help"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_436-109-0",
+      "input_tokens": 348,
+      "prompt_sha256": "2e354a562a10064b8303446d9eb866538017586be7940616b2e633b59c5fe412",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_response"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_849-339-0",
+      "input_tokens": 272,
+      "prompt_sha256": "739fafffddf0f8975b1e5fa80a448619302383735fd86ca6360f95fea6f22b69",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.authenticate"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_199-32-12",
+      "input_tokens": 286,
+      "prompt_sha256": "92400bda884a3825b49c1490abe06b76234c052b221019d6795b89e3950e5d78",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.login"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_279-61-0",
+      "input_tokens": 271,
+      "prompt_sha256": "1536837231be011f5402b5debd099c024d5337803251ce4abf691cfde3da28d0",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "language_translator.translate"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_825-318-0",
+      "input_tokens": 268,
+      "prompt_sha256": "445b2e1313109089411871290b46cdf6e01aea7f11adba8c429dc891df5ccc20",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.login"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_157-18-1",
+      "input_tokens": 470,
+      "prompt_sha256": "280884db4e203bf1c045d8b1b60da1328b77f9da901f3dace0a003d3f80e0f47",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_interviewer_list"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_444-114-0",
+      "input_tokens": 284,
+      "prompt_sha256": "709894f08066d67c67667615893d272b06484bc631cda86041ca1f4649b04873",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "create_user_profile"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_408-90-0",
+      "input_tokens": 269,
+      "prompt_sha256": "8e45c39446581d9c7b4a771d962c7a838a9d902438704422edadb0b1f7fe78d1",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.login"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_480-136-0",
+      "input_tokens": 274,
+      "prompt_sha256": "15142e7d3bb1b6a4d5270a9a67534a29576be8ba0dfef470693d65d71d660f41",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.login"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_708-232-0",
+      "input_tokens": 268,
+      "prompt_sha256": "d051f9cd22325458cd08a7260d7f5a52c7bf5e299a8a989171de217579751b1c",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "translate_english_to_chinese"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_445-115-0",
+      "input_tokens": 278,
+      "prompt_sha256": "688ca293a5321ddd712b453ccde61d0a88cc42d5eab9b617016471f4d08b58f8",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "search_for_sea_pictures"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_843-333-0",
+      "input_tokens": 282,
+      "prompt_sha256": "d3853c5d3b754d120bd9bd5b70f1fc03c0df209f8346f54ba188961f6292d9c8",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.verify"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_810-309-0",
+      "input_tokens": 287,
+      "prompt_sha256": "2fd28149e4891426dc82a99792701ab024dd386d346af863bca3698e4730564e",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "EventSettingsApi.create_website_alert_config"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_848-338-0",
+      "input_tokens": 265,
+      "prompt_sha256": "ed158cb2566437cdf750cd580c04e84a8a6b070f12b3e12cec294d7cd86f0420",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.login"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_860-349-0",
+      "input_tokens": 277,
+      "prompt_sha256": "447ff8b9064a71a9085aae4cb310a483d63bae09d6c7df9288b261352e976ecf",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "calculate_tax"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_400-83-0",
+      "input_tokens": 292,
+      "prompt_sha256": "422ededcf4930b759a2e51f3be125f5329e2b1b3522240fafa8e4542bc735a52",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "calculate_sum"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_771-280-0",
+      "input_tokens": 288,
+      "prompt_sha256": "8fe8d0637622da4b3860cde98d4502db105bb4f914bcc22d5c871810bccc49eb",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "contains_word_gaurav"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_399-82-0",
+      "input_tokens": 268,
+      "prompt_sha256": "d8e1b1d592bd7b91a67033df82124de0f1cbad0ff70e33d048759bae74c4347f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.login"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_815-313-0",
+      "input_tokens": 286,
+      "prompt_sha256": "695244aaaf166e0e6f7c5e3ee4dc33c0584138063564f6d8ca48faeb755afd73",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "EventSettingsApi.get_alerts"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_228-35-3",
+      "input_tokens": 324,
+      "prompt_sha256": "6693b79a461176f60cf6e2772ccf9eb018b051fbd2c8fdb5b63ba38754a49279",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "check_order_status"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_109-6-0",
+      "input_tokens": 282,
+      "prompt_sha256": "8e68ed5f5a913411c6533e733136661e5c05351f1ddfe4ebb643845661a87097",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.ride"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_10-1-0",
+      "input_tokens": 293,
+      "prompt_sha256": "a6703b6b76ba27063ef66e7838e0f243eb15a0e85f51c24aaf3bc16b38f49f9f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "uber.ride"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_69-2-57",
+      "input_tokens": 280,
+      "prompt_sha256": "b5f2f0ec8212ee58e4e1ea2ed4e6e4fac0eae146c11b40eba44b2f2a44d12cb4",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_current_weather"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_526-162-1",
+      "input_tokens": 268,
+      "prompt_sha256": "ed8a71e2d503673996d1580527c3131f6c6050fd6f529b2f51ceeebebd8f50bf",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "introduction.greet"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_469-130-1",
+      "input_tokens": 275,
+      "prompt_sha256": "adfdd49f703b4f53fbfe5cd2b75ffc9ead201d5e195f0308b79f5bb8c5754a50",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.authenticate"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_853-343-0",
+      "input_tokens": 274,
+      "prompt_sha256": "7698a9e3f487489d6c59f90f266aefce00f6cafabaaa6586b52fa5ce1acaafae",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "archive_documents"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_818-314-2",
+      "input_tokens": 286,
+      "prompt_sha256": "eee2ee65a3d0fdd129cc556be1598d95e374e6e04e17d5fc9e197759927c4727",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_813-311-0",
+      "input_tokens": 284,
+      "prompt_sha256": "da7fa58ea5099fbdcf48dc29139622138139baae89d1a57f8505af2a8b63da58",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "CustomDashboardsApi.add_custom_dashboard"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_510-150-1",
+      "input_tokens": 286,
+      "prompt_sha256": "dbb2c69081158d18955af890c050500edf0495fdaec6849d9d771b8894bc44d9",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_720-238-1",
+      "input_tokens": 281,
+      "prompt_sha256": "93258207d03ae0a2a3b0d5096e0041caef2f942833171e79d82536cde1638f56",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "book_flight"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_837-327-1",
+      "input_tokens": 268,
+      "prompt_sha256": "893cda19631f514925331d727d0de3013f9ee47841bce26f2541d8a924fb49f7",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "search_on_google"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_432-107-0",
+      "input_tokens": 326,
+      "prompt_sha256": "415b4f156073655a51ac211c1ade3d36de9bac912353fe9ec7c10ec9983bed29",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_response"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_852-342-0",
+      "input_tokens": 269,
+      "prompt_sha256": "09ba0e770e2a8a7a15c2c000b942cc5ccfc29cef17f4115b799599b1ac0e8f90",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "generate_report"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_479-135-1",
+      "input_tokens": 313,
+      "prompt_sha256": "62bb828230633466f4102b13810abc13dc43fa138232c2b2f720f4e541b84fa6",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_weather_forecast"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_775-284-0",
+      "input_tokens": 311,
+      "prompt_sha256": "fd7f2bf2f59c7553c2459521f60067d3e03ae4188e0c2bd610096e45c2103c5f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "calculate_sum"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_476-134-0",
+      "input_tokens": 273,
+      "prompt_sha256": "05fbaa7410e3654292465f2d693de9764e5ff1e1819075d247997d0fee8cf410",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "search_google"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_711-235-0",
+      "input_tokens": 266,
+      "prompt_sha256": "5ed4496ef195bb31a222985a8a1ffaeb9546d21a9fed2c6d176439df631eada9",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "play_song"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_842-332-0",
+      "input_tokens": 271,
+      "prompt_sha256": "21da139359f5a4138f2be44e79b54135c6b6797a729e12c4ffb1dadab9796c32",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "process_transaction"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_427-102-1",
+      "input_tokens": 337,
+      "prompt_sha256": "f323df6027238c9601bfd54e79d9b07dc6701ee0a3ebcd5f521f3d3fd559c501",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_response"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_867-353-0",
+      "input_tokens": 269,
+      "prompt_sha256": "553a335aa88d76d9de0c008962288eb884d6f4a7c105cd35feba1df36285708c",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "user_authentication.verify"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_452-120-0",
+      "input_tokens": 358,
+      "prompt_sha256": "d44ce335f0388b11c66c9e4faa6b62ac09c2ccf82c3c5238f90c94a4b61b93ce",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "dynamic_pricing.calculate"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_276-60-1",
+      "input_tokens": 296,
+      "prompt_sha256": "8d34235fd368b798c9dc9ba69ab396dda95ff3c0fba6e85eb655bd6af5fcac80",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "detect_beats_and_filter"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_484-138-1",
+      "input_tokens": 291,
+      "prompt_sha256": "f7bbf28439975edc276058167881c2df8fa5f4837773e0f59f4633dfb098fb01",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "calculate_tax"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_377-81-38",
+      "input_tokens": 277,
+      "prompt_sha256": "bd9f2f6b1ba697b54eca492a00bc1e0ddb090347f7fcf3165c1c514a2c7bf57e",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_415-94-0",
+      "input_tokens": 277,
+      "prompt_sha256": "3000f9ed57024fdfa82e8d2bb876e97eb6164dee43966134159ffc32561ec409",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "doNothing"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_830-323-0",
+      "input_tokens": 272,
+      "prompt_sha256": "f24bf750f0c6407a81491f5f1e34b40329cedf59b44fb53de46849fa3ff167e3",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "fetch_user_details"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_424-101-1",
+      "input_tokens": 322,
+      "prompt_sha256": "b20da09e8d654d761f53824467a6c0eaec8702a2f996e4cf6a442e7451a1b62f",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "get_response"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_301-75-0",
+      "input_tokens": 275,
+      "prompt_sha256": "f0737f22cd16ffb0ee93d1c782e6082bdf7500d6b63f11f75fcc7f6201c37472",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "search_web"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "case_id": "live_irrelevance_460-125-1",
+      "input_tokens": 284,
+      "prompt_sha256": "bfd8b2bcdd081f71cd7b7b6a1ff4218c4628a2bf62af7d6d1538d11712929fff",
+      "option_ids": [
+        "no_tool",
+        "clarify",
+        "cannot_answer",
+        "requests.get"
+      ],
+      "candidate_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ]
+}

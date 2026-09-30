@@ -1,0 +1,57 @@
+{
+  "rizzo": {
+    "pid": 1696726,
+    "command": [
+      "/data/home/pritish/jev-model-performance/.cache/third_party/rizzo/.venv/bin/rizzo",
+      "serve",
+      "--device",
+      "cuda",
+      "--model",
+      "/data/home/pritish/.cache/jev-model-performance-dgx59/rizzo/rizzo-flow-q8.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "18017",
+      "--ctx",
+      "8192",
+      "--batch-size",
+      "4"
+    ],
+    "console_log": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/runtime/bfcl_v4/rizzo_server.console.log",
+    "started_at_utc": "2026-09-30T00:32:29.960474+00:00"
+  },
+  "nanojev_native": {
+    "pid": 1696727,
+    "command": [
+      "/data/home/pritish/jev-model-performance/inference/.venv/bin/python",
+      "/data/home/pritish/jev-model-performance/.cache/third_party/nanojev/scripts/serve_decisions.py",
+      "--checkpoint-dir",
+      "/data/home/pritish/.cache/jev-model-performance-dgx59/nanojev/checkpoint",
+      "--web-root",
+      "/data/home/pritish/jev-model-performance/.cache/third_party/nanojev/web",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "18765",
+      "--precision",
+      "bf16"
+    ],
+    "console_log": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/runtime/bfcl_v4/nanojev_native_server.console.log",
+    "started_at_utc": "2026-09-30T00:32:29.961636+00:00"
+  },
+  "nanojev_bridge": {
+    "pid": 1696728,
+    "command": [
+      "/data/home/pritish/jev-model-performance/inference/.venv/bin/python",
+      "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/inference/nanojev/bridge.py",
+      "--upstream",
+      "http://127.0.0.1:18765",
+      "--checkpoint-dir",
+      "/data/home/pritish/.cache/jev-model-performance-dgx59/nanojev/checkpoint",
+      "--port",
+      "18015"
+    ],
+    "console_log": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/runtime/bfcl_v4/nanojev_bridge_server.console.log",
+    "started_at_utc": "2026-09-30T00:32:29.962498+00:00"
+  }
+}

@@ -21,7 +21,7 @@ DEFAULT_MERGED = Path("/scratch") / os.environ.get("USER", "pritish") / "jev-mod
 
 # The existing evaluator owns case validation and the shared scoring definition.
 sys.path.insert(0, str(HERE.parent))
-from evaluate import (load_cases, read_predictions, sha256, stratum, summarize,
+from evaluate import (dataset_run_fields, eval_schema, load_cases, read_predictions, sha256, stratum, summarize,
                       utc_now, write_json_atomic)  # noqa: E402
 
 
@@ -190,6 +190,7 @@ def main() -> int:
         "source_tag": manifest.get("source_tag") if manifest else None,
         "source_commit": manifest.get("source_commit") if manifest else None,
         "selection_review_sha256": (manifest.get("selection_review") or {}).get("sha256") if manifest else None,
+        **dataset_run_fields(manifest),
     }
     run_id = hashlib.sha256(json.dumps(run_config, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     meta_path = output.with_suffix(".meta.json")
@@ -202,7 +203,7 @@ def main() -> int:
             raise RuntimeError(f"Run identity differs from {meta_path}")
     else:
         write_json_atomic(meta_path, {
-            "schema": "bfcl-v1-jev-eval-run/v1", "created_at_utc": utc_now(),
+            "schema": eval_schema("run", run_config), "created_at_utc": utc_now(),
             "run_id": run_id, "run": run_config,
             "server_probe": {"native_cuda_scorer": scorer.runtime},
             "server_identity": identity,

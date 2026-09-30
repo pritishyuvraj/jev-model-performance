@@ -1,0 +1,49 @@
+{
+  "schema": "bfcl-v4-jev-eval-run/v1",
+  "created_at_utc": "2026-09-30T00:33:30+00:00",
+  "run_id": "caf50a7e93bd71d52693e385cfad84ccd19c988fa3afc6166429985773bc1c3a",
+  "run": {
+    "provider": "nanojev",
+    "requested_model": "nanojev-unified-games-v1",
+    "declared_model_revision": "047b927b30882a1138fc504821b82ac145a4b81a",
+    "endpoint": "http://127.0.0.1:18015",
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "server_probe": {
+    "/v1/models": {
+      "models": [
+        {
+          "name": "nanojev-unified-games-v1",
+          "run": "C-Tianyu/NanoJev@047b927b30882a1138fc504821b82ac145a4b81a",
+          "base": "Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+          "code_revision": "76fdfc9ecdca45a9bcef17991a07d3041a87685a",
+          "backend": "torch",
+          "dtype": "bfloat16"
+        }
+      ]
+    },
+    "/health": {
+      "ready": true,
+      "model_loaded_once": true,
+      "provider_calls": 0,
+      "model": "nanojev-unified-games-v1",
+      "revision": "047b927b30882a1138fc504821b82ac145a4b81a"
+    }
+  },
+  "server_identity": {
+    "name": "nanojev-unified-games-v1",
+    "run": "C-Tianyu/NanoJev@047b927b30882a1138fc504821b82ac145a4b81a",
+    "base": "Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+    "backend": "torch",
+    "dtype": "bfloat16",
+    "health_model": "nanojev-unified-games-v1",
+    "health_revision": "047b927b30882a1138fc504821b82ac145a4b81a"
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_nanojev.jsonl"
+}

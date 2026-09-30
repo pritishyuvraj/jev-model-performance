@@ -1,0 +1,26 @@
+{
+  "schema": "bfcl-v4-model-log-verification/v1",
+  "provider": "rizzo",
+  "verified_at_utc": "2026-09-30T00:36:22.858047+00:00",
+  "count": 250,
+  "unique_cases": 250,
+  "all_attempt_one": true,
+  "errors": 0,
+  "http_retries": 0,
+  "all_probabilities_match_offered_options": true,
+  "all_selected_actions_are_probability_argmax": true,
+  "all_probability_sums_within_tolerance": true,
+  "dataset_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "run_id": "aa8335140bf2035f7a1884b113dab1eb6105f354eacc579214c6350a5f6b8b6f",
+  "latency_ms": {
+    "basis": "wall_latency_ms",
+    "mean": 41.84564,
+    "median": 40.37,
+    "p95": 52.46
+  },
+  "server_latency_reported_count": 0,
+  "mean_gold_probability": 0.8798267400151908,
+  "positive_mean_gold_probability": 0.9265220838997058,
+  "positive_exact_correct": 195,
+  "positive_count": 200
+}

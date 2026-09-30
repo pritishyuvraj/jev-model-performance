@@ -1,5 +1,7 @@
 # BFCL V1 Jev routing pilot: seven model runs
 
+[New BFCL V4 Live results](bfcl_v4.md): seven complete runs on the new V1-disjoint 250-case set, with [charts](../charts/bfcl_v4/README.md) and [per-case viewer](../data/bfcl_v4/viewer.html). The V1 results below remain their original frozen run.
+
 All seven models completed the same [250 selected BFCL V1 cases](../data/bfcl_v1/cases.jsonl) on `vp-dgx-65` (`dgxh100-065`, NVIDIA H100). Each case asked a model to select the assistant's next capability from the offered actions. The saved rows record the selected action and option probabilities; the BFCL answer and gold label stayed outside model requests. No model generated function arguments or executed a tool.
 
 **Tool selection** is the primary score for Jev's router role. On 200 positive BFCL cases, the model must choose the exact function ID. On 50 BFCL no-call cases, `no_tool`, `clarify`, and `cannot_answer` all count as selecting no function. **Exact action** is stricter: it requires the BFCL-derived action ID, including `no_tool` rather than another no-function action. Failed requests count as wrong in both scores.

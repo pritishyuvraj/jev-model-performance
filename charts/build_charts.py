@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 import math
 import statistics
@@ -22,6 +23,7 @@ RESULTS = ROOT / "results"
 CASES = ROOT / "data" / "bfcl_v1" / "cases.jsonl"
 NO_FUNCTION = frozenset({"no_tool", "clarify", "cannot_answer"})
 EXPECTED_CASES_SHA256 = "68868277c9f10c56706a5d8a1a79a78720582dd731fef414a4b7c4ae366cc602"
+BFCL_VERSION = "v1"
 
 # Rounded published model/backbone sizes for the checkpoints used in these logs.
 # See charts/README.md for model-card links and interpretation.
@@ -61,9 +63,9 @@ def compute_metrics() -> list[dict]:
 
     metrics = []
     for slug, label, params_billion, color in MODELS:
-        rows = read_jsonl(RESULTS / f"bfcl_v1_{slug}.jsonl")
-        summary = json.loads((RESULTS / f"bfcl_v1_{slug}.summary.json").read_text(encoding="utf-8"))
-        metadata = json.loads((RESULTS / f"bfcl_v1_{slug}.meta.json").read_text(encoding="utf-8"))
+        rows = read_jsonl(RESULTS / f"bfcl_{BFCL_VERSION}_{slug}.jsonl")
+        summary = json.loads((RESULTS / f"bfcl_{BFCL_VERSION}_{slug}.summary.json").read_text(encoding="utf-8"))
+        metadata = json.loads((RESULTS / f"bfcl_{BFCL_VERSION}_{slug}.meta.json").read_text(encoding="utf-8"))
         row_ids = [row["case_id"] for row in rows]
         if len(rows) != 250 or len(set(row_ids)) != 250 or set(row_ids) != case_ids:
             raise ValueError(f"{slug}: cases do not match the selected BFCL set")
@@ -130,7 +132,7 @@ def format_plot() -> None:
         "axes.facecolor": "white",
         "savefig.facecolor": "white",
         "svg.fonttype": "none",
-        "svg.hashsalt": "bfcl-v1-jev-routing-charts",
+        "svg.hashsalt": f"bfcl-{BFCL_VERSION}-jev-routing-charts",
     })
 
 
@@ -159,7 +161,13 @@ def chart_size_accuracy(metrics: list[dict]) -> None:
     for model in metrics:
         x = model["parameters_billion_approx"]
         y = 100 * model["exact_right_tool_accuracy"]
-        ax.scatter(x, y, s=125, color=model["color"], edgecolor="white", linewidth=1.6, zorder=3)
+        if BFCL_VERSION == "v4" and model["slug"] == "rizzo":
+            # Equal backbone sizes and close scores otherwise hide SemIf's point.
+            ax.scatter(x, y, s=155, facecolor="none", edgecolor=model["color"], linewidth=2.1, zorder=4)
+        else:
+            marker = "s" if BFCL_VERSION == "v4" and model["slug"] == "semif" else "o"
+            ax.scatter(x, y, s=100 if marker == "s" else 125, color=model["color"],
+                       marker=marker, edgecolor="white", linewidth=1.6, zorder=3)
         point_label(ax, x, y, model["model"], *offsets[model["model"]])
     ax.set_xscale("log")
     ax.set_xlim(0.30, 15)
@@ -171,7 +179,7 @@ def chart_size_accuracy(metrics: list[dict]) -> None:
     ax.set_xlabel("Approximate checkpoint parameters (billions; log scale)", labelpad=10)
     ax.set_ylabel("Exact right function on 200 call cases (%)", labelpad=10)
     ax.set_title("Model size and right-tool accuracy", loc="left", fontsize=16, fontweight="bold", pad=17)
-    fig.text(0.5, 0.045, "BFCL V1 Jev routing pilot · rounded published sizes · no argument scoring",
+    fig.text(0.5, 0.045, f"BFCL {BFCL_VERSION.upper()} Jev routing pilot · rounded published sizes · no argument scoring",
              ha="center", fontsize=9, color="#526172")
     save(fig, "size_vs_right_tool_accuracy")
 
@@ -189,15 +197,23 @@ def chart_latency_accuracy(metrics: list[dict]) -> None:
         y = 100 * model["exact_right_tool_accuracy"]
         ax.scatter(x, y, s=125, color=model["color"], edgecolor="white", linewidth=1.6, zorder=3)
         point_label(ax, x, y, model["model"], *offsets[model["model"]])
-    ax.set_xlim(15, 88)
+    means = [model["mean_wall_latency_ms"] for model in metrics]
+    if BFCL_VERSION == "v1":
+        ax.set_xlim(15, 88)
+    else:
+        ax.set_xlim(0, max(means) * 1.25)
     ax.set_ylim(0, 106)
-    ax.set_xticks([20, 30, 40, 50, 60, 70, 80])
+    if BFCL_VERSION == "v1":
+        ax.set_xticks([20, 30, 40, 50, 60, 70, 80])
     ax.set_yticks([0, 20, 40, 60, 80, 90, 100])
     ax.grid(axis="both")
     ax.set_xlabel("Mean observed wall latency per case (ms)", labelpad=10)
     ax.set_ylabel("Exact right function on 200 call cases (%)", labelpad=10)
     ax.set_title("Observed latency and right-tool accuracy", loc="left", fontsize=16, fontweight="bold", pad=17)
-    fig.text(0.5, 0.045, "Sequential GPU runs; different runtimes and prompts. Means include first-request warmup.",
+    timing_note = ("Sequential GPU runs; different runtimes and prompts. Means include first-request warmup."
+                   if BFCL_VERSION == "v1" else
+                   "Sequential per-model requests on separate GPUs; different native runtimes. Warmup included.")
+    fig.text(0.5, 0.045, timing_note,
              ha="center", fontsize=9, color="#526172")
     save(fig, "latency_vs_right_tool_accuracy")
 
@@ -233,11 +249,22 @@ def chart_accuracy_probability(metrics: list[dict]) -> None:
 
 
 def main() -> None:
+    global BFCL_VERSION, CASES, OUT, EXPECTED_CASES_SHA256
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--bfcl-version", choices=("v1", "v4"), default="v1")
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args()
+    BFCL_VERSION = args.bfcl_version
+    CASES = ROOT / "data" / f"bfcl_{BFCL_VERSION}" / "cases.jsonl"
+    if BFCL_VERSION == "v4":
+        EXPECTED_CASES_SHA256 = json.loads(CASES.with_name("manifest.json").read_text())["cases_sha256"]
+    OUT = args.output or (ROOT / "charts" / "bfcl_v4" if BFCL_VERSION == "v4" else ROOT / "charts")
+    OUT.mkdir(parents=True, exist_ok=True)
     format_plot()
     metrics = compute_metrics()
     payload = {
-        "schema": "bfcl-v1-jev-chart-metrics/v1",
-        "case_file": "data/bfcl_v1/cases.jsonl",
+        "schema": f"bfcl-{BFCL_VERSION}-jev-chart-metrics/v1",
+        "case_file": f"data/bfcl_{BFCL_VERSION}/cases.jsonl",
         "cases_sha256": EXPECTED_CASES_SHA256,
         "latency_measure": "wall_latency_ms; all 250 rows, including first request",
         "accuracy_measure": "exact function ID on 200 BFCL tool-call rows",

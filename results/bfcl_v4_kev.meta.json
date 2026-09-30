@@ -1,0 +1,131 @@
+{
+  "schema": "bfcl-v4-jev-eval-run/v1",
+  "created_at_utc": "2026-09-30T00:36:09+00:00",
+  "run_id": "5928925506d7326a2633fbe20ba7c805e9dff33714dd7f4e8d86bdb77e129be0",
+  "run": {
+    "provider": "kev",
+    "requested_model": "kev-latest",
+    "declared_model_revision": "9a45d25eb2ab761841196625383fa1dff0e56c1e",
+    "endpoint": "http://127.0.0.1:18008",
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "server_probe": {
+    "/v1/models": {
+      "models": [
+        {
+          "name": "kev-latest",
+          "description": "Kev pointer head on Qwen/Qwen3.5-0.8B-Base, serving jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e at temperature 2.35",
+          "release_date": "2026-09-28",
+          "run": "jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e",
+          "base": "Qwen/Qwen3.5-0.8B-Base",
+          "lora": 16,
+          "device": "cuda",
+          "backend": "torch",
+          "dtype": "float32",
+          "temperature": 2.3510958125672174,
+          "cuda_graphs": null,
+          "prefix_cache": {
+            "size": 4,
+            "min_state_tokens": 0,
+            "max_tokens": 65536,
+            "hits": 0,
+            "misses": 3,
+            "cached_states": 3,
+            "oom_retries": 0
+          },
+          "batches": {
+            "count": 3,
+            "requests": 3,
+            "queued": 0
+          }
+        },
+        {
+          "name": "jev-latest",
+          "description": "Kev pointer head on Qwen/Qwen3.5-0.8B-Base, serving jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e at temperature 2.35",
+          "release_date": "2026-09-28",
+          "run": "jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e",
+          "base": "Qwen/Qwen3.5-0.8B-Base",
+          "lora": 16,
+          "device": "cuda",
+          "backend": "torch",
+          "dtype": "float32",
+          "temperature": 2.3510958125672174,
+          "cuda_graphs": null,
+          "prefix_cache": {
+            "size": 4,
+            "min_state_tokens": 0,
+            "max_tokens": 65536,
+            "hits": 0,
+            "misses": 3,
+            "cached_states": 3,
+            "oom_retries": 0
+          },
+          "batches": {
+            "count": 3,
+            "requests": 3,
+            "queued": 0
+          }
+        }
+      ]
+    },
+    "/health": {
+      "unavailable": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}"
+    }
+  },
+  "server_identity": {
+    "name": "kev-latest",
+    "run": "jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e",
+    "base": "Qwen/Qwen3.5-0.8B-Base",
+    "device": "cuda",
+    "backend": "torch",
+    "dtype": "float32",
+    "temperature": 2.3510958125672174
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_kev.jsonl",
+  "runtime": {
+    "implementation": "kev native /v1/systemone",
+    "source_repository": "https://github.com/jaredpalmer/kev",
+    "source_revision": "461b5eac35d96e95c7dede21b9e0402b4cf7092d",
+    "weights_repository": "jaredpalmer/kev-0.8b",
+    "weights_revision": "9a45d25eb2ab761841196625383fa1dff0e56c1e",
+    "weights_sha256": {
+      "head.pt": "f400bd12802b2b105ae45d6b03774a158a3db4fccff42413734ddca2e5c920b6",
+      "adapter_model.safetensors": "9b908623acb162118575f4e7a94524f9c139c335be4bfb74d6cfceca01e1885a"
+    },
+    "device": "cuda",
+    "dtype": "fp32",
+    "hostname": "dgxh100-059",
+    "gpu_index": 1,
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "driver_version": "570.195.03",
+    "server_flags": [
+      "KEV_DTYPE=fp32",
+      "KEV_FUSED=0",
+      "KEV_CUDA_GRAPHS=0",
+      "KEV_DATE_FACTS=0"
+    ],
+    "endpoint_bound_to": "127.0.0.1:18008",
+    "environment_file": "runtime/bfcl_v4/kev/environment.json",
+    "environment_sha256": "d3715077c53f597f6d2627590e991b57f5200d50cb2d656780b6ab1c024b0af6",
+    "native_preflight_file": "runtime/bfcl_v4/kev/preflight.json",
+    "native_preflight_sha256": "9bc52730e32fb2566ad9cd3baaf80c8ac0e2fb9664f95edd6a2c4d40a2c2391e",
+    "launch_file": "runtime/bfcl_v4/kev/launch.sh",
+    "launch_sha256": "250c9019cab26f6452b8d28da00fc28c8fb3223104f29409b6057df83f39ed94",
+    "warm_up": {
+      "count": 3,
+      "case_ids": [
+        "live_multiple_997-228-0",
+        "live_multiple_430-141-19",
+        "live_multiple_996-227-0"
+      ],
+      "excluded_from_scored_log": true
+    },
+    "notes": "One sequential pass through the 250 frozen cases after three separate warmup cases. Latency is observed native endpoint timing, not a controlled throughput benchmark."
+  }
+}

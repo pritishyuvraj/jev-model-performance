@@ -1,0 +1,107 @@
+{
+  "schema": "bfcl-v4-jev-eval-summary/v1",
+  "generated_at_utc": "2026-09-30T00:32:24+00:00",
+  "run": {
+    "provider": "semif",
+    "requested_model": "Qwen/Qwen3.5-4B",
+    "declared_model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "upstream_repo": "https://github.com/TheoLeeCJ/SemIf-OpenJev",
+    "upstream_revision": "23cf1f39fc9534fe81437200959b6dfc7106e45a",
+    "mode": "direct",
+    "backend": "torch",
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "max_input_tokens": 4096,
+    "input_adapter": "semif-direct-bfcl-choice-v1",
+    "input_adapter_sha256": "cc55d6b036b3d582407167e6cd009e253fdedc487b4f2494fc61dcbfebd8af11",
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "expected_count": 250,
+  "completed_count": 250,
+  "is_complete": true,
+  "overall": {
+    "total": 250,
+    "correct": 229,
+    "tool_selection_correct": 244,
+    "errors": 0,
+    "incorrect_responses": 21,
+    "accuracy_all_cases": 0.916,
+    "tool_selection_accuracy_all_cases": 0.976,
+    "accuracy_responded_only": 0.916
+  },
+  "by_stratum": {
+    "multi_tool_call": {
+      "total": 150,
+      "correct": 147,
+      "tool_selection_correct": 147,
+      "errors": 0,
+      "incorrect_responses": 3,
+      "accuracy_all_cases": 0.98,
+      "tool_selection_accuracy_all_cases": 0.98,
+      "accuracy_responded_only": 0.98
+    },
+    "one_tool_call": {
+      "total": 50,
+      "correct": 49,
+      "tool_selection_correct": 49,
+      "errors": 0,
+      "incorrect_responses": 1,
+      "accuracy_all_cases": 0.98,
+      "tool_selection_accuracy_all_cases": 0.98,
+      "accuracy_responded_only": 0.98
+    },
+    "one_tool_no_call": {
+      "total": 50,
+      "correct": 33,
+      "tool_selection_correct": 48,
+      "errors": 0,
+      "incorrect_responses": 17,
+      "accuracy_all_cases": 0.66,
+      "tool_selection_accuracy_all_cases": 0.96,
+      "accuracy_responded_only": 0.66
+    }
+  },
+  "by_category": {
+    "live_irrelevance": {
+      "total": 50,
+      "correct": 33,
+      "tool_selection_correct": 48,
+      "errors": 0,
+      "incorrect_responses": 17,
+      "accuracy_all_cases": 0.66,
+      "tool_selection_accuracy_all_cases": 0.96,
+      "accuracy_responded_only": 0.66
+    },
+    "live_multiple": {
+      "total": 150,
+      "correct": 147,
+      "tool_selection_correct": 147,
+      "errors": 0,
+      "incorrect_responses": 3,
+      "accuracy_all_cases": 0.98,
+      "tool_selection_accuracy_all_cases": 0.98,
+      "accuracy_responded_only": 0.98
+    },
+    "live_simple": {
+      "total": 50,
+      "correct": 49,
+      "tool_selection_correct": 49,
+      "errors": 0,
+      "incorrect_responses": 1,
+      "accuracy_all_cases": 0.98,
+      "tool_selection_accuracy_all_cases": 0.98,
+      "accuracy_responded_only": 0.98
+    }
+  },
+  "error_cases": [],
+  "response_models": {
+    "Qwen/Qwen3.5-4B": 250
+  },
+  "note": "accuracy_all_cases scores the exact BFCL-derived action. tool_selection_accuracy_all_cases also credits clarify/cannot_answer on BFCL no-call cases because no function was selected. Errors count as incorrect in both. Neither scores arguments or tool execution."
+}

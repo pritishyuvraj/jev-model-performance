@@ -1,0 +1,19 @@
+Fetching 20 files:   0%|          | 0/20 [00:00<?, ?it/s]Fetching 20 files: 100%|██████████| 20/20 [00:00<00:00, 2466.51it/s]
+Loading weights:   0%|          | 0/760 [00:00<?, ?it/s]Loading weights:  36%|███▌      | 270/760 [00:00<00:00, 2651.06it/s]Loading weights:  71%|███████   | 536/760 [00:00<00:00, 2304.72it/s]Loading weights: 100%|██████████| 760/760 [00:00<00:00, 2449.59it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[1/2] live_multiple_997-228-0: usage_api.UsageApi.get_hosts_per_day
+[2/2] live_multiple_430-141-19: Movies_1_BuyMovieTickets
+{
+  "summary": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_nimble.summary.json",
+  "overall": {
+    "total": 2,
+    "correct": 2,
+    "tool_selection_correct": 2,
+    "errors": 0,
+    "incorrect_responses": 0,
+    "accuracy_all_cases": 1.0,
+    "tool_selection_accuracy_all_cases": 1.0,
+    "accuracy_responded_only": 1.0
+  }
+}

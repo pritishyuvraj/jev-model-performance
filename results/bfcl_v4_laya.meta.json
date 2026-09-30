@@ -1,0 +1,91 @@
+{
+  "schema": "bfcl-v4-jev-eval-run/v1",
+  "created_at_utc": "2026-09-30T00:36:09+00:00",
+  "run_id": "78fd87934d5b8f6fa95913d2cbef1197ff445a4475cf1f9c6486aa6867289416",
+  "run": {
+    "provider": "laya",
+    "requested_model": "convaiinnovations/laya-typed-decisions",
+    "declared_model_revision": "1a793eb568e6718f15941d08f85432581df534e3",
+    "endpoint": "http://127.0.0.1:18007",
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "server_probe": {
+    "/v1/models": {
+      "unavailable": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}"
+    },
+    "/health": {
+      "status": "ok",
+      "loaded": [
+        "typed-decisions"
+      ],
+      "revisions": {
+        "typed-decisions": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+      },
+      "device": "cuda",
+      "device_is_preference": false,
+      "checkpoint_devices": {
+        "typed-decisions": "cuda"
+      },
+      "cpu_fallbacks": {
+        "typed-decisions": {
+          "count": 0,
+          "last_reason": null
+        }
+      }
+    }
+  },
+  "server_identity": {
+    "health_device": "cuda",
+    "health_revisions": {
+      "typed-decisions": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "health_loaded": [
+      "typed-decisions"
+    ]
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_laya.jsonl",
+  "runtime": {
+    "implementation": "laya native /v1/systemone",
+    "source_repository": "https://github.com/NandhaKishorM/laya",
+    "source_revision": "9d955671415fc19f069b9cc998928075c1f255ec",
+    "weights_repository": "convaiinnovations/laya",
+    "weights_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "weights_sha256": {
+      "model.safetensors": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e"
+    },
+    "device": "cuda",
+    "dtype": "fp16 CUDA autocast",
+    "hostname": "dgxh100-059",
+    "gpu_index": 0,
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "driver_version": "570.195.03",
+    "server_flags": [
+      "LAYA_MODELS=typed-decisions",
+      "LAYA_REVISION=reviewed",
+      "LAYA_CUDA_AMP=fp16"
+    ],
+    "endpoint_bound_to": "127.0.0.1:18007",
+    "environment_file": "runtime/bfcl_v4/laya/environment.json",
+    "environment_sha256": "814be7b1f20b9396ca582dbde0e95f6a36339c2528f91ef39f2579163ca7d7d1",
+    "native_preflight_file": "runtime/bfcl_v4/laya/preflight.json",
+    "native_preflight_sha256": "b376b96775ef1a2555ab8b857d09c82f79ee648c19f233a4259a6e7748792ca6",
+    "launch_file": "runtime/bfcl_v4/laya/launch.sh",
+    "launch_sha256": "8e0beeeff77f300a3ba6fa35473514969a5e6ee88d270f3f401482fe496867a7",
+    "warm_up": {
+      "count": 3,
+      "case_ids": [
+        "live_multiple_997-228-0",
+        "live_multiple_430-141-19",
+        "live_multiple_996-227-0"
+      ],
+      "excluded_from_scored_log": true
+    },
+    "notes": "One sequential pass through the 250 frozen cases after three separate warmup cases. Latency is observed native endpoint timing, not a controlled throughput benchmark."
+  }
+}

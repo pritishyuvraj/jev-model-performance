@@ -1,0 +1,88 @@
+{
+  "schema": "bfcl-v4-jev-eval-run/v1",
+  "created_at_utc": "2026-09-30T00:33:30+00:00",
+  "run_id": "aa8335140bf2035f7a1884b113dab1eb6105f354eacc579214c6350a5f6b8b6f",
+  "run": {
+    "provider": "rizzo",
+    "requested_model": "rizzo-latest",
+    "declared_model_revision": "55633c8cbd2b826bd3eefdeb05310450996649df",
+    "endpoint": "http://127.0.0.1:18017",
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "server_probe": {
+    "/v1/models": {
+      "models": [
+        {
+          "name": "rizzo-latest",
+          "description": "Local XHToken/Spark-X2.5-4B scored with typed option logits.",
+          "release_date": "2026-09-21"
+        },
+        {
+          "name": "rizzo-flow-4b-q8_0",
+          "description": "Local XHToken/Spark-X2.5-4B scored with typed option logits.",
+          "release_date": "2026-09-21"
+        },
+        {
+          "name": "jev-latest",
+          "description": "Compatibility alias: answered by rizzo-flow-4b-q8_0, not by TypeSafe Jev.",
+          "release_date": "2026-09-21"
+        }
+      ]
+    },
+    "/health": {
+      "status": "ready",
+      "model": {
+        "source": "XHToken/Spark-X2.5-4B",
+        "requested_revision": "0bcb35678590218655dff3765b9e61c83b35e9c4",
+        "gguf_source": "rizzoaiacademy/rizzo-flow",
+        "gguf_revision": "55633c8cbd2b826bd3eefdeb05310450996649df",
+        "source_files": {
+          "rizzo-flow-q8.gguf": "dbec3c89d33984772324e65a8ed56b48e958e301b856cb870a7c1b385d01691a"
+        },
+        "precision": "q8_0",
+        "device": "gpu",
+        "backend": "cuda",
+        "runtime": "llama.cpp",
+        "llama_cpp_release": "b11081",
+        "llama_cpp_commit": "161755f29e415e2c33efe906e91843c068efd664",
+        "prompt_version": "spark-decisions-v3",
+        "weights": "flow",
+        "fingerprint": "db40919f83d69e2e52de546847a47ae357e8e42b88c820af8d075d5dda59cd22",
+        "device_name": "NVIDIA H100 80GB HBM3",
+        "context_cells": 10240,
+        "load_seconds": 7.0363178718835115
+      }
+    }
+  },
+  "server_identity": {
+    "name": "rizzo-latest",
+    "health_model": {
+      "source": "XHToken/Spark-X2.5-4B",
+      "requested_revision": "0bcb35678590218655dff3765b9e61c83b35e9c4",
+      "gguf_source": "rizzoaiacademy/rizzo-flow",
+      "gguf_revision": "55633c8cbd2b826bd3eefdeb05310450996649df",
+      "source_files": {
+        "rizzo-flow-q8.gguf": "dbec3c89d33984772324e65a8ed56b48e958e301b856cb870a7c1b385d01691a"
+      },
+      "precision": "q8_0",
+      "device": "gpu",
+      "backend": "cuda",
+      "runtime": "llama.cpp",
+      "llama_cpp_release": "b11081",
+      "llama_cpp_commit": "161755f29e415e2c33efe906e91843c068efd664",
+      "prompt_version": "spark-decisions-v3",
+      "weights": "flow",
+      "fingerprint": "db40919f83d69e2e52de546847a47ae357e8e42b88c820af8d075d5dda59cd22",
+      "device_name": "NVIDIA H100 80GB HBM3",
+      "context_cells": 10240,
+      "load_seconds": 7.0363178718835115
+    }
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_rizzo.jsonl"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "ready",
+  "model": {
+    "source": "XHToken/Spark-X2.5-4B",
+    "requested_revision": "0bcb35678590218655dff3765b9e61c83b35e9c4",
+    "gguf_source": "rizzoaiacademy/rizzo-flow",
+    "gguf_revision": "55633c8cbd2b826bd3eefdeb05310450996649df",
+    "source_files": {
+      "rizzo-flow-q8.gguf": "dbec3c89d33984772324e65a8ed56b48e958e301b856cb870a7c1b385d01691a"
+    },
+    "precision": "q8_0",
+    "device": "gpu",
+    "backend": "cuda",
+    "runtime": "llama.cpp",
+    "llama_cpp_release": "b11081",
+    "llama_cpp_commit": "161755f29e415e2c33efe906e91843c068efd664",
+    "prompt_version": "spark-decisions-v3",
+    "weights": "flow",
+    "fingerprint": "db40919f83d69e2e52de546847a47ae357e8e42b88c820af8d075d5dda59cd22",
+    "device_name": "NVIDIA H100 80GB HBM3",
+    "context_cells": 10240,
+    "load_seconds": 7.0363178718835115
+  }
+}

@@ -1,0 +1,29 @@
+[1/2] live_multiple_997-228-0: clarify
+[2/2] live_multiple_430-141-19: clarify
+{
+  "summary": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_nanojev.summary.json",
+  "completed_count": 2,
+  "expected_count": 250,
+  "overall": {
+    "total": 2,
+    "correct": 0,
+    "tool_selection_correct": 0,
+    "errors": 0,
+    "incorrect_responses": 2,
+    "accuracy_all_cases": 0.0,
+    "tool_selection_accuracy_all_cases": 0.0,
+    "accuracy_responded_only": 0.0
+  },
+  "by_stratum": {
+    "multi_tool_call": {
+      "total": 2,
+      "correct": 0,
+      "tool_selection_correct": 0,
+      "errors": 0,
+      "incorrect_responses": 2,
+      "accuracy_all_cases": 0.0,
+      "tool_selection_accuracy_all_cases": 0.0,
+      "accuracy_responded_only": 0.0
+    }
+  }
+}

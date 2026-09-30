@@ -1,0 +1,26 @@
+{
+  "schema": "bfcl-v4-model-log-verification/v1",
+  "provider": "nanojev",
+  "verified_at_utc": "2026-09-30T00:36:22.863606+00:00",
+  "count": 250,
+  "unique_cases": 250,
+  "all_attempt_one": true,
+  "errors": 0,
+  "http_retries": 0,
+  "all_probabilities_match_offered_options": true,
+  "all_selected_actions_are_probability_argmax": true,
+  "all_probability_sums_within_tolerance": true,
+  "dataset_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "run_id": "caf50a7e93bd71d52693e385cfad84ccd19c988fa3afc6166429985773bc1c3a",
+  "latency_ms": {
+    "basis": "server_latency_ms",
+    "mean": 26.73352,
+    "median": 23.939999999999998,
+    "p95": 32.5
+  },
+  "server_latency_reported_count": 250,
+  "mean_gold_probability": 0.21367423981428146,
+  "positive_mean_gold_probability": 0.17708429586142302,
+  "positive_exact_correct": 7,
+  "positive_count": 200
+}

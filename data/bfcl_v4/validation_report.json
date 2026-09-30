@@ -1,0 +1,43 @@
+{
+  "schema": "bfcl-v4-final-validation/v1",
+  "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "case_count": 250,
+  "category_counts": {
+    "live_multiple": 150,
+    "live_simple": 50,
+    "live_irrelevance": 50
+  },
+  "v1_full_source_rows": 2000,
+  "v1_frozen_subset_rows": 250,
+  "v1_unique_normalized_requests": 1696,
+  "normalized_v1_overlap_count": 0,
+  "internal_duplicate_normalized_requests": 0,
+  "internal_duplicate_complete_catalogs": 0,
+  "internal_duplicate_category_middle_id_families": 0,
+  "source_questions_schemas_and_full_cards_preserved": true,
+  "semantic_review_acceptance_count": 250,
+  "reviewed_card_override_count": 0,
+  "native_laya_fit_report_sha256": "4db5a98e21d0e1837f68a88de8aee3acf1da9fd0016e955b039934b02bdfc1de",
+  "viewer_sha256": "e92f658702861f405d6c11866880c05a9046cbda337fecdbf6478c3055ae3c6c",
+  "viewer_embedded_cases_match": true,
+  "viewer_embedded_model_runs": 7,
+  "independent_rebuild_files_byte_identical": [
+    "LICENSE",
+    "cases.jsonl",
+    "exclusions.jsonl",
+    "index.csv",
+    "manifest.json",
+    "review.md",
+    "selection_audit.jsonl",
+    "selection_manifest.json",
+    "selection_review.json"
+  ],
+  "near_v1_screen": {
+    "method": "Word-set Jaccard >=0.65 and normalized character-length ratio >=0.82, then difflib.SequenceMatcher >=0.90",
+    "flag_count": 0,
+    "note": "Additional text-similarity screen, not a guarantee against every semantic paraphrase."
+  },
+  "model_inference_performed": true,
+  "dataset_creation_performed_inference": false,
+  "evaluation_run_manifest_file": "results/bfcl_v4_run_manifest.json"
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "bfcl-v4-native-input-preflight/v1",
+  "model": "nimble",
+  "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "case_count": 250,
+  "source_revision": "62076b4f2d365b5879dafcf7f6dd072a1fe76df7",
+  "model_identity": {
+    "model_id": "bespokelabs/Bespoke-Nimble-9B",
+    "model_revision": "bd792f44ec8e265be861bfcdf4e05967ffe0e858",
+    "base_model": "Qwen/Qwen3.5-9B",
+    "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "adapter_sha256": "29ef39b072dee97287947455337879c1e916705c2f727287922a2d81f5e2f20a",
+    "source_revision": "62076b4f2d365b5879dafcf7f6dd072a1fe76df7"
+  },
+  "token_limit": 8192,
+  "min_input_tokens": 265,
+  "max_input_tokens": 470,
+  "mean_input_tokens": 338.492,
+  "no_truncation": true,
+  "source_and_gold_excluded_from_model_payload": true,
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "transformers": "5.17.0",
+    "visible_gpu": "2",
+    "gpu_names": [
+      "NVIDIA H100 80GB HBM3"
+    ]
+  }
+}

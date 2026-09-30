@@ -1,0 +1,61 @@
+{
+  "schema": "bfcl-v4-jev-eval-run/v1",
+  "created_at_utc": "2026-09-30T00:31:47+00:00",
+  "run_id": "e402ba6ce68c5d9a86aed24881505730b6302f60f0f79154b7b80d870cc9c5fb",
+  "run": {
+    "provider": "nimble",
+    "requested_model": "bespokelabs/Bespoke-Nimble-9B",
+    "declared_model_revision": "bd792f44ec8e265be861bfcdf4e05967ffe0e858",
+    "endpoint": "native-cuda",
+    "adapter": "nimble-cuda-enum-v1",
+    "source_revision": "62076b4f2d365b5879dafcf7f6dd072a1fe76df7",
+    "base_model": "Qwen/Qwen3.5-9B",
+    "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "adapter_sha256": "29ef39b072dee97287947455337879c1e916705c2f727287922a2d81f5e2f20a",
+    "runtime": {
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "device_map": null,
+      "max_gpu_memory": null,
+      "placement": null,
+      "torch": "2.8.0+cu128",
+      "cuda": "12.8",
+      "hip": null,
+      "gpus": [
+        "NVIDIA H100 80GB HBM3"
+      ]
+    },
+    "temperature": 1.0,
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "server_probe": {
+    "native_cuda_scorer": {
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "device_map": null,
+      "max_gpu_memory": null,
+      "placement": null,
+      "torch": "2.8.0+cu128",
+      "cuda": "12.8",
+      "hip": null,
+      "gpus": [
+        "NVIDIA H100 80GB HBM3"
+      ]
+    }
+  },
+  "server_identity": {
+    "model_id": "bespokelabs/Bespoke-Nimble-9B",
+    "model_revision": "bd792f44ec8e265be861bfcdf4e05967ffe0e858",
+    "base_model": "Qwen/Qwen3.5-9B",
+    "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "adapter_sha256": "29ef39b072dee97287947455337879c1e916705c2f727287922a2d81f5e2f20a",
+    "source_revision": "62076b4f2d365b5879dafcf7f6dd072a1fe76df7"
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_nimble.jsonl"
+}

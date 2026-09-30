@@ -1,0 +1,71 @@
+{
+  "schema": "bfcl-v4-live-jev-routing-subset/v1",
+  "source_repository": "https://github.com/ShishirPatil/gorilla",
+  "source_tag": "BFCL V4 corpus / Live categories",
+  "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+  "observed_checkout_head": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+  "source_data_path": "berkeley-function-call-leaderboard/bfcl_eval/data",
+  "source_license": "Apache-2.0",
+  "source_sha256": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_irrelevance.json": "6559fda2beaceb609a2cd2e504c65b4a56cb448e1ef88fddfd199e163d163349",
+    "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json": "fd8ccfad4d911420d0e3341dbe2fff77d1d341da934248b9bb2bda24ab3a10c8",
+    "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_simple.json": "1af2ac87dca47556db7b7e37e51e28b459a38b594e3c7b3c792b4903598ca0c4",
+    "berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer/BFCL_v4_live_multiple.json": "97e90d59c5bd76c55a2920ce93e5566e9046307d3f558578f085f9d3a56c3084",
+    "berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer/BFCL_v4_live_simple.json": "fec9cfa9744a936f9126981e85a2023da1e63e273eafebc81923a1162fad70ce"
+  },
+  "v1_exclusion_source": {
+    "source_commit": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "observed_checkout_head": "9df5c346ee0556c8a7cb09fd7206a39aadd904c2",
+    "source_data_path": "berkeley-function-call-leaderboard/data",
+    "source_sha256": {
+      "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_chatable.json": "91fd72da3055225bde3bf8870402ca6354cb9d84bfea263c666a5e988dd2bb88",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_executable_multiple_function.json": "6b1bed85d05a12a7dbc6197460c72f81df83055813926263031894d00ca58747",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_executable_parallel_function.json": "b86cdb4a71558b22ac1ea51b339d13daf947a31ed318afaa2a4850b28935909a",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_executable_parallel_multiple_function.json": "813c85b613f33093120a90343786a9838c0d6b7d951ede629b29db2809dffee4",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_executable_simple.json": "7c548f9183a197c595ac689f166a0e91082bf0559938bfce07cf464da6152200",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_java.json": "44091b346e6cf82da201c311386f4949fd4cd0d2ba3d4f323ab084a54315aee0",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_javascript.json": "d766841fe3cefed8d5429eb474032dfb038e34794f28a393365579480bc5265d",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_multiple_function.json": "cf5f84a1554c3df3a3973b946868cc562ca416f643b6a77dec23a56db41ca855",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_parallel_function.json": "610a5dea95d7d6f8a7d0889eab92805d7de95693069a5cfc7812b8817cc650df",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_parallel_multiple_function.json": "431f9b2464a03df1287be2f66a340313b4f4acde062da4d15f90bf537c3b22e8",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_relevance.json": "6f1b76988f9e29bca69e00ef8da259d45a1cff5966f7d3227513ecdcd9d48da1",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_rest.json": "64673dba0e8f4f2551af4eccc982ff885871965fc5c416e29969a77a3b674613",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_simple.json": "bf4f0cbd59c6899dc7d38b7f68b8d57ff07030c368f665e16b48f0cc29cee464",
+      "berkeley-function-call-leaderboard/data/gorilla_openfunctions_v1_test_sql.json": "073320ecbf9f20c3332995e51d2db8072e0ec3cddbd7c404525378dd3b19efd0"
+    }
+  },
+  "selected_count": 250,
+  "score_eligible_count": 250,
+  "category_counts": {
+    "live_multiple": 150,
+    "live_simple": 50,
+    "live_irrelevance": 50
+  },
+  "stratum_counts": {
+    "multi_tool_call": 150,
+    "one_tool_call": 50,
+    "one_tool_no_call": 50
+  },
+  "cases_file": "cases.jsonl",
+  "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "index_file": "index.csv",
+  "index_sha256": "ab7610aa3e94e46644f1599051b208a49857733434375ae8cd377c1a393afe61",
+  "selection_manifest_file": "selection_manifest.json",
+  "selection_manifest_sha256": "05fa44f1ce8fdce1492ccb3c4aa07811852e332fd977e91dbd3741a86a0e56c8",
+  "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+  "selection_audit_sha256": "c17da8914613f70a8aa0ad1f9f474530536cf9929cf2c23cdedd09beef6b7ccf",
+  "exclusions_sha256": "6e7f6783f1750d175ab8184b514b4fa0f44f14df652d9acd34b10037ea304bab",
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "target_semantics": {
+    "positive": "Select the unique relevant offered capability. The chat model supplies arguments and clarification before execution; neither is scored.",
+    "negative": "Semantic review found no applicable offered capability. Canonical no_tool is retained for exact-action scoring; any of no_tool/clarify/cannot_answer is accepted for primary tool-route scoring.",
+    "official_bfcl": "This is an independent capability-routing adaptation, not the official BFCL V4 function-calling or agentic score."
+  },
+  "card_policy": "Original full descriptions unless an explicit per-case reviewed card_overrides entry is supplied; complete original schemas remain in source.functions.",
+  "meta_card_version": "bfcl-v4-neutral-meta-cards/v1",
+  "meta_card_change_from_v1": "Neutral meta cards remove V1's unsupported blanket claims about unavailable messaging/payments; ambiguous missing argument values remain the chat model's responsibility.",
+  "token_fit": "Not asserted by conversion; verify native renderings before inference.",
+  "selected_overlap_count": 0
+}

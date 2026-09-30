@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the authoritative SemIf direct-logit scorer on the BFCL V1 routing cases."""
+"""Run the authoritative SemIf direct-logit scorer on frozen BFCL routing cases."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ ROOT = HERE.parents[1]
 sys.path.insert(0, str(HERE.parent))
 
 from evaluate import (  # noqa: E402
-    load_cases, read_predictions, sha256, stratum, summarize, utc_now, write_json_atomic,
+    dataset_run_fields, eval_schema, load_cases, read_predictions, sha256, stratum, summarize, utc_now, write_json_atomic,
 )
 from semif_phase1.core import load_causal_model  # noqa: E402
 from semif_phase1.direct import score  # noqa: E402
@@ -106,6 +106,7 @@ def main() -> int:
         "source_tag": source_manifest.get("source_tag") if source_manifest else None,
         "source_commit": source_manifest.get("source_commit") if source_manifest else None,
         "selection_review_sha256": (source_manifest.get("selection_review") or {}).get("sha256") if source_manifest else None,
+        **dataset_run_fields(source_manifest),
     }
     run_id = hashlib.sha256(json.dumps(run, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     if output.exists() and not meta_path.exists():
@@ -116,7 +117,7 @@ def main() -> int:
             raise ValueError(f"{meta_path} belongs to a different run")
     else:
         metadata = {
-            "schema": "bfcl-v1-jev-eval-run/v1",
+            "schema": eval_schema("run", run),
             "created_at_utc": utc_now(),
             "run_id": run_id,
             "run": run,
