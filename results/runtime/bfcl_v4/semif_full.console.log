@@ -1,0 +1,41 @@
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<03:14,  2.19it/s]Loading weights:   5%|▌         | 22/426 [00:00<00:07, 51.56it/s]Loading weights:   9%|▉         | 38/426 [00:00<00:05, 71.24it/s]Loading weights:  14%|█▍        | 61/426 [00:00<00:03, 109.53it/s]Loading weights:  18%|█▊        | 77/426 [00:00<00:03, 104.22it/s]Loading weights:  21%|██▏       | 91/426 [00:01<00:03, 87.95it/s] Loading weights:  33%|███▎      | 141/426 [00:01<00:02, 118.22it/s]Loading weights:  46%|████▌     | 194/426 [00:01<00:01, 166.86it/s]Loading weights:  51%|█████▏    | 219/426 [00:01<00:01, 163.89it/s]Loading weights:  58%|█████▊    | 248/426 [00:01<00:00, 184.87it/s]Loading weights:  63%|██████▎   | 269/426 [00:02<00:01, 148.21it/s]Loading weights:  70%|███████   | 300/426 [00:02<00:00, 165.67it/s]Loading weights:  77%|███████▋  | 326/426 [00:02<00:00, 174.87it/s]Loading weights:  81%|████████  | 345/426 [00:02<00:00, 167.54it/s]Loading weights:  85%|████████▌ | 363/426 [00:02<00:00, 155.71it/s]Loading weights:  89%|████████▉ | 380/426 [00:02<00:00, 156.43it/s]Loading weights:  96%|█████████▌| 408/426 [00:03<00:00, 163.33it/s]Loading weights: 100%|██████████| 426/426 [00:03<00:00, 137.90it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[10/248] live_multiple_956-203-0: partner.mandates
+[20/248] live_multiple_197-89-0: get_tickets
+[30/248] live_multiple_952-201-0: uber.eat.order
+[40/248] live_multiple_251-115-0: version_api.VersionApi.get_version
+[50/248] live_multiple_221-95-0: segment
+[60/248] live_multiple_555-154-1: RentalCars_3_GetCarsAvailable
+[70/248] live_multiple_322-132-12: Movies_3_FindMovies
+[80/248] live_multiple_497-148-7: Events_3_FindEvents
+[90/248] live_multiple_1035-263-0: api_token_api.APITokenApi.get_api_tokens
+[100/248] live_multiple_835-178-10: Music_3_LookupMusic
+[110/248] live_multiple_51-21-0: order_status_check
+[120/248] live_multiple_0-0-0: ChaDri.change_drink
+[130/248] live_multiple_398-139-2: Events_3_FindEvents
+[140/248] live_multiple_477-146-2: Music_3_LookupMusic
+[150/248] live_simple_131-84-1: requests.get
+[160/248] live_simple_229-120-0: requests.get
+[170/248] live_simple_50-22-0: get_latest_carbon_intensity
+[180/248] live_simple_126-82-0: telemetry.flowrules.interfaceInfo.get
+[190/248] live_simple_246-128-0: book_flight
+[200/248] live_irrelevance_436-109-0: no_tool
+[210/248] live_irrelevance_445-115-0: no_tool
+[220/248] live_irrelevance_109-6-0: no_tool
+[230/248] live_irrelevance_837-327-1: no_tool
+[240/248] live_irrelevance_452-120-0: no_tool
+[248/248] live_irrelevance_460-125-1: no_tool
+{
+  "completed": 250,
+  "overall": {
+    "total": 250,
+    "correct": 229,
+    "tool_selection_correct": 244,
+    "errors": 0,
+    "incorrect_responses": 21,
+    "accuracy_all_cases": 0.916,
+    "tool_selection_accuracy_all_cases": 0.976,
+    "accuracy_responded_only": 0.916
+  }
+}

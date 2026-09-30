@@ -18,9 +18,9 @@
   "semantic_review_acceptance_count": 250,
   "reviewed_card_override_count": 0,
   "native_laya_fit_report_sha256": "4db5a98e21d0e1837f68a88de8aee3acf1da9fd0016e955b039934b02bdfc1de",
-  "viewer_sha256": "254117ecb001003386ebddec1e70edc45e2ea2636c5e7a37a6b54fd69d101c21",
+  "viewer_sha256": "e92f658702861f405d6c11866880c05a9046cbda337fecdbf6478c3055ae3c6c",
   "viewer_embedded_cases_match": true,
-  "viewer_embedded_model_runs": 0,
+  "viewer_embedded_model_runs": 7,
   "independent_rebuild_files_byte_identical": [
     "LICENSE",
     "cases.jsonl",
@@ -37,5 +37,7 @@
     "flag_count": 0,
     "note": "Additional text-similarity screen, not a guarantee against every semantic paraphrase."
   },
-  "model_inference_performed": false
+  "model_inference_performed": true,
+  "dataset_creation_performed_inference": false,
+  "evaluation_run_manifest_file": "results/bfcl_v4_run_manifest.json"
 }

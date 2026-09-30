@@ -1,0 +1,10 @@
+{
+  "checked_count": 250,
+  "unique_case_count": 250,
+  "status_errors": 0,
+  "probability_distributions_valid": true,
+  "case_ids_exactly_match_frozen_set": true,
+  "exact_correct": 56,
+  "route_correct": 103,
+  "case_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8"
+}

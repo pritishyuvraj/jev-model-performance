@@ -1,0 +1,15 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-5.15.0-1090-nvidia-x86_64-with-glibc2.35",
+  "packages": {
+    "torch": "2.8.0",
+    "transformers": "5.17.0",
+    "safetensors": "0.8.0",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.54.0",
+    "numpy": "2.5.3",
+    "triton": "3.4.0",
+    "pydantic": "2.13.5"
+  },
+  "nvidia_smi": "0, GPU-ae0ad6c6-1533-db65-02bd-15eda189d2de, NVIDIA H100 80GB HBM3, 570.195.03\n1, GPU-6a68559f-0467-4157-2020-7be34d987d7a, NVIDIA H100 80GB HBM3, 570.195.03\n2, GPU-f4c75c69-0412-bf77-a377-0c3d2b85690e, NVIDIA H100 80GB HBM3, 570.195.03\n3, GPU-a31b1fc7-9f7c-0f43-76e1-d49a33846967, NVIDIA H100 80GB HBM3, 570.195.03\n4, GPU-0b2be7db-231a-ca27-648d-bcb7f2357121, NVIDIA H100 80GB HBM3, 570.195.03\n5, GPU-ccf8a3ef-1cbc-a0f5-a324-ea80f359eb8c, NVIDIA H100 80GB HBM3, 570.195.03\n6, GPU-ef3f2a68-2e34-0bcf-684a-da0b2866a13c, NVIDIA H100 80GB HBM3, 570.195.03\n7, GPU-22851875-344e-0d4b-7099-d84936474416, NVIDIA H100 80GB HBM3, 570.195.03\n"
+}

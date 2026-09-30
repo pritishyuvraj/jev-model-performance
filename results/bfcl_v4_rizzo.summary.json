@@ -1,0 +1,99 @@
+{
+  "schema": "bfcl-v4-jev-eval-summary/v1",
+  "generated_at_utc": "2026-09-30T00:34:17+00:00",
+  "run": {
+    "provider": "rizzo",
+    "requested_model": "rizzo-latest",
+    "declared_model_revision": "55633c8cbd2b826bd3eefdeb05310450996649df",
+    "endpoint": "http://127.0.0.1:18017",
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "expected_count": 250,
+  "completed_count": 250,
+  "is_complete": true,
+  "overall": {
+    "total": 250,
+    "correct": 232,
+    "tool_selection_correct": 241,
+    "errors": 0,
+    "incorrect_responses": 18,
+    "accuracy_all_cases": 0.928,
+    "tool_selection_accuracy_all_cases": 0.964,
+    "accuracy_responded_only": 0.928
+  },
+  "by_stratum": {
+    "multi_tool_call": {
+      "total": 150,
+      "correct": 145,
+      "tool_selection_correct": 145,
+      "errors": 0,
+      "incorrect_responses": 5,
+      "accuracy_all_cases": 0.9666666666666667,
+      "tool_selection_accuracy_all_cases": 0.9666666666666667,
+      "accuracy_responded_only": 0.9666666666666667
+    },
+    "one_tool_call": {
+      "total": 50,
+      "correct": 50,
+      "tool_selection_correct": 50,
+      "errors": 0,
+      "incorrect_responses": 0,
+      "accuracy_all_cases": 1.0,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 1.0
+    },
+    "one_tool_no_call": {
+      "total": 50,
+      "correct": 37,
+      "tool_selection_correct": 46,
+      "errors": 0,
+      "incorrect_responses": 13,
+      "accuracy_all_cases": 0.74,
+      "tool_selection_accuracy_all_cases": 0.92,
+      "accuracy_responded_only": 0.74
+    }
+  },
+  "by_category": {
+    "live_irrelevance": {
+      "total": 50,
+      "correct": 37,
+      "tool_selection_correct": 46,
+      "errors": 0,
+      "incorrect_responses": 13,
+      "accuracy_all_cases": 0.74,
+      "tool_selection_accuracy_all_cases": 0.92,
+      "accuracy_responded_only": 0.74
+    },
+    "live_multiple": {
+      "total": 150,
+      "correct": 145,
+      "tool_selection_correct": 145,
+      "errors": 0,
+      "incorrect_responses": 5,
+      "accuracy_all_cases": 0.9666666666666667,
+      "tool_selection_accuracy_all_cases": 0.9666666666666667,
+      "accuracy_responded_only": 0.9666666666666667
+    },
+    "live_simple": {
+      "total": 50,
+      "correct": 50,
+      "tool_selection_correct": 50,
+      "errors": 0,
+      "incorrect_responses": 0,
+      "accuracy_all_cases": 1.0,
+      "tool_selection_accuracy_all_cases": 1.0,
+      "accuracy_responded_only": 1.0
+    }
+  },
+  "error_cases": [],
+  "response_models": {
+    "rizzo-flow-4b-q8_0": 250
+  },
+  "note": "accuracy_all_cases scores the exact BFCL-derived action. tool_selection_accuracy_all_cases also credits clarify/cannot_answer on BFCL no-call cases because no function was selected. Errors count as incorrect in both. Neither scores arguments or tool execution."
+}

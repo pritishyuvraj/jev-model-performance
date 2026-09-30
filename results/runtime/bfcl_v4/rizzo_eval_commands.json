@@ -1,0 +1,36 @@
+{
+  "smoke": [
+    "/data/home/pritish/jev-model-performance/inference/.venv/bin/python",
+    "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/inference/evaluate.py",
+    "--provider",
+    "rizzo",
+    "--endpoint",
+    "http://127.0.0.1:18017",
+    "--model",
+    "rizzo-latest",
+    "--model-revision",
+    "55633c8cbd2b826bd3eefdeb05310450996649df",
+    "--cases",
+    "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "--output",
+    "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_rizzo.jsonl",
+    "--limit",
+    "2"
+  ],
+  "resume": [
+    "/data/home/pritish/jev-model-performance/inference/.venv/bin/python",
+    "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/inference/evaluate.py",
+    "--provider",
+    "rizzo",
+    "--endpoint",
+    "http://127.0.0.1:18017",
+    "--model",
+    "rizzo-latest",
+    "--model-revision",
+    "55633c8cbd2b826bd3eefdeb05310450996649df",
+    "--cases",
+    "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "--output",
+    "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_rizzo.jsonl"
+  ]
+}

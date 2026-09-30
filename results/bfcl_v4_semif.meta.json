@@ -1,0 +1,35 @@
+{
+  "schema": "bfcl-v4-jev-eval-run/v1",
+  "created_at_utc": "2026-09-30T00:31:02+00:00",
+  "run_id": "1a08963f994aad280454c0b7dc1c9b2b486c9909bbeb8e39a7c67f2802c90c59",
+  "run": {
+    "provider": "semif",
+    "requested_model": "Qwen/Qwen3.5-4B",
+    "declared_model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "upstream_repo": "https://github.com/TheoLeeCJ/SemIf-OpenJev",
+    "upstream_revision": "23cf1f39fc9534fe81437200959b6dfc7106e45a",
+    "mode": "direct",
+    "backend": "torch",
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "max_input_tokens": 4096,
+    "input_adapter": "semif-direct-bfcl-choice-v1",
+    "input_adapter_sha256": "cc55d6b036b3d582407167e6cd009e253fdedc487b4f2494fc61dcbfebd8af11",
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "predictions_file": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_semif.jsonl",
+  "native_model_identity": {
+    "source": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "dtype": "bfloat16",
+    "device": "cuda:0",
+    "torch_version": "2.10.0+cu128",
+    "transformers_version": "5.17.0"
+  }
+}

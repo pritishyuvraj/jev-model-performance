@@ -10,7 +10,7 @@
 
 The canonical evaluation input is [cases.jsonl](cases.jsonl). Send only `jev.laya` or `jev.macjev` to a model. Gold labels, review notes, and `source` are for scoring and inspection and must stay outside the model input. **Jev selects the capability; the chat model supplies arguments and asks for missing values before execution.** Missing dates, addresses, or other argument values alone do not invalidate a positive tool label.
 
-No model inference has been run on this set. The viewer currently has no V4 results; rebuilding it after evaluation will embed `results/bfcl_v4_*.jsonl` logs. V1 logs are excluded.
+All seven models have completed this set with zero request errors. The viewer embeds their V4 per-case selections, probabilities, and saved logs. See the [results report](../../results/bfcl_v4.md), [charts](../../charts/bfcl_v4/README.md), and [exact rerun commands](../../inference/BFCL_V4.md). Rebuilding the viewer embeds `results/bfcl_v4_*.jsonl` logs; V1 logs are excluded.
 
 ## Source and selection
 
@@ -37,7 +37,7 @@ V4 uses neutral `no_tool`, `clarify`, and `cannot_answer` descriptions. This rem
 
 This is a curated, short-context, single-step routing pilot, **not an official BFCL V4 score** or a random representative sample of its full corpus. Public BFCL prompts may have appeared in model training. The overlap guarantee concerns exact and normalized user requests; it does not claim that every possible semantic paraphrase has been detected. Keep this set frozen and use separate development prompts for tuning.
 
-The [native Laya fit report](fit_report.json) checks all 250 complete rendered inputs with the pinned tokenizer: **250/250 fit**, maximum 312 total tokens, 217 head tokens, and 48 tokens in an option, under limits of 1,024/256/48. This check loads no model weights. The other six native adapters still need their own preflight when evaluated.
+The [native Laya fit report](fit_report.json) checks all 250 complete rendered inputs with the pinned tokenizer: **250/250 fit**, maximum 312 total tokens, 217 head tokens, and 48 tokens in an option, under limits of 1,024/256/48. This check loads no model weights. All six other native adapters also passed their own input checks before evaluation; their reports are preserved in [runtime evidence](../../results/runtime/bfcl_v4/README.md). Native formats and budgets differ between models.
 
 ## Files
 

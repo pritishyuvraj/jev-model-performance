@@ -1,0 +1,109 @@
+{
+  "schema": "bfcl-v4-native-output-validation/v1",
+  "models": {
+    "nimble": {
+      "run_id": "e402ba6ce68c5d9a86aed24881505730b6302f60f0f79154b7b80d870cc9c5fb",
+      "case_count": 250,
+      "all_finite_probabilities_logits": true,
+      "all_prompt_hashes_match_preflight": true,
+      "all_first_attempt": true,
+      "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+      "overall": {
+        "total": 250,
+        "correct": 222,
+        "tool_selection_correct": 249,
+        "errors": 0,
+        "incorrect_responses": 28,
+        "accuracy_all_cases": 0.888,
+        "tool_selection_accuracy_all_cases": 0.996,
+        "accuracy_responded_only": 0.888
+      },
+      "by_stratum": {
+        "multi_tool_call": {
+          "total": 150,
+          "correct": 150,
+          "tool_selection_correct": 150,
+          "errors": 0,
+          "incorrect_responses": 0,
+          "accuracy_all_cases": 1.0,
+          "tool_selection_accuracy_all_cases": 1.0,
+          "accuracy_responded_only": 1.0
+        },
+        "one_tool_call": {
+          "total": 50,
+          "correct": 50,
+          "tool_selection_correct": 50,
+          "errors": 0,
+          "incorrect_responses": 0,
+          "accuracy_all_cases": 1.0,
+          "tool_selection_accuracy_all_cases": 1.0,
+          "accuracy_responded_only": 1.0
+        },
+        "one_tool_no_call": {
+          "total": 50,
+          "correct": 22,
+          "tool_selection_correct": 49,
+          "errors": 0,
+          "incorrect_responses": 28,
+          "accuracy_all_cases": 0.44,
+          "tool_selection_accuracy_all_cases": 0.98,
+          "accuracy_responded_only": 0.44
+        }
+      },
+      "mean_wall_latency_ms": 57.78968,
+      "median_wall_latency_ms": 47.635
+    },
+    "semif": {
+      "run_id": "1a08963f994aad280454c0b7dc1c9b2b486c9909bbeb8e39a7c67f2802c90c59",
+      "case_count": 250,
+      "all_finite_probabilities_logits": true,
+      "all_prompt_hashes_match_preflight": true,
+      "all_first_attempt": true,
+      "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+      "overall": {
+        "total": 250,
+        "correct": 229,
+        "tool_selection_correct": 244,
+        "errors": 0,
+        "incorrect_responses": 21,
+        "accuracy_all_cases": 0.916,
+        "tool_selection_accuracy_all_cases": 0.976,
+        "accuracy_responded_only": 0.916
+      },
+      "by_stratum": {
+        "multi_tool_call": {
+          "total": 150,
+          "correct": 147,
+          "tool_selection_correct": 147,
+          "errors": 0,
+          "incorrect_responses": 3,
+          "accuracy_all_cases": 0.98,
+          "tool_selection_accuracy_all_cases": 0.98,
+          "accuracy_responded_only": 0.98
+        },
+        "one_tool_call": {
+          "total": 50,
+          "correct": 49,
+          "tool_selection_correct": 49,
+          "errors": 0,
+          "incorrect_responses": 1,
+          "accuracy_all_cases": 0.98,
+          "tool_selection_accuracy_all_cases": 0.98,
+          "accuracy_responded_only": 0.98
+        },
+        "one_tool_no_call": {
+          "total": 50,
+          "correct": 33,
+          "tool_selection_correct": 48,
+          "errors": 0,
+          "incorrect_responses": 17,
+          "accuracy_all_cases": 0.66,
+          "tool_selection_accuracy_all_cases": 0.96,
+          "accuracy_responded_only": 0.66
+        }
+      },
+      "mean_wall_latency_ms": 57.29324,
+      "median_wall_latency_ms": 50.285
+    }
+  }
+}

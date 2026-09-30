@@ -1,0 +1,130 @@
+{
+  "schema": "bfcl-v4-jev-eval-run/v1",
+  "created_at_utc": "2026-09-30T00:36:09+00:00",
+  "run_id": "994c950929c0f22ad8f28377c5e14d0fb65f94ae1511e0d45419240a051f75b4",
+  "run": {
+    "provider": "von",
+    "requested_model": "von-1.3",
+    "declared_model_revision": "43bbca0fb17f424539416ee8eb3de33cfc3dacf3",
+    "endpoint": "http://127.0.0.1:18014",
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "server_probe": {
+    "/v1/models": {
+      "models": [
+        {
+          "name": "von-latest",
+          "description": "Current Von System One decision model",
+          "release_date": "2026-09-23"
+        },
+        {
+          "name": "von-1.3.0",
+          "description": "Von 1.3 (von-1.2 weights + chain-of-options, real usage tokens)",
+          "release_date": "2026-09-28"
+        },
+        {
+          "name": "von-1.2.0",
+          "description": "Von 1.2 stable release (order-invariant option scoring)",
+          "release_date": "2026-09-23"
+        },
+        {
+          "name": "von-1.1.0",
+          "description": "Von 1.1 alias (resolves to current model)",
+          "release_date": "2026-09-21"
+        },
+        {
+          "name": "jev-latest",
+          "description": "TypeSafe Jev compatibility alias",
+          "release_date": "2026-09-21"
+        }
+      ],
+      "object": "list",
+      "data": [
+        {
+          "id": "von-latest",
+          "object": "model",
+          "owned_by": "von"
+        },
+        {
+          "id": "von-1.3.0",
+          "object": "model",
+          "owned_by": "von"
+        },
+        {
+          "id": "von-1.2.0",
+          "object": "model",
+          "owned_by": "von"
+        },
+        {
+          "id": "von-1.1.0",
+          "object": "model",
+          "owned_by": "von"
+        },
+        {
+          "id": "jev-latest",
+          "object": "model",
+          "owned_by": "von"
+        }
+      ]
+    },
+    "/health": {
+      "status": "ok",
+      "service": "von-decision-server",
+      "version": "1.3.1",
+      "engine": "von-1.3",
+      "homage": "John von Neumann & Ludwig von Mises"
+    }
+  },
+  "server_identity": {},
+  "predictions_file": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/results/bfcl_v4_von.jsonl",
+  "runtime": {
+    "implementation": "von native /v1/systemone",
+    "source_repository": "https://github.com/wfzyx/von",
+    "source_revision": "a930f9d5709e62388cd4d3bd45675aaaf323b973",
+    "weights_repository": "wfzyx/von",
+    "weights_revision": "43bbca0fb17f424539416ee8eb3de33cfc3dacf3",
+    "weights_sha256": {
+      "model.safetensors": "af57d5d2ab15715a753a1eb4add4271d1aecce7e76f3365f629c082df329297a",
+      "option_marker.pt": "3faf27f88d30aaf9aa37860d4cdef99f1d05450cf40364f6236ac892d4d139ed",
+      "marker_calibration.json": "9b32949dcd0cfd122db509c9bd5be67f0cfe35696153aa93d667caf0aae147c9"
+    },
+    "device": "cuda",
+    "dtype": "fp32 native default",
+    "hostname": "dgxh100-059",
+    "gpu_index": 5,
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "driver_version": "570.195.03",
+    "server_flags": [
+      "--model",
+      "von-1.3",
+      "--device",
+      "cuda",
+      "--no-chains",
+      "--on-overflow",
+      "refuse"
+    ],
+    "endpoint_bound_to": "127.0.0.1:18014",
+    "environment_file": "runtime/bfcl_v4/von/environment.json",
+    "environment_sha256": "fae9dc8de4b4ee664bf34dc3005bd79f0ef16a016fc70107962e91385819ea41",
+    "native_preflight_file": "runtime/bfcl_v4/von/preflight.json",
+    "native_preflight_sha256": "94ac6916712b285b248f8d8db500da5ac65d9f92e3a522f53940982dcbcd33d4",
+    "launch_file": "runtime/bfcl_v4/von/launch.sh",
+    "launch_sha256": "b7c95d366635815eff652b1811b60b90afcbfdc44453bb13c039c1ef78fcdea1",
+    "warm_up": {
+      "count": 3,
+      "case_ids": [
+        "live_multiple_997-228-0",
+        "live_multiple_430-141-19",
+        "live_multiple_996-227-0"
+      ],
+      "excluded_from_scored_log": true
+    },
+    "notes": "One sequential pass through the 250 frozen cases after three separate warmup cases. Latency is observed native endpoint timing, not a controlled throughput benchmark."
+  }
+}

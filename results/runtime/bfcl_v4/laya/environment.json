@@ -1,0 +1,444 @@
+{
+  "provider": "laya",
+  "python": "3.12.14 (main, Sep 24 2026, 17:57:43) [Clang 22.1.3 ]",
+  "packages": {
+    "hf-xet": {
+      "version": "1.6.0",
+      "direct_url": null
+    },
+    "dill": {
+      "version": "0.4.1",
+      "direct_url": null
+    },
+    "typing_extensions": {
+      "version": "4.16.0",
+      "direct_url": null
+    },
+    "tenacity": {
+      "version": "9.1.4",
+      "direct_url": null
+    },
+    "propcache": {
+      "version": "0.5.4",
+      "direct_url": null
+    },
+    "psutil": {
+      "version": "7.2.2",
+      "direct_url": null
+    },
+    "aiosignal": {
+      "version": "1.4.0",
+      "direct_url": null
+    },
+    "fsspec": {
+      "version": "2026.6.0",
+      "direct_url": null
+    },
+    "annotated-doc": {
+      "version": "0.0.5",
+      "direct_url": null
+    },
+    "scikit-learn": {
+      "version": "1.9.1",
+      "direct_url": null
+    },
+    "h11": {
+      "version": "0.16.0",
+      "direct_url": null
+    },
+    "annotated-types": {
+      "version": "0.8.0",
+      "direct_url": null
+    },
+    "accelerate": {
+      "version": "1.15.0",
+      "direct_url": null
+    },
+    "rich": {
+      "version": "15.0.0",
+      "direct_url": null
+    },
+    "networkx": {
+      "version": "3.7",
+      "direct_url": null
+    },
+    "uvicorn": {
+      "version": "0.54.0",
+      "direct_url": null
+    },
+    "regex": {
+      "version": "2026.9.10",
+      "direct_url": null
+    },
+    "mdurl": {
+      "version": "0.1.2",
+      "direct_url": null
+    },
+    "Jinja2": {
+      "version": "3.1.6",
+      "direct_url": null
+    },
+    "pydantic_core": {
+      "version": "2.46.5",
+      "direct_url": null
+    },
+    "anyio": {
+      "version": "4.15.1",
+      "direct_url": null
+    },
+    "triton": {
+      "version": "3.4.0",
+      "direct_url": null
+    },
+    "packaging": {
+      "version": "26.3",
+      "direct_url": null
+    },
+    "markdown-it-py": {
+      "version": "4.2.0",
+      "direct_url": null
+    },
+    "nvidia-cuda-runtime-cu12": {
+      "version": "12.8.90",
+      "direct_url": null
+    },
+    "certifi": {
+      "version": "2026.7.22",
+      "direct_url": null
+    },
+    "nvidia-cusolver-cu12": {
+      "version": "11.7.3.90",
+      "direct_url": null
+    },
+    "transformers": {
+      "version": "5.17.0",
+      "direct_url": null
+    },
+    "python-multipart": {
+      "version": "0.0.32",
+      "direct_url": null
+    },
+    "urllib3": {
+      "version": "2.8.0",
+      "direct_url": null
+    },
+    "httpcore": {
+      "version": "1.0.9",
+      "direct_url": null
+    },
+    "nvidia-nvtx-cu12": {
+      "version": "12.8.90",
+      "direct_url": null
+    },
+    "click": {
+      "version": "8.5.0",
+      "direct_url": null
+    },
+    "joblib": {
+      "version": "1.6.0",
+      "direct_url": null
+    },
+    "multidict": {
+      "version": "6.9.1",
+      "direct_url": null
+    },
+    "python-dateutil": {
+      "version": "2.9.0.post0",
+      "direct_url": null
+    },
+    "safetensors": {
+      "version": "0.8.0",
+      "direct_url": null
+    },
+    "aiohappyeyeballs": {
+      "version": "2.7.1",
+      "direct_url": null
+    },
+    "peft": {
+      "version": "0.21.0",
+      "direct_url": null
+    },
+    "shellingham": {
+      "version": "1.5.4",
+      "direct_url": null
+    },
+    "cloudpickle": {
+      "version": "3.1.2",
+      "direct_url": null
+    },
+    "typer": {
+      "version": "0.27.2",
+      "direct_url": null
+    },
+    "nvidia-cuda-nvrtc-cu12": {
+      "version": "12.8.93",
+      "direct_url": null
+    },
+    "laya": {
+      "version": "0.3.21",
+      "direct_url": {
+        "url": "https://github.com/NandhaKishorM/laya.git",
+        "vcs_info": {
+          "vcs": "git",
+          "commit_id": "9d955671415fc19f069b9cc998928075c1f255ec",
+          "requested_revision": "9d955671415fc19f069b9cc998928075c1f255ec"
+        }
+      }
+    },
+    "narwhals": {
+      "version": "2.26.0",
+      "direct_url": null
+    },
+    "aiohttp": {
+      "version": "3.14.3",
+      "direct_url": null
+    },
+    "pydantic": {
+      "version": "2.13.5",
+      "direct_url": null
+    },
+    "six": {
+      "version": "1.17.0",
+      "direct_url": null
+    },
+    "Pygments": {
+      "version": "2.21.0",
+      "direct_url": null
+    },
+    "typesafe-sdk": {
+      "version": "0.7.2",
+      "direct_url": null
+    },
+    "nvidia-nccl-cu12": {
+      "version": "2.27.3",
+      "direct_url": null
+    },
+    "mpmath": {
+      "version": "1.3.0",
+      "direct_url": null
+    },
+    "httpx": {
+      "version": "0.28.1",
+      "direct_url": null
+    },
+    "xxhash": {
+      "version": "4.0.1",
+      "direct_url": null
+    },
+    "pandas": {
+      "version": "3.0.6",
+      "direct_url": null
+    },
+    "torch": {
+      "version": "2.8.0",
+      "direct_url": null
+    },
+    "httpx2": {
+      "version": "2.13.1",
+      "direct_url": null
+    },
+    "huggingface_hub": {
+      "version": "1.33.0",
+      "direct_url": null
+    },
+    "pyarrow": {
+      "version": "25.0.1",
+      "direct_url": null
+    },
+    "threadpoolctl": {
+      "version": "3.7.0",
+      "direct_url": null
+    },
+    "nvidia-cusparse-cu12": {
+      "version": "12.5.8.93",
+      "direct_url": null
+    },
+    "httpcore2": {
+      "version": "2.13.1",
+      "direct_url": null
+    },
+    "starlette": {
+      "version": "1.7.0",
+      "direct_url": null
+    },
+    "truststore": {
+      "version": "0.10.4",
+      "direct_url": null
+    },
+    "scipy": {
+      "version": "1.18.1",
+      "direct_url": null
+    },
+    "typing-inspection": {
+      "version": "0.4.4",
+      "direct_url": null
+    },
+    "nvidia-cuda-cupti-cu12": {
+      "version": "12.8.90",
+      "direct_url": null
+    },
+    "attrs": {
+      "version": "26.1.0",
+      "direct_url": null
+    },
+    "charset-normalizer": {
+      "version": "3.5.1",
+      "direct_url": null
+    },
+    "nvidia-nvjitlink-cu12": {
+      "version": "12.8.93",
+      "direct_url": null
+    },
+    "kev": {
+      "version": "0.1.0",
+      "direct_url": {
+        "url": "https://github.com/jaredpalmer/kev.git",
+        "vcs_info": {
+          "vcs": "git",
+          "commit_id": "461b5eac35d96e95c7dede21b9e0402b4cf7092d",
+          "requested_revision": "461b5eac35d96e95c7dede21b9e0402b4cf7092d"
+        }
+      }
+    },
+    "nvidia-cufft-cu12": {
+      "version": "11.3.3.83",
+      "direct_url": null
+    },
+    "idna": {
+      "version": "3.20",
+      "direct_url": null
+    },
+    "numpy": {
+      "version": "2.5.3",
+      "direct_url": null
+    },
+    "filelock": {
+      "version": "4.0.6",
+      "direct_url": null
+    },
+    "nvidia-cusparselt-cu12": {
+      "version": "0.7.1",
+      "direct_url": null
+    },
+    "PyYAML": {
+      "version": "6.0.3",
+      "direct_url": null
+    },
+    "multiprocess": {
+      "version": "0.70.19",
+      "direct_url": null
+    },
+    "tokenizers": {
+      "version": "0.23.2",
+      "direct_url": null
+    },
+    "frozenlist": {
+      "version": "1.8.0",
+      "direct_url": null
+    },
+    "setuptools": {
+      "version": "84.0.0",
+      "direct_url": null
+    },
+    "nvidia-curand-cu12": {
+      "version": "10.3.9.90",
+      "direct_url": null
+    },
+    "requests": {
+      "version": "2.34.2",
+      "direct_url": null
+    },
+    "yarl": {
+      "version": "1.25.1",
+      "direct_url": null
+    },
+    "MarkupSafe": {
+      "version": "3.0.3",
+      "direct_url": null
+    },
+    "nvidia-cudnn-cu12": {
+      "version": "9.10.2.21",
+      "direct_url": null
+    },
+    "nvidia-cublas-cu12": {
+      "version": "12.8.4.1",
+      "direct_url": null
+    },
+    "fastapi": {
+      "version": "0.141.1",
+      "direct_url": null
+    },
+    "nvidia-cufile-cu12": {
+      "version": "1.13.1.3",
+      "direct_url": null
+    },
+    "datasets": {
+      "version": "5.0.1",
+      "direct_url": null
+    },
+    "tqdm": {
+      "version": "4.70.1",
+      "direct_url": null
+    },
+    "sympy": {
+      "version": "1.14.0",
+      "direct_url": null
+    }
+  },
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "cuda_available": true,
+  "hostname": "dgxh100-059",
+  "gpu_inventory": "0, NVIDIA H100 80GB HBM3, GPU-ae0ad6c6-1533-db65-02bd-15eda189d2de, 570.195.03, 81559 MiB\n1, NVIDIA H100 80GB HBM3, GPU-6a68559f-0467-4157-2020-7be34d987d7a, 570.195.03, 81559 MiB\n2, NVIDIA H100 80GB HBM3, GPU-f4c75c69-0412-bf77-a377-0c3d2b85690e, 570.195.03, 81559 MiB\n3, NVIDIA H100 80GB HBM3, GPU-a31b1fc7-9f7c-0f43-76e1-d49a33846967, 570.195.03, 81559 MiB\n4, NVIDIA H100 80GB HBM3, GPU-0b2be7db-231a-ca27-648d-bcb7f2357121, 570.195.03, 81559 MiB\n5, NVIDIA H100 80GB HBM3, GPU-ccf8a3ef-1cbc-a0f5-a324-ea80f359eb8c, 570.195.03, 81559 MiB\n6, NVIDIA H100 80GB HBM3, GPU-ef3f2a68-2e34-0bcf-684a-da0b2866a13c, 570.195.03, 81559 MiB\n7, NVIDIA H100 80GB HBM3, GPU-22851875-344e-0d4b-7099-d84936474416, 570.195.03, 81559 MiB\n",
+  "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "weight_sha256": {
+    "model.safetensors": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e"
+  },
+  "checkpoint_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "source_revision": "9d955671415fc19f069b9cc998928075c1f255ec",
+  "dtype": "fp16 CUDA autocast",
+  "gpu_index": 0,
+  "port": 18007,
+  "limits": {
+    "max_len": 1024,
+    "head_max_len": 256,
+    "per_option": 48
+  },
+  "checkpoint_config": {
+    "encoder": "answerdotai/ModernBERT-large",
+    "head_layers": 2,
+    "max_len": 1024,
+    "head_max_len": 256,
+    "max_prefixes": 6,
+    "act_costs": {
+      "escalate": 0.5
+    },
+    "cost_wrong_act": 3.0,
+    "amp_dtype": "bf16",
+    "model_name": "laya-typed-decisions",
+    "temperature": [
+      1.0148024559020996,
+      1.0374259948730469,
+      1.0575125217437744
+    ],
+    "temperature_by_options": {
+      "choice:3-5": 1.7601518630981445,
+      "choice:6-10": 1.0000158548355103,
+      "score:3-5": 1.2514300346374512,
+      "noul:2": 1.983399510383606,
+      "choice:11+": 0.10058280825614929,
+      "choice:2": 1.9063563346862793
+    },
+    "training": {
+      "updates": 7313,
+      "epochs_completed": 1,
+      "hours": 1.96,
+      "world_size": 1,
+      "fine_tuned_from_checkpoint": true
+    },
+    "gradient_checkpointing": true,
+    "max_tokens_per_batch": 4096,
+    "fine_tuned": true
+  },
+  "tokenizer_sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30"
+}

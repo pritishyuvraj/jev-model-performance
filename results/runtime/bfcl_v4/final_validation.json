@@ -1,0 +1,480 @@
+{
+  "schema": "bfcl-v4-final-independent-validation/v1",
+  "verified_at_utc": "2026-09-30T00:44:25.994147+00:00",
+  "dataset_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "dataset_count": 250,
+  "models_checked": 7,
+  "all_models_passed_log_and_gold_checks": true,
+  "all_checkpoint_revisions_match_v1": true,
+  "groups": {
+    "multi_tool_call": 150,
+    "one_tool_call": 50,
+    "one_tool_no_call": 50
+  },
+  "model_checks": {
+    "laya": {
+      "case_count": 250,
+      "unique_cases": 250,
+      "errors": 0,
+      "attempts_per_case": 1,
+      "transport_retries": 0,
+      "run_id": "78fd87934d5b8f6fa95913d2cbef1197ff445a4475cf1f9c6486aa6867289416",
+      "run_id_recomputed": true,
+      "gold_data_alignment": true,
+      "probabilities_valid": true,
+      "max_probability_sum_error": 0.000200000000000089,
+      "selected_argmax_within_1e_4": true,
+      "rounding_tie_cases": 0,
+      "exact_action_correct": 192,
+      "route_correct": 224,
+      "positive_tool_correct": 186,
+      "positive_tool_total": 200,
+      "negative_exact_no_tool_correct": 6,
+      "negative_no_function_correct": 38,
+      "groups": {
+        "multi_tool_call": {
+          "count": 150,
+          "exact_correct": 137,
+          "route_correct": 137,
+          "selected_meta": {
+            "clarify": 2
+          }
+        },
+        "one_tool_call": {
+          "count": 50,
+          "exact_correct": 49,
+          "route_correct": 49,
+          "selected_meta": {
+            "clarify": 1
+          }
+        },
+        "one_tool_no_call": {
+          "count": 50,
+          "exact_correct": 6,
+          "route_correct": 38,
+          "selected_meta": {
+            "cannot_answer": 18,
+            "clarify": 14,
+            "no_tool": 6
+          }
+        }
+      },
+      "checkpoint_revision_matches_v1": true,
+      "result_sha256": "43456c367f43011e4ae44e097f1bedfaa9429fe8995be217ed7b14b9ac7172f6"
+    },
+    "kev": {
+      "case_count": 250,
+      "unique_cases": 250,
+      "errors": 0,
+      "attempts_per_case": 1,
+      "transport_retries": 0,
+      "run_id": "5928925506d7326a2633fbe20ba7c805e9dff33714dd7f4e8d86bdb77e129be0",
+      "run_id_recomputed": true,
+      "gold_data_alignment": true,
+      "probabilities_valid": true,
+      "max_probability_sum_error": 0.000200000000000089,
+      "selected_argmax_within_1e_4": true,
+      "rounding_tie_cases": 0,
+      "exact_action_correct": 199,
+      "route_correct": 230,
+      "positive_tool_correct": 180,
+      "positive_tool_total": 200,
+      "negative_exact_no_tool_correct": 19,
+      "negative_no_function_correct": 50,
+      "groups": {
+        "multi_tool_call": {
+          "count": 150,
+          "exact_correct": 137,
+          "route_correct": 137,
+          "selected_meta": {
+            "cannot_answer": 5,
+            "no_tool": 2,
+            "clarify": 1
+          }
+        },
+        "one_tool_call": {
+          "count": 50,
+          "exact_correct": 43,
+          "route_correct": 43,
+          "selected_meta": {
+            "clarify": 2,
+            "cannot_answer": 4,
+            "no_tool": 1
+          }
+        },
+        "one_tool_no_call": {
+          "count": 50,
+          "exact_correct": 19,
+          "route_correct": 50,
+          "selected_meta": {
+            "cannot_answer": 19,
+            "no_tool": 19,
+            "clarify": 12
+          }
+        }
+      },
+      "checkpoint_revision_matches_v1": true,
+      "result_sha256": "df135d119bfd96791629781efea7155d4f4beb693049ac60043c90832270f574"
+    },
+    "nimble": {
+      "case_count": 250,
+      "unique_cases": 250,
+      "errors": 0,
+      "attempts_per_case": 1,
+      "transport_retries": 0,
+      "run_id": "e402ba6ce68c5d9a86aed24881505730b6302f60f0f79154b7b80d870cc9c5fb",
+      "run_id_recomputed": true,
+      "gold_data_alignment": true,
+      "probabilities_valid": true,
+      "max_probability_sum_error": 1.2986856745555997e-07,
+      "selected_argmax_within_1e_4": true,
+      "rounding_tie_cases": 0,
+      "exact_action_correct": 222,
+      "route_correct": 249,
+      "positive_tool_correct": 200,
+      "positive_tool_total": 200,
+      "negative_exact_no_tool_correct": 22,
+      "negative_no_function_correct": 49,
+      "groups": {
+        "multi_tool_call": {
+          "count": 150,
+          "exact_correct": 150,
+          "route_correct": 150,
+          "selected_meta": {}
+        },
+        "one_tool_call": {
+          "count": 50,
+          "exact_correct": 50,
+          "route_correct": 50,
+          "selected_meta": {}
+        },
+        "one_tool_no_call": {
+          "count": 50,
+          "exact_correct": 22,
+          "route_correct": 49,
+          "selected_meta": {
+            "cannot_answer": 23,
+            "no_tool": 22,
+            "clarify": 4
+          }
+        }
+      },
+      "checkpoint_revision_matches_v1": true,
+      "result_sha256": "692a72531211411a6b16828f11949e375f5c002cb59dfae6f3382ccef6673a40"
+    },
+    "semif": {
+      "case_count": 250,
+      "unique_cases": 250,
+      "errors": 0,
+      "attempts_per_case": 1,
+      "transport_retries": 0,
+      "run_id": "1a08963f994aad280454c0b7dc1c9b2b486c9909bbeb8e39a7c67f2802c90c59",
+      "run_id_recomputed": true,
+      "gold_data_alignment": true,
+      "probabilities_valid": true,
+      "max_probability_sum_error": 2.220446049250313e-16,
+      "selected_argmax_within_1e_4": true,
+      "rounding_tie_cases": 0,
+      "exact_action_correct": 229,
+      "route_correct": 244,
+      "positive_tool_correct": 196,
+      "positive_tool_total": 200,
+      "negative_exact_no_tool_correct": 33,
+      "negative_no_function_correct": 48,
+      "groups": {
+        "multi_tool_call": {
+          "count": 150,
+          "exact_correct": 147,
+          "route_correct": 147,
+          "selected_meta": {
+            "cannot_answer": 1
+          }
+        },
+        "one_tool_call": {
+          "count": 50,
+          "exact_correct": 49,
+          "route_correct": 49,
+          "selected_meta": {
+            "cannot_answer": 1
+          }
+        },
+        "one_tool_no_call": {
+          "count": 50,
+          "exact_correct": 33,
+          "route_correct": 48,
+          "selected_meta": {
+            "cannot_answer": 13,
+            "no_tool": 33,
+            "clarify": 2
+          }
+        }
+      },
+      "checkpoint_revision_matches_v1": true,
+      "result_sha256": "c784c41891555438090759812b118497fe7066e4b504a9c32b0f6cc28cb3628d"
+    },
+    "rizzo": {
+      "case_count": 250,
+      "unique_cases": 250,
+      "errors": 0,
+      "attempts_per_case": 1,
+      "transport_retries": 0,
+      "run_id": "aa8335140bf2035f7a1884b113dab1eb6105f354eacc579214c6350a5f6b8b6f",
+      "run_id_recomputed": true,
+      "gold_data_alignment": true,
+      "probabilities_valid": true,
+      "max_probability_sum_error": 2.220446049250313e-16,
+      "selected_argmax_within_1e_4": true,
+      "rounding_tie_cases": 0,
+      "exact_action_correct": 232,
+      "route_correct": 241,
+      "positive_tool_correct": 195,
+      "positive_tool_total": 200,
+      "negative_exact_no_tool_correct": 37,
+      "negative_no_function_correct": 46,
+      "groups": {
+        "multi_tool_call": {
+          "count": 150,
+          "exact_correct": 145,
+          "route_correct": 145,
+          "selected_meta": {
+            "no_tool": 1
+          }
+        },
+        "one_tool_call": {
+          "count": 50,
+          "exact_correct": 50,
+          "route_correct": 50,
+          "selected_meta": {}
+        },
+        "one_tool_no_call": {
+          "count": 50,
+          "exact_correct": 37,
+          "route_correct": 46,
+          "selected_meta": {
+            "cannot_answer": 9,
+            "no_tool": 37
+          }
+        }
+      },
+      "checkpoint_revision_matches_v1": true,
+      "result_sha256": "6953911319d21bc4bab23acf1cd0c72956e0da8a72bda9fc2b8ee11e56e2ca6e"
+    },
+    "von": {
+      "case_count": 250,
+      "unique_cases": 250,
+      "errors": 0,
+      "attempts_per_case": 1,
+      "transport_retries": 0,
+      "run_id": "994c950929c0f22ad8f28377c5e14d0fb65f94ae1511e0d45419240a051f75b4",
+      "run_id_recomputed": true,
+      "gold_data_alignment": true,
+      "probabilities_valid": true,
+      "max_probability_sum_error": 0.00019999999999997797,
+      "selected_argmax_within_1e_4": true,
+      "rounding_tie_cases": 0,
+      "exact_action_correct": 56,
+      "route_correct": 103,
+      "positive_tool_correct": 53,
+      "positive_tool_total": 200,
+      "negative_exact_no_tool_correct": 3,
+      "negative_no_function_correct": 50,
+      "groups": {
+        "multi_tool_call": {
+          "count": 150,
+          "exact_correct": 39,
+          "route_correct": 39,
+          "selected_meta": {
+            "clarify": 21,
+            "cannot_answer": 88,
+            "no_tool": 1
+          }
+        },
+        "one_tool_call": {
+          "count": 50,
+          "exact_correct": 14,
+          "route_correct": 14,
+          "selected_meta": {
+            "cannot_answer": 29,
+            "clarify": 7
+          }
+        },
+        "one_tool_no_call": {
+          "count": 50,
+          "exact_correct": 3,
+          "route_correct": 50,
+          "selected_meta": {
+            "cannot_answer": 28,
+            "clarify": 19,
+            "no_tool": 3
+          }
+        }
+      },
+      "checkpoint_revision_matches_v1": true,
+      "result_sha256": "f14a8ca1e705016b9e2ace67b2409e7d29b7280ec226cf545485e4d234ba9ceb"
+    },
+    "nanojev": {
+      "case_count": 250,
+      "unique_cases": 250,
+      "errors": 0,
+      "attempts_per_case": 1,
+      "transport_retries": 0,
+      "run_id": "caf50a7e93bd71d52693e385cfad84ccd19c988fa3afc6166429985773bc1c3a",
+      "run_id_recomputed": true,
+      "gold_data_alignment": true,
+      "probabilities_valid": true,
+      "max_probability_sum_error": 1.043081283569336e-07,
+      "selected_argmax_within_1e_4": true,
+      "rounding_tie_cases": 0,
+      "exact_action_correct": 35,
+      "route_correct": 56,
+      "positive_tool_correct": 7,
+      "positive_tool_total": 200,
+      "negative_exact_no_tool_correct": 28,
+      "negative_no_function_correct": 49,
+      "groups": {
+        "multi_tool_call": {
+          "count": 150,
+          "exact_correct": 2,
+          "route_correct": 2,
+          "selected_meta": {
+            "clarify": 51,
+            "no_tool": 94
+          }
+        },
+        "one_tool_call": {
+          "count": 50,
+          "exact_correct": 5,
+          "route_correct": 5,
+          "selected_meta": {
+            "no_tool": 25,
+            "clarify": 20
+          }
+        },
+        "one_tool_no_call": {
+          "count": 50,
+          "exact_correct": 28,
+          "route_correct": 49,
+          "selected_meta": {
+            "no_tool": 28,
+            "clarify": 21
+          }
+        }
+      },
+      "checkpoint_revision_matches_v1": true,
+      "result_sha256": "b65486319b5b18e2d9e87d8bd24698211569439ab8058321c24af6265d574295"
+    }
+  },
+  "native_preflights": {
+    "laya": {
+      "count": 250,
+      "failures": 0,
+      "max_input_tokens": 312
+    },
+    "kev": {
+      "count": 250,
+      "failures": 0,
+      "max_input_tokens": 301
+    },
+    "nimble": {
+      "count": 250,
+      "failures": 0,
+      "max_input_tokens": 470,
+      "limit": 8192
+    },
+    "semif": {
+      "count": 250,
+      "failures": 0,
+      "max_input_tokens": 393,
+      "limit": 4096
+    },
+    "rizzo": {
+      "count": 250,
+      "failures": 0,
+      "max_input_tokens": 445,
+      "limit": 8192
+    },
+    "von": {
+      "count": 250,
+      "failures": 0,
+      "max_input_tokens": 291
+    },
+    "nanojev": {
+      "count": 250,
+      "failures": 0,
+      "max_input_tokens": 258,
+      "limit": 8192
+    }
+  },
+  "nanojev_adapter_review": {
+    "bridge_byte_identical_to_v1": true,
+    "all_250_state_questions_and_option_keys_preserved": true,
+    "native_candidate_count_matches_every_case": true,
+    "native_response_mapping_unchanged": true,
+    "post_run_probe_choice_matches_first_record": true,
+    "post_run_probability_delta": 0.0,
+    "actual_forward_storage": "float32",
+    "actual_forward_autocast": "bfloat16",
+    "disable_native_triton": false,
+    "context_limit": 8192,
+    "temperature": 1.0,
+    "finding": "No adapter or option mapping defect found in checked paths; low positive routing score preserved without retraining or selection-dependent changes."
+  },
+  "v1_runtime_parity": {
+    "laya_kev_nanojev_identities_equal": true,
+    "rizzo_runtime_fingerprint_equal": true,
+    "nimble_semif_scoring_config_equal": true,
+    "von_no_chains": true,
+    "von_overflow": "refuse",
+    "von_independent_options": true,
+    "von_digit_split": false,
+    "von_precision": "FP32 native default"
+  },
+  "adapter_metadata_only_diffs": {
+    "nimble": {
+      "shared_v1_sha256": "212c6a2a522344d1c8466fda6839900b3dee1bfc517c61760176c387d554ffc2",
+      "v4_sha256": "5e8f40ccc2f491faba588e65d5a456d20e7f870e74d3a832642d4b147999305f",
+      "changed_lines": [
+        "-from evaluate import (load_cases, read_predictions, sha256, stratum, summarize,",
+        "+from evaluate import (dataset_run_fields, eval_schema, load_cases, read_predictions, sha256, stratum, summarize,",
+        "+        **dataset_run_fields(manifest),",
+        "-            \"schema\": \"bfcl-v1-jev-eval-run/v1\", \"created_at_utc\": utc_now(),",
+        "+            \"schema\": eval_schema(\"run\", run_config), \"created_at_utc\": utc_now(),"
+      ],
+      "review": "Only imports, run metadata/schema and SemIf docstring differ. Native prompt, readout, token limit and precision unchanged."
+    },
+    "semif": {
+      "shared_v1_sha256": "afbd1324f029d8465050f48ba721f7ebb7e85819a8deafcf989adae33bb05230",
+      "v4_sha256": "cc55d6b036b3d582407167e6cd009e253fdedc487b4f2494fc61dcbfebd8af11",
+      "changed_lines": [
+        "-\"\"\"Run the authoritative SemIf direct-logit scorer on the BFCL V1 routing cases.\"\"\"",
+        "+\"\"\"Run the authoritative SemIf direct-logit scorer on frozen BFCL routing cases.\"\"\"",
+        "-    load_cases, read_predictions, sha256, stratum, summarize, utc_now, write_json_atomic,",
+        "+    dataset_run_fields, eval_schema, load_cases, read_predictions, sha256, stratum, summarize, utc_now, write_json_atomic,",
+        "+        **dataset_run_fields(source_manifest),",
+        "-            \"schema\": \"bfcl-v1-jev-eval-run/v1\",",
+        "+            \"schema\": eval_schema(\"run\", run),"
+      ],
+      "review": "Only imports, run metadata/schema and SemIf docstring differ. Native prompt, readout, token limit and precision unchanged."
+    }
+  },
+  "credential_pattern_scan": {
+    "files_scanned": 83,
+    "match_counts": {
+      "hugging_face": 0,
+      "github": 0,
+      "openai_style": 0,
+      "slack": 0,
+      "aws_access_key": 0,
+      "private_key_block": 0,
+      "credential_assignment": 0
+    },
+    "files_with_matches": 0,
+    "values_recorded_or_printed": false,
+    "note": "Package names such as tokenizers and source literals such as access_token are not credential patterns. This is a bounded pattern scan, not proof about arbitrary secrets."
+  },
+  "notes": [
+    "Each model retained its native published prompt/readout adapter; token preflights covered all 250 inputs without truncation.",
+    "Nano native runtime probe followed the benchmark and is excluded from result rows.",
+    "This checks frozen dataset and prediction integrity; it does not re-audit every source label or evaluate arguments."
+  ]
+}

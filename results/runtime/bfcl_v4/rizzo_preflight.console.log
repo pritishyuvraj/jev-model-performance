@@ -1,0 +1,10 @@
+ggml_cuda_init: failed to initialize CUDA: no CUDA-capable device is detected
+{
+  "schema": "bfcl-v4-native-token-preflight/v1",
+  "provider": "rizzo",
+  "completed_at_utc": "2026-09-30T00:31:07.296778+00:00",
+  "dataset_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "cases": 250,
+  "truncated_cases": 0,
+  "max_native_tokens": 445
+}

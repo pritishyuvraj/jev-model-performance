@@ -1,0 +1,64 @@
+{
+  "stopped_at_utc": "2026-09-30T00:36:47.347266+00:00",
+  "owned_servers": {
+    "nanojev_bridge": {
+      "pid": 1696728,
+      "verified_command": [
+        "/data/home/pritish/jev-model-performance/inference/.venv/bin/python",
+        "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/inference/nanojev/bridge.py",
+        "--upstream",
+        "http://127.0.0.1:18765",
+        "--checkpoint-dir",
+        "/data/home/pritish/.cache/jev-model-performance-dgx59/nanojev/checkpoint",
+        "--port",
+        "18015"
+      ],
+      "signal": "SIGTERM"
+    },
+    "nanojev_native": {
+      "pid": 1696727,
+      "verified_command": [
+        "/data/home/pritish/jev-model-performance/inference/.venv/bin/python",
+        "/data/home/pritish/jev-model-performance/.cache/third_party/nanojev/scripts/serve_decisions.py",
+        "--checkpoint-dir",
+        "/data/home/pritish/.cache/jev-model-performance-dgx59/nanojev/checkpoint",
+        "--web-root",
+        "/data/home/pritish/jev-model-performance/.cache/third_party/nanojev/web",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18765",
+        "--precision",
+        "bf16"
+      ],
+      "signal": "SIGTERM"
+    },
+    "rizzo": {
+      "pid": 1696726,
+      "verified_command": [
+        "/data/home/pritish/jev-model-performance/.cache/third_party/rizzo/.venv/bin/python",
+        "/data/home/pritish/jev-model-performance/.cache/third_party/rizzo/.venv/bin/rizzo",
+        "serve",
+        "--device",
+        "cuda",
+        "--model",
+        "/data/home/pritish/.cache/jev-model-performance-dgx59/rizzo/rizzo-flow-q8.gguf",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18017",
+        "--ctx",
+        "8192",
+        "--batch-size",
+        "4"
+      ],
+      "signal": "SIGTERM"
+    }
+  },
+  "ports_closed": [
+    18017,
+    18015,
+    18765
+  ],
+  "gpu_state": "4, 0, 0\n6, 0, 0\n"
+}

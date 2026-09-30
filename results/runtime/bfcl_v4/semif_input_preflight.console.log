@@ -1,0 +1,27 @@
+{
+  "schema": "bfcl-v4-native-input-preflight/v1",
+  "model": "semif",
+  "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "case_count": 250,
+  "source_revision": "23cf1f39fc9534fe81437200959b6dfc7106e45a",
+  "model_identity": {
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "source_revision": "23cf1f39fc9534fe81437200959b6dfc7106e45a"
+  },
+  "token_limit": 4096,
+  "min_input_tokens": 189,
+  "max_input_tokens": 393,
+  "mean_input_tokens": 258.244,
+  "no_truncation": true,
+  "source_and_gold_excluded_from_model_payload": true,
+  "runtime": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "transformers": "5.17.0",
+    "visible_gpu": "3",
+    "gpu_names": [
+      "NVIDIA H100 80GB HBM3"
+    ]
+  }
+}

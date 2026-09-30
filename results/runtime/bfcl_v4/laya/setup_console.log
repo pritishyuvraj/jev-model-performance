@@ -1,0 +1,8 @@
+{
+  "provider": "laya",
+  "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+  "checked_count": 250,
+  "failures": [],
+  "max_input_tokens": 312,
+  "method": "Exact native input construction/tokenization only; no model inference."
+}

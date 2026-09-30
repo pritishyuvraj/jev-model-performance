@@ -1,0 +1,99 @@
+{
+  "schema": "bfcl-v4-jev-eval-summary/v1",
+  "generated_at_utc": "2026-09-30T00:34:13+00:00",
+  "run": {
+    "provider": "nanojev",
+    "requested_model": "nanojev-unified-games-v1",
+    "declared_model_revision": "047b927b30882a1138fc504821b82ac145a4b81a",
+    "endpoint": "http://127.0.0.1:18015",
+    "cases_path": "/data/home/pritish/jev-model-performance-v4-dgx59-20260929/data/bfcl_v4/cases.jsonl",
+    "cases_sha256": "2f7b2ad2d3f0d2610ce303fb3c10e7bdd00d03e4e2f9a7a826bf93293ebcb2e8",
+    "source_tag": "BFCL V4 corpus / Live categories",
+    "source_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+    "selection_review_sha256": "a20e1a75a3181aebec0cb2915933f2a0a7dd0f9f8c3f11ff774076bb967e82ef",
+    "dataset_schema": "bfcl-v4-live-jev-routing-subset/v1",
+    "meta_card_version": "bfcl-v4-neutral-meta-cards/v1"
+  },
+  "expected_count": 250,
+  "completed_count": 250,
+  "is_complete": true,
+  "overall": {
+    "total": 250,
+    "correct": 35,
+    "tool_selection_correct": 56,
+    "errors": 0,
+    "incorrect_responses": 215,
+    "accuracy_all_cases": 0.14,
+    "tool_selection_accuracy_all_cases": 0.224,
+    "accuracy_responded_only": 0.14
+  },
+  "by_stratum": {
+    "multi_tool_call": {
+      "total": 150,
+      "correct": 2,
+      "tool_selection_correct": 2,
+      "errors": 0,
+      "incorrect_responses": 148,
+      "accuracy_all_cases": 0.013333333333333334,
+      "tool_selection_accuracy_all_cases": 0.013333333333333334,
+      "accuracy_responded_only": 0.013333333333333334
+    },
+    "one_tool_call": {
+      "total": 50,
+      "correct": 5,
+      "tool_selection_correct": 5,
+      "errors": 0,
+      "incorrect_responses": 45,
+      "accuracy_all_cases": 0.1,
+      "tool_selection_accuracy_all_cases": 0.1,
+      "accuracy_responded_only": 0.1
+    },
+    "one_tool_no_call": {
+      "total": 50,
+      "correct": 28,
+      "tool_selection_correct": 49,
+      "errors": 0,
+      "incorrect_responses": 22,
+      "accuracy_all_cases": 0.56,
+      "tool_selection_accuracy_all_cases": 0.98,
+      "accuracy_responded_only": 0.56
+    }
+  },
+  "by_category": {
+    "live_irrelevance": {
+      "total": 50,
+      "correct": 28,
+      "tool_selection_correct": 49,
+      "errors": 0,
+      "incorrect_responses": 22,
+      "accuracy_all_cases": 0.56,
+      "tool_selection_accuracy_all_cases": 0.98,
+      "accuracy_responded_only": 0.56
+    },
+    "live_multiple": {
+      "total": 150,
+      "correct": 2,
+      "tool_selection_correct": 2,
+      "errors": 0,
+      "incorrect_responses": 148,
+      "accuracy_all_cases": 0.013333333333333334,
+      "tool_selection_accuracy_all_cases": 0.013333333333333334,
+      "accuracy_responded_only": 0.013333333333333334
+    },
+    "live_simple": {
+      "total": 50,
+      "correct": 5,
+      "tool_selection_correct": 5,
+      "errors": 0,
+      "incorrect_responses": 45,
+      "accuracy_all_cases": 0.1,
+      "tool_selection_accuracy_all_cases": 0.1,
+      "accuracy_responded_only": 0.1
+    }
+  },
+  "error_cases": [],
+  "response_models": {
+    "nanojev-unified-games-v1": 250
+  },
+  "note": "accuracy_all_cases scores the exact BFCL-derived action. tool_selection_accuracy_all_cases also credits clarify/cannot_answer on BFCL no-call cases because no function was selected. Errors count as incorrect in both. Neither scores arguments or tool execution."
+}

@@ -1,6 +1,6 @@
 # Jev model performance
 
-This repository holds a **250-case BFCL-conditioned Jev routing pilot** adapted from Berkeley Function Calling Leaderboard (BFCL) V1. BFCL V1 has 2,000 source examples; the review set uses a selected subset. Seven model runs are complete: Laya, Kev-0.8B, Nimble-9B, SemIf on frozen Qwen3.5-4B, Rizzo Flow 4B, Von, and NanoJev.
+This repository compares seven Jev-style decision systems on two **250-case capability-routing pilots**, adapted from Berkeley Function Calling Leaderboard (BFCL) V1 and the V4 Live corpus. Both sets have complete runs for Laya, Kev-0.8B, Nimble-9B, SemIf on frozen Qwen3.5-4B, Rizzo Flow 4B, Von, and NanoJev. The V4 set has no exact or normalized request matches against all 2,000 V1 source rows or our frozen V1 subset.
 
 ## Results at a glance
 
@@ -30,7 +30,7 @@ The checkpoints and inference methods belong to their upstream authors; this rep
 
 ## Results and reruns
 
-- [BFCL V4 Live routing set](data/bfcl_v4/README.md): 250 reviewed prompts with no normalized request overlap against all 2,000 original V1 rows or our frozen V1 subset. [Prompt and results viewer](data/bfcl_v4/viewer.html).
+- [New BFCL V4 results](results/bfcl_v4.md): all seven scores, timing, probability statistics, credits, and per-case logs. [V4 charts](charts/bfcl_v4/README.md) · [V4 data](data/bfcl_v4/README.md) · [V4 prompt and results viewer](data/bfcl_v4/viewer.html) · [Exact rerun commands](inference/BFCL_V4.md).
 - [Evaluation results](results/README.md): all seven scores, per-stratum breakdowns, run identity, and links to every per-case selection log.
 - [Comparison charts](charts/README.md): model size, observed latency, and gold-function probability against exact right-tool accuracy, with reproducible PNG and SVG figures.
 - [Inference setup](inference/README.md): pinned environments and rerun instructions for each model.
